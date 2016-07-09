@@ -2,9 +2,9 @@
 The Demise of Linkedin
 
 
-- [ ] HTML/CSS/Javascript/JQuery
-- [ ]  Login page (Alex Cortes)
-- [ ]     Create new account
+- [ ]1. HTML/CSS/Javascript/JQuery
+- [ ]  A.  Login page (Aex Cortes)
+- [ ]    i. Create new account
 - [ ]     Existing account
 - [ ]   Profile page
 - [ ]   Resume builder
