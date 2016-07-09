@@ -21,3 +21,15 @@ The Demise of Linkedin
 -[ ]    HTML test
 -[ ]    Node test
 -[ ]    PHP test
+
+### Solar System Exploration, 1950s – 1960s
+
+- [ ] Mercury
+- [x] Venus
+- [x] Earth (Orbit/Moon)
+- [x] Mars
+- [ ] Jupiter
+- [ ] Saturn
+- [ ] Uranus
+- [ ] Neptune
+- [ ] Comet Haley
