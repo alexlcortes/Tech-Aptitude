@@ -3,7 +3,7 @@ The Demise of Linkedin
 
 
 - [ ] HTML/CSS/Javascript/JQuery
-- [ ] Login page (Cool Hand Luke)
+- [ ] Login page (Paul Newman)
 - [ ] Create new account
 - [ ] Existing account
 - [ ] Profile page
