@@ -23,9 +23,9 @@ The Demise of Linkedin
 - [ ] Create API that shows potential employers
 
 - [ ] MySQL
-- [ ] Create Table  (Gerald Ford)
-- [ ] Schema.sql    (Gerald Ford)
-- [ ] Seeds.sql     (Gerald Ford)
+- [ ] Create Table  (Oppenheimer)
+- [ ] Schema.sql    (Oppenheimer)
+- [ ] Seeds.sql     (Oppenheimer)
 - [ ] Create SQL for inserting, updating, deleting, and retrieving data from tables.
 
 - [ ] New technology - login using facebook or gmail.com account.
