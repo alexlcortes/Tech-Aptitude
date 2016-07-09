@@ -2,34 +2,30 @@
 The Demise of Linkedin
 
 
-[ ] HTML/CSS/Javascript/JQuery
+- [ ] HTML/CSS/Javascript/JQuery
+- [ ]  Login page
+- [ ]     Create new account
+- [ ]     Existing account
+- [ ]   Profile page
+- [ ]   Resume builder
+- [ ]     Upload Existing Resume
+- [ ]     Create Resume from Scratch
+- [ ]   Skills Page
+- [ ]     Junior, Mid-Level, Senior developer tests
+- [ ]       CSS test
+- [ ]       HTML test
+- [ ]       Node test
+- [ ]       PHP test
 
-[ ]  Login page
+- [ ] Node
+- [ ]   Create routes to pages
+- [ ]   Create API that shows potential employees
+- [ ]   Create API that shows potential employers
 
-[ ]    Create new account
+- [ ] MySQL
+- [ ]   Create Table
+- [ ]     Schema.sql
+- [ ]     Seeds.sql
+- [ ]   Create SQL for inserting, updating, deleting, and retrieving data from tables.
 
-[ ]    Existing account
-
--[ ]  Profile page
-
--[ ]  Resume builder
--[ ]    Upload Existing Resume
--[ ]    Create Resume from Scratch
--[ ]  Skills Page
--[ ]    Junior, Mid-Level, Senior developer tests
--[ ]    CSS test
--[ ]    HTML test
--[ ]    Node test
--[ ]    PHP test
-
-### Solar System Exploration, 1950s – 1960s
-
-- [ ] Mercury
-- [x] Venus
-- [x] Earth (Orbit/Moon)
-- [x] Mars
-- [ ] Jupiter
-- [ ] Saturn
-- [ ] Uranus
-- [ ] Neptune
-- [ ] Comet Haley
+- [ ] New technology - login using facebook or gmail.com account.
