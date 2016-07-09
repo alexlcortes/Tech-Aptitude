@@ -6,7 +6,7 @@ The Demise of Linkedin
 - [ ] Login page (Paul Newman)
 - [ ] Create new account
 - [ ] Existing account
-- [ ] Profile page
+- [ ] Profile page employee/employer (Richard Garcia)
 - [ ] Resume builder
 - [ ] Upload Existing Resume
 - [ ] Create Resume from Scratch
