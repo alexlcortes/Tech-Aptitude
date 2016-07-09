@@ -3,7 +3,7 @@ The Demise of Linkedin
 
 
 - [ ] HTML/CSS/Javascript/JQuery
-- [ ]  Login page
+- [ ]  Login page (Aex Cortes)
 - [ ]     Create new account
 - [ ]     Existing account
 - [ ]   Profile page
