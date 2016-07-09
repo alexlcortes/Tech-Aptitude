@@ -1,0 +1,29 @@
+{
+  "name": "tech-aptitude",
+  "version": "1.0.0",
+  "description": "Matching employees with employers based on skills rather than job titles.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.6",
+    "mysql": "^2.11.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexlcortes/Tech-Aptitude.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexlcortes/Tech-Aptitude/issues"
+  },
+  "homepage": "https://github.com/alexlcortes/Tech-Aptitude#readme"
+}
