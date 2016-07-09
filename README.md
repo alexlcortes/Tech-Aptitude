@@ -18,14 +18,14 @@ The Demise of Linkedin
 - [ ] PHP test
 
 - [ ] Node
-- [ ] Create routes to pages
+- [ ] Create routes to pages  
 - [ ] Create API that shows potential employees
 - [ ] Create API that shows potential employers
 
 - [ ] MySQL
-- [ ] Create Table
-- [ ] Schema.sql
-- [ ] Seeds.sql
+- [ ] Create Table  (Gerald Ford)
+- [ ] Schema.sql    (Gerald Ford)
+- [ ] Seeds.sql     (Gerald Ford)
 - [ ] Create SQL for inserting, updating, deleting, and retrieving data from tables.
 
 - [ ] New technology - login using facebook or gmail.com account.
