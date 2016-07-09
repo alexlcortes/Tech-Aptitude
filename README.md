@@ -2,13 +2,13 @@
 The Demise of Linkedin
 
 
--[ ] HTML/CSS/Javascript/JQuery
+[ ] HTML/CSS/Javascript/JQuery
 
--[ ]  Login page
+[ ]  Login page
 
--[ ]    Create new account
+[ ]    Create new account
 
--[ ]    Existing account
+[ ]    Existing account
 
 -[ ]  Profile page
 
