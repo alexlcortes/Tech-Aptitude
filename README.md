@@ -34,3 +34,8 @@ The Demise of Linkedin
 
 - [ ] New technology - login using facebook or gmail account.
 
+Color Palette:
+#FA5555
+#F7FB76
+#8DED8E
+#2D7D8F
