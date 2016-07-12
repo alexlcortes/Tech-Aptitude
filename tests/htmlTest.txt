@@ -1,0 +1,95 @@
+1.	What does HTML stand for?
+a.	Hit The Mother Load
+b.	How To Make Language
+c.	Hypertext Markup Language*
+d.	Hyper Text Media Language 
+
+
+2.	What goes into the <head> section of a html document?
+a.	Title
+b.	Link to CSS Page
+c.	Menu Header
+d.	A &B*
+e.	All of the Above
+
+
+3.	What common tag is used for a logical container?
+a.	<container> </container>
+b.	<body> </body>
+c.	<div> </div>*
+d.	<logicContainer> </logicContainer>
+
+
+4.	What is the correct HTML for referring to an external style sheet?
+a.	<link rel="stylesheet" type="text/css" href="mystyle">*
+b.	<style src="mystyle.css">
+c.	<stylesheet>mystyle.css</stylesheet>
+d.	<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+
+5.	Which HTML attribute is used to define inline styles?
+a.	Font
+b.	Styles
+c.	Style*
+d.	Class
+
+
+6.	What is the correct HTML5 element for playing music files?
+a.	<sound>
+b.	<audio>*
+c.	<mp3>
+d.	<music>
+
+
+7.	What element is no longer supported in HTML5?
+a.	<ins>
+b.	<menu>
+c.	<q>
+d.	<font>*
+
+
+8.	In HTML5, onblur and onfocus are:
+a.	Style attributes
+b.	HTML elements
+c.	Event attributes*
+d.	Javascript attributes
+
+
+9.	In HTML5, which method is used to get the current location of a user?
+a.	getUserPosition()
+b.	getCurrentPosition()*
+c.	getPosition()
+d.	getCurrentUserPosition()
+
+
+10.	The new HTML5 global attribute, "contenteditable" is used to:
+a.	Update content from the server
+b.	Specify whether the content of an element should be editable or not*
+c.	Return the position of the first found occurrence of content inside a string
+d.	Specifies a context menu for an element. The menu appears when a user right-clicks on the element
+
+
+11.	In HTML5, you can embed SVG elements directly into an HTML page.	
+a.	True*
+b.	False
+
+
+12.	The <canvas> element in HTML5 is used to:
+a.	Display database records
+b.	Draw graphics*
+c.	Create draggable elements
+d.	Manipulate data in MySQL
+
+
+13.	Which input type defines a slider control?
+a.	range*
+b.	slider
+c.	search
+d.	controls
+
+
+14.	Which HTML5 element is used to display a scalar measurement within a known range?
+a.	<measure>
+b.	<gauge>
+c.	<meter>*
+d.	<range>

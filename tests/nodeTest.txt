@@ -1,0 +1,82 @@
+1.	Node.js runs on
+a.	Client
+b.	Server*
+c.	Both server and client
+d.	None of the above
+
+
+2.	Node.js is ________ by default
+a.	Synchronous
+b.	Multi-threaded
+c.	Asynchronous*
+d.	None of the above
+
+
+3.	Node.js supports which of the following platform?
+a.	Windows
+b.	Unix/Linux
+c.	Macintosh
+d.	All of the Above*
+
+
+4.	Node.js terminal (REPL) is used for _________.
+a.	testing node.js/JavaScript expressions.*
+b.	the preview of node.js application.
+c.	executing browser’s JavaScript expressions.
+d.	None of the Above
+
+
+5.	What is the default scope in Node.js application.
+a.	Local*
+b.	Global Function
+c.	Global
+d.	Local to object
+
+
+6.	Node.js application runs on ______________.
+a.	Multiple threads
+b.	Single thread*
+c.	Multiple Processes
+d.	Single Process
+
+
+7.	Simple or complex functionality organized in a single or multiple JavaScript files which can be reused throughout your Node.js application is called ________.
+a.	Module*
+b.	Library
+c.	Function
+d.	Package
+
+
+8.	The Node.js modules can be exposed using:
+a.	module.expose
+b.	module
+c.	module.exports*
+d.	all of the above
+
+
+9.	Which of the following core module is used to create a web server in Node.js?
+a.	url
+b.	fs
+c.	http*
+d.	connect
+
+
+10.	Which of the following class is used to create and consume custom events in Node.js?
+a.	EventEmitter*
+b.	Events
+c.	NodeEvent
+d.	None of the Above
+
+
+11.	Which of the following types of application can be built using Node.js?
+a.	Web Application
+b.	RESTful Service
+c.	Chat Application
+d.	All of the Above*
+
+
+12.	Which of the following template engines can be used with Node.js?
+a.	Jade
+b.	Vash
+c.	Handlebars
+d.	All of the Above*

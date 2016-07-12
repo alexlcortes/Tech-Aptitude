@@ -1,0 +1,88 @@
+1.	What does CSS Stand for?
+a.	Content Scrambling System
+b.	Cascading Style Sheet*
+c.	Creative Style Sheet
+d.	Computer Style Sheet
+
+
+2.	What is a declaration in CSS?
+a.	a
+b.	{*
+c.	.
+d.	;
+
+
+3.	How do you call a class in CSS?
+a.	#
+b.	.*
+c.	;
+d.	*
+
+
+4.	How do you call a ID in CSS?
+a.	#
+b.	.
+c.	;
+d.	*
+
+
+5.	What is the correct CSS Syntax?
+a.	{body:color=black;}
+b.	body {color: black;}*
+c.	{body;color:black;}
+d.	body:color=black;
+
+
+6.	Which property is used to change the background-color?
+a.	color
+b.	bgcolor
+c.	background-color*
+d.	backgroundColor
+
+
+7.	What is the correct CSS syntax for 
+making all the <p> elements bold?
+a.	p {font-weight:bold;}*
+b.	p {text-size:bold;}
+c.	<p style="font-size:bold;">
+d.	<p style="text-size:bold;">
+
+
+8.	How do you make each word in a text start with a capital letter?
+a.	You can't do that with CSS
+b.	text-transform:capitalize
+c.	text-transform:uppercase*
+
+
+9.	Which property is used to change the font of an element?
+a.	font
+b.	font-family
+c.	fontFamily
+d.	A & B*
+e.	All of the Above
+
+
+10.	How do you make a list that lists its items with squares?
+a.	list: square;
+b.	list-type: square;
+c.	list-style-type: square;*
+d.	list-style: square;
+
+
+11.	How do you group selectors?
+a.	Separate each selector with a comma*
+b.	Separate each selector with a plus sign
+c.	Separate each selector with a space
+d.	Not possible with CSS
+
+
+12.	How do you insert a comment in a CSS file?
+a.	// this is a comment
+b.	/* this is a comment */*
+c.	// this is a comment //
+d.	' this is a comment
+
+
+13.	When using the padding property; are you allowed to use negative values?
+a.	No*
+b.	Yes
