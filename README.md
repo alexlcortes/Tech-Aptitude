@@ -1,11 +1,6 @@
 # Tech-Aptitude
 The Demise of Linkedin
 
-- [ ] HTML/CSS/JavaScript/JQuery	
-- [x] Login
-- [x] Create new account
-- [x] Existing account
-
 - [ ] HTML/CSS/Javascript/JQuery
 - [x] Login page (Paul Newman)
 - [x] Create new account
