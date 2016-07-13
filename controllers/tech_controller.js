@@ -7,6 +7,9 @@ module.exports = function(app, passport) {
 	app.get('/', function(req, res) {
 		res.render('index'); // load the index file
 	});
+	app.get('/profile', function(req, res) {
+		res.render('profile'); // load the index file
+	});
 
 
 }
