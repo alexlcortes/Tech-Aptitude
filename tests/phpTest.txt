@@ -1,0 +1,77 @@
+1.	What does PHP stand for?
+a.	Personal Hypertext Processor
+b.	PHP; Hypertext Processor*
+c.	Private Home Page
+d.	Private Hypertext Homepage
+
+
+2.	PHP server scripts are surrounded by delimiters, which?
+a.	<?php>...</?>*
+b.	<&>...</&>
+c.	<script>...</script>
+d.	<?php...?>
+
+
+3.	How do you write "Hello World" in PHP?
+a.	echo "Hello World";*
+b.	Document.Write("Hello World");
+c.	"Hello World";
+d.	Doucument.echo “Hello World!”
+
+
+4.	All variables in PHP start with which symbol?
+a.	{
+b.	&
+c.	$*
+d.	!
+
+
+5.	What is the correct way to end a PHP statement?
+a.	;*
+b.	.
+c.	</php>
+d.	New Line
+
+
+6.	How do you get information from a form that is submitted using the "get" method?
+a.	$_GET[];*
+b.	Request.QueryString;
+c.	Request.Form;
+d.	GET. QUERYString;
+
+
+7.	In PHP you can use both single quotes ( ' ' ) and double quotes ( " " ) for strings:
+a.	True *
+b.	False
+
+
+8.	What is the correct way to include the file "time.inc" ?
+a.	<?php include "time.inc"; ?>*
+b.	<!-- include file="time.inc" -->
+c.	<?php include file="time.inc"; ?>
+d.	<?php include:"time.inc"; ?>
+
+
+9.	What is the correct way to create a function in PHP?
+a.	function myFunction()*
+b.	function ()
+c.	create myFunction()
+d.	new_function myFunction()
+
+10.	What is the correct way to open the file "time.txt" as readable?
+a.	open("time.txt","read");
+b.	open("time.txt");
+c.	fopen("time.txt","r");*
+d.	fopen("time.txt","r+");
+
+
+11.	Which superglobal variable holds information about headers, paths, and script locations?
+a.	$_SESSION
+b.	$_SERVER*
+c.	$_GET
+d.	_GLOBALS
+
+
+12.	The die() and exit() functions do the exact same thing.
+a.	True *
+b.	False
