@@ -1,7 +1,7 @@
 # Tech-Aptitude
 The Demise of Linkedin
 
-- [ ] HTML/CSS/Javascript/JQuery
+- [ ] HTML/CSS/Javascript/JQuery (Paul Newman, Richard Garcia, Morgan...)
 - [x] Login page (Paul Newman)
 - [x] Create new account
 - [x] Existing account
