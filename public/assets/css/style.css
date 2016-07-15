@@ -320,7 +320,7 @@ color: #fff;
 /**************************************************************************************/
 /*------------------------------------- Buttons -------------------------------------*/
 /************************************************************************************/
-
+/*
 .button {
     -moz-border-bottom-colors: none;
     -moz-border-image: none;
@@ -360,7 +360,7 @@ color: #fff;
 	   background-image: -o-linear-gradient(top, #E0E0E0, #fafafa);
 	   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E0E0E0', endColorstr='#fafafa')
    }
-
+*/
 /* button small */
  
 .button_small {

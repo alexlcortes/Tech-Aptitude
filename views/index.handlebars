@@ -18,12 +18,12 @@
               <!-- tab 1 -->
               <div class="tabs-panel is-active" id="panelCan">
                 <!-- Login Form Group -->
-                <form action="/login" method="post">
+                <form action="/" method="post">
                   <div class="row">
                     <div class="large-12 columns">
                       <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-control" name="username" placeholder="Username">
+                        <input type="text" class="form-control" name="email" placeholder="Email">
                       </div>
                     </div>
                   </div>  
@@ -46,13 +46,14 @@
                   <div class="row">
                     <div class="large-12 large-centered columns">
                         <input type="submit" class="button" value="Sign In"/>
-                        <a href="#" class="button">Create Account</a>
+                        <a href="/signup" class="button">Create Account</a>
                     </div>
                   </div>
                 </form>
               </div>
             </div>
             <!-- end of tabs content -->
+            {{message}}
         </div>
       </div>
     </div>
