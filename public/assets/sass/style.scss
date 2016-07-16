@@ -1,2 +1,23 @@
-$ff: 'times';
-$bg: #fa5555;
+$bc: #D72323;
+$sb: #3A4750;
+$bt: #eeeeee;
+$ff: inherit;
+
+body {
+	background-color: $sb;
+	border-top: 7px solid $bc;
+}
+
+.row {
+	.button {
+		background-color: $sb;
+	}
+}
+
+#logo {
+	color: $bt;
+}
+
+a {
+	color: $bc;
+}

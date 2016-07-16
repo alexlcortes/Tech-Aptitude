@@ -321,7 +321,7 @@ color: #fff;
 /*------------------------------------- Buttons -------------------------------------*/
 /************************************************************************************/
 
-.button {
+/*.button {
     -moz-border-bottom-colors: none;
     -moz-border-image: none;
     -moz-border-left-colors: none;
@@ -347,9 +347,9 @@ color: #fff;
    background-image: -ms-linear-gradient(top, #fafafa, #E0E0E0);
    background-image: -o-linear-gradient(top, #fafafa, #E0E0E0);
    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#E0E0E0')
-}
+}*/
 
-.button:hover {  
+/*.button:hover {  
   -webkit-box-shadow: 0 0 6px #cccccc;
   -moz-box-shadow: 0 0 6px #cccccc;
    box-shadow: 0 0 6px #cccccc;
@@ -359,11 +359,11 @@ color: #fff;
 	   background-image: -ms-linear-gradient(top, #E0E0E0, #fafafa);
 	   background-image: -o-linear-gradient(top, #E0E0E0, #fafafa);
 	   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E0E0E0', endColorstr='#fafafa')
-   }
+   }*/
 
 /* button small */
  
-.button_small {
+/*.button_small {
     -moz-border-bottom-colors: none;
     -moz-border-image: none;
     -moz-border-left-colors: none;
@@ -396,7 +396,7 @@ color: #fff;
   -moz-box-shadow: 0 0 6px #cccccc;
    box-shadow: 0 0 6px #cccccc; }
 
-
+*/
 
 
 /**************************************************************************************/
