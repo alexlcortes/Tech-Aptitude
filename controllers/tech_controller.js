@@ -63,16 +63,42 @@ module.exports = function(app, passport) {
 		res.redirect('/');
 	});
 
+
+	// =====================================
+	// Employee ==============================
+	// =====================================
+	// app.get('/profile', function(req, res) {
+	// 	// load the edit_profile file
+	// 	res.render('profile'); 
+	// });
 	app.get('/edit_profile', function(req, res) {
 		// load the edit_profile file
 		res.render('edit_profile'); 
 	});
+
+	// =====================================
+	// Employeer ==============================
+	// =====================================
 	app.get('/employeer', function(req, res) {
 		// load the edit_profile file
 		res.render('employeer'); 
 	});
-}
-
+	app.get('/employeer_search', function(req, res) {
+		// load the edit_profile file
+		res.render('employeer_search'); 
+	});
+	app.get('/employeer_edit_contact', function(req, res) {
+		// load the edit_profile file
+		res.render('employeer_edit_contact'); 
+	});
+	app.get('/employeer_add_test', function(req, res) {
+		// load the edit_profile file
+		res.render('employeer_add_test'); 
+	});
+	app.get('/employeer_edit_test', function(req, res) {
+		// load the edit_profile file
+		res.render('employeer_edit_test'); 
+	});
 };
 
 // route middleware to make sure
