@@ -34,6 +34,38 @@ var questions = [{
   answers: ["Content Scrambling System", "Cascading Style Sheet", "Creative Style Sheet", "Computer Style Sheet"],
   correctAnswer: "Cascading Style Sheet"
 }, {
+  question: "What is the correct CSS Syntax?",
+  answers: ["{body:color=black;}", "body {color: black;}", "{body;color:black;}", "body:color=black;"],
+  correctAnswer: "body {color: black;}"
+}, {
+  question: "Which property is used to change the background-color?",
+  answers: ["color", "bgcolor", "background-color", "backgroundColor"],
+  correctAnswer: "background-color"
+}, {
+  question: "What is the correct CSS syntax for making all the < p> elements bold?",
+  answers: ["p {font-weight:bold;}", "text-transform:capitalize", "text-transform:uppercase", "text: capitalize"],
+  correctAnswer: "text-transform:uppercase"
+}, {
+  question: "How do you make each word in a text start with a capital letter?",
+  answers: ["You can't do that with CSS", "p {text-size:bold;}", "list-style: square;"],
+  correctAnswer: "p {font-weight:bold;}"
+}, {
+  question: "How do you make a list that lists its items with squares?",
+  answers: ["list: square;", "list-type: square;", "list-style-type: square;", "< p style="text-size:bold;" >"],
+  correctAnswer: "list-style-type: square;"
+}, {
+  question: "How do you group selectors?",
+  answers: ["Separate each selector with a comma", "Separate each selector with a plus sign", "Separate each selector with a space", "Not possible with CSS"],
+  correctAnswer: "Separate each selector with a comma"
+}, {
+  question: "When using the padding property; are you allowed to use negative values?",
+  answers: ["No", "Yes"],
+  correctAnswer: "No"
+}, {
+  question: "How do you insert a comment in a CSS file?",
+  answers: ["// this is a comment", "/* this is a comment */", "// this is a comment //", "' this is a comment'"],
+  correctAnswer: "/* this is a comment */"
+},{
   question: "What is a declaration in CSS?",
   answers: ["a", "{", ".", ";"],
   correctAnswer: "{"

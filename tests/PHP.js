@@ -89,13 +89,13 @@ var game = {
     panel.html('<h2>Thank you for completing the HTML Test. Your results are displayed below. </h2>');
     $('#counter-number').html(game.counter);
         if (game.correct < 4) {
-      panel.html('<h2> Congratulations you are a Junior HTML Developer! </h2>')
+      panel.html('<h2> Congratulations you are a Junior PHP Developer! </h2>')
     }; 
      if (game.correct = 5) {
-      panel.html('<h2> Congratulations you are a Mid-Level HTML Developer! </h2>')
+      panel.html('<h2> Congratulations you are a Mid-Level PHP Developer! </h2>')
     }; 
      if (game.correct > 6) {
-      panel.html('<h2> Congratulations you are a Senior HTML Developer! </h2>')
+      panel.html('<h2> Congratulations you are a Senior PHP Developer! </h2>')
     };
     // panel.append('<h3>Incorrect Answers: ' + game.incorrect + '</h3>');
     // panel.append('<h3>Unanswered: ' + (questions.length - (game.incorrect + game.correct)) + '</h3>');

@@ -30,11 +30,24 @@ $(document).on('click', '#start', function(e) {
 
 ///////////////////////////////////////////////////////////////////////////////
 var questions = [{
-  question: "Node.js runs on",
+  question: "Node.js runs on:",
   answers: ["Client", "Server", "Both client and server", "None of these answers"],
   correctAnswer: "Server"
 }, {
-  question: "Node.js is ________ by default",
+  question: "Node.js supports which of the following platform?",
+  answers: ["Windows", "Unix/Linux", "Macintosh", "All of these answers"],
+  correctAnswer: "All of these answers"
+}, {
+  question: "Node.js terminal (REPL) is used for _________.",
+  answers: ["testing node.js/JavaScript expressions.", "the preview of node.js application.", "executing browser’s JavaScript expressions.", "None of these answers"],
+  correctAnswer: "testing node.js/JavaScript expressions."
+}, {
+  question: "What is the default scope in Node.js application?",
+  answers: ["Local", "Global Function", "Global", "Local to Object"],
+  correctAnswer: "Local"
+},
+{
+  question: "Node.js is ________ by default.",
   answers: ["Synchronous", "Multi-threaded", "Asynchronous", "None of these answers"],
   correctAnswer: "Asynchronous"
   
@@ -90,13 +103,13 @@ var game = {
     panel.html('<h2>Thank you for completing the HTML Test. Your results are displayed below. </h2>');
     $('#counter-number').html(game.counter);
         if (game.correct < 4) {
-      panel.html('<h2> Congratulations you are a Junior HTML Developer! </h2>')
+      panel.html('<h2> Congratulations you are a Junior NODE Developer! </h2>')
     }; 
      if (game.correct = 5) {
-      panel.html('<h2> Congratulations you are a Mid-Level HTML Developer! </h2>')
+      panel.html('<h2> Congratulations you are a Mid-Level NODE Developer! </h2>')
     }; 
      if (game.correct > 6) {
-      panel.html('<h2> Congratulations you are a Senior HTML Developer! </h2>')
+      panel.html('<h2> Congratulations you are a Senior NODE Developer! </h2>')
     };
     // panel.append('<h3>Incorrect Answers: ' + game.incorrect + '</h3>');
     // panel.append('<h3>Unanswered: ' + (questions.length - (game.incorrect + game.correct)) + '</h3>');
