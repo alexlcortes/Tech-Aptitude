@@ -53,43 +53,34 @@
 
 <div class="two-third">
 
-<h1>Profile</h1>       
+<h1>Employeer Profile</h1>       
 
 <div style="clear:both"></div>
 
-<div>
-    <div class="heading_bg"><h2>Contact Information</h2></div>
-<form action="#" class="TTWForm" method="post" novalidate=""> 
-  <div id="field1-container" class="field f_50">
-    <label for="firstName">First Name</label>         
-    {{firstName}}
-    <label for="lastName">Last Name</label>
-    {{lastName}}
-    <label for="email">Email Address</label>
-    {{emailAddress}}    
-    <label for="address">Address</label>
-    {{Address}}
-    <label for="zip">Zip Code</label>
-    {{Zip}}
-    <label for="country">Country</label>
-    {{country}}
+
+ <div>
+   <div class="heading_bg"><h2>Contact Information</h2></div>
+   <div>
+      Name: {{employeer_name}}<br>
+      Email Address: {{employeer_email}}<br>
+      Address: {{employeer_email}}<br>
+      Zip Code {{employeer_zip}}<br>
+      Country {{country}}<br>
+    </div>
   </div>
-  <p><input type="submit" value="Submit"></p>
-</form>
-</div>
 
 </div><!-- close two third -->
 
       <!-- Right Picture Nar -->
       <div class="sidebar_right">
-        <h4>Richard Garcia</h4>
-        <img src="assets/img/headshot.jpg" style="width:200px">
+        <img src="assets/img/company.jpg" style="width:200px">
     
           <ul class="sidebar_menu" style="margin:0">
             <li><a href="/edit_profile">Contact Information</a></li>
             <li><a href="#">Photo</a></li>
             <li><a href="#">Edit Resume</a></li>
             <li><a href="#">Skills</a></li>
+            <li><a href="/employeer_search">Employee Search</a></li>
           </ul>
       
       </div><!-- end sidebar right -->

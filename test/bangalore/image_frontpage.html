@@ -1,6 +1,29 @@
-<div class="header">
+<!DOCTYPE HTML>
+
+<head>
+
+    <title>Theme by CssTemplateHeaven</title>
+    <meta name="keywords" content="create from keywords">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     
-    <div id="site_title"><a href="index.html"><img src="assets/img/tech.jpg" /></a></div>
+<!-- Google Fonts -->
+    
+    <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+
+<!-- CSS Files -->
+
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="menu/css/simple_menu.css">
+    <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="css/gridNavigation.css" />
+
+</head>
+
+<body>
+  
+    <div class="header">
+    
+    <div id="site_title"><a href="index.html"><img src="img/logo.png" /></a></div>
 
     <!-- Main Menu -->
     
@@ -47,57 +70,52 @@
     
     </div><!-- END header -->
 
-
     <div id="container">
 
 
-<div class="two-third">
-
-<h1>Profile</h1>       
-
-<div style="clear:both"></div>
-
-<div>
-    <div class="heading_bg"><h2>Contact Information</h2></div>
-<form action="#" class="TTWForm" method="post" novalidate=""> 
-  <div id="field1-container" class="field f_50">
-    <label for="firstName">First Name</label>         
-    {{firstName}}
-    <label for="lastName">Last Name</label>
-    {{lastName}}
-    <label for="email">Email Address</label>
-    {{emailAddress}}    
-    <label for="address">Address</label>
-    {{Address}}
-    <label for="zip">Zip Code</label>
-    {{Zip}}
-    <label for="country">Country</label>
-    {{country}}
-  </div>
-  <p><input type="submit" value="Submit"></p>
-</form>
-</div>
-
-</div><!-- close two third -->
-
-      <!-- Right Picture Nar -->
-      <div class="sidebar_right">
-        <h4>Richard Garcia</h4>
-        <img src="assets/img/headshot.jpg" style="width:200px">
+    <div style="margin-bottom: 15px">
+        <img title="" src="img/demo/slide_2.jpg" alt="" width="960" height="450" />
+    </div>
     
-          <ul class="sidebar_menu" style="margin:0">
-            <li><a href="/edit_profile">Contact Information</a></li>
-            <li><a href="#">Photo</a></li>
-            <li><a href="#">Edit Resume</a></li>
-            <li><a href="#">Skills</a></li>
+    <div style="clear:both"></div>
+    
+    <h1 style="padding: 20px 0">Professional Photographer John Doe</h1>
+
+    <!-- First Column -->
+
+    <div class="one-third">
+        <div class="heading_bg"><h2>Who</h2></div>
+          <p><strong>Professional Studios</strong><br />
+          NORWAY<br /><br />
+          Tel: (+47) 99 88 77 66<br />
+          mail: mail@studios.com
+          </p>
+    </div>
+
+    <!-- Second Column -->
+
+    <div class="one-third">
+        <div class="heading_bg"><h2>Work</h2></div>
+          <ul class="container_links">
+              <li><a href="#">People</a></li>
+              <li><a href="#">Moments</a></li>
+              <li><a href="#">Toddler</a></li>
+              <li><a href="#">Streetlife</a></li>
           </ul>
-      
-      </div><!-- end sidebar right -->
-      
-      
-      <div style="clear:both; height: 40px"></div>
-      
-      </div><!-- end container -->
+    </div>
+
+    <!-- Third Column -->
+
+    <div class="one-third last">
+       <div class="heading_bg"><h2>Photography</h2></div>
+          <blockquote>&quot;Beauty can be seen in all things, seeing and composing the beauty is what separates the snapshot from the photograph.&quot;</blockquote>       
+          <p><small>– Matt Hardy</small></p>
+    </div>
+
+    <div style="clear:both; height: 40px"></div>
+    </div>
+
+    <!-- END container -->
 
 
     <div id="footer">
@@ -150,3 +168,6 @@
     <div style="clear:both"></div>
     
     </div> <!-- END footer -->
+
+</body>
+</html>

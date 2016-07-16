@@ -62,21 +62,28 @@
 <form action="#" class="TTWForm" method="post" novalidate=""> 
   <div id="field1-container" class="field f_50">
     <label for="firstName">First Name</label>         
-    {{firstName}}
+    <input name="firstName" id="firstName" required="required" type="text" value="">
     <label for="lastName">Last Name</label>
-    {{lastName}}
+    <input name="location" id="location" required="required" type="text" value="">
     <label for="email">Email Address</label>
-    {{emailAddress}}    
+    <input name="email" id="email" required="required" type="text" value="">
+    
     <label for="address">Address</label>
-    {{Address}}
-    <label for="zip">Zip Code</label>
-    {{Zip}}
-    <label for="country">Country</label>
-    {{country}}
+    <input name="address" id="address" required="required" type="text" value="">
+
+     <label for="zip">Zip Code</label>
+    <input name="zip" id="zip" required="required" type="text" value="">
+
+     <label for="country">Country</label>
+    <input name="country" id="country" required="required" type="text" value="">
   </div>
   <p><input type="submit" value="Submit"></p>
 </form>
 </div>
+
+
+
+
 
 </div><!-- close two third -->
 
@@ -86,7 +93,7 @@
         <img src="assets/img/headshot.jpg" style="width:200px">
     
           <ul class="sidebar_menu" style="margin:0">
-            <li><a href="/edit_profile">Contact Information</a></li>
+            <li><a href="#">Contact Information</a></li>
             <li><a href="#">Photo</a></li>
             <li><a href="#">Edit Resume</a></li>
             <li><a href="#">Skills</a></li>

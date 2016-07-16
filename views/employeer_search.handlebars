@@ -57,33 +57,36 @@
 
 <div style="clear:both"></div>
 
-<div>
-    <div class="heading_bg"><h2>Contact Information</h2></div>
-<form action="#" class="TTWForm" method="post" novalidate=""> 
-  <div id="field1-container" class="field f_50">
-    <label for="firstName">First Name</label>         
-    {{firstName}}
-    <label for="lastName">Last Name</label>
-    {{lastName}}
-    <label for="email">Email Address</label>
-    {{emailAddress}}    
-    <label for="address">Address</label>
-    {{Address}}
-    <label for="zip">Zip Code</label>
-    {{Zip}}
-    <label for="country">Country</label>
-    {{country}}
+
+ <div>
+   <div class="heading_bg"><h2>Employee Search</h2></div>
+   <div>
+      Search for an employee by entering any information:<br>
+      <b>Keyword:</b> enter a key work sure as "CSS" or "PHP" <br>
+      <b>Location:</b> Choose what location en potential employee is from<br>
+      <b>Level:</b> Search what level developer you want - Junnior, Mid-level, Senior<br>            
+   </div>
+  <form action="#" class="TTWForm" method="post" novalidate=""> 
+    <div id="field1-container" class="field f_50">         
+        <input name="name" id="name" required="required" type="text" value="Keyword Search">
+        <input name="location" id="location" required="required" type="text" value="Location">
+        <!-- This should be coming from the Database! -->
+        <select id="select">
+          <option value="junior">Junior</option>
+          <option value="mid">Mid-Level</option>
+          <option value="senior">Senior</option>
+        </select>
+    </div>
+    <p><input type="submit" value="Submit"></p>
+  </form>
   </div>
-  <p><input type="submit" value="Submit"></p>
-</form>
-</div>
 
 </div><!-- close two third -->
 
       <!-- Right Picture Nar -->
       <div class="sidebar_right">
         <h4>Richard Garcia</h4>
-        <img src="assets/img/headshot.jpg" style="width:200px">
+        <img src="assets/img/company.jpg" style="width:200px">
     
           <ul class="sidebar_menu" style="margin:0">
             <li><a href="/edit_profile">Contact Information</a></li>
