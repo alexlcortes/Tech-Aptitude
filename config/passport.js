@@ -41,29 +41,33 @@ module.exports = function(passport) {
         'local-signup',
         new LocalStrategy({
             // by default, local strategy uses username and password, we will override with email
-            usernameField : 'username',
+            usernameField : 'email',
             passwordField : 'password',
             passReqToCallback : true // allows us to pass back the entire request to the callback
         },
-        function(req, username, password, done) {
+        function(req, email, password, done) {
             // find a user whose email is the same as the forms email
             // we are checking to see if the user trying to login already exists
-            connection.query("SELECT * FROM users WHERE username = ?",[username], function(err, rows) {
+            connection.query("SELECT * FROM users WHERE email = ?",[email], function(err, rows) {
                 if (err)
                     return done(err);
                 if (rows.length) {
-                    return done(null, false);
-                } else {
+                    return done(null, false, req.flash('signupMessage', 'That username is already taken.'));
+                }
+                else {
                     // if there is no user with that username
                     // create the user
                     var newUserMysql = {
-                        username: username,
-                        password: bcrypt.hashSync(password, null, null)  // use the generateHash function in our user model
+                        email: email,
+                        password: bcrypt.hashSync(password, null, null),  // use the generateHash function in our user model
+                        firstName: req.body.firstName,
+                        lastName: req.body.lastName
                     };
+                    console.log(req);
+                    console.log(newUserMysql);
+                    var insertQuery = "INSERT INTO users ( email, password, firstName, lastName ) values (?,?,?,?)";
 
-                    var insertQuery = "INSERT INTO users ( username, password ) values (?,?)";
-
-                    connection.query(insertQuery,[newUserMysql.username, newUserMysql.password],function(err, rows) {
+                    connection.query(insertQuery,[newUserMysql.email, newUserMysql.password, newUserMysql.firstName, newUserMysql.lastName],function(err, rows) {
                         newUserMysql.id = rows.insertId;
 
                         return done(null, newUserMysql);
@@ -83,21 +87,21 @@ module.exports = function(passport) {
         'local-login',
         new LocalStrategy({
             // by default, local strategy uses username and password, we will override with email
-            usernameField : 'username',
+            usernameField : 'email',
             passwordField : 'password',
             passReqToCallback : true // allows us to pass back the entire request to the callback
         },
-        function(req, username, password, done) { // callback with email and password from our form
-            connection.query("SELECT * FROM users WHERE username = ?",[username], function(err, rows){
+        function(req, email, password, done) { // callback with email and password from our form
+            connection.query("SELECT * FROM users WHERE email = ?",[email], function(err, rows){
                 if (err)
                     return done(err);
                 if (!rows.length) {
-                    return done(null, false); // req.flash is the way to set flashdata using connect-flash
+                    return done(null, false, req.flash('loginMessage', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
                 }
 
                 // if the user is found but the password is wrong
                 if (!bcrypt.compareSync(password, rows[0].password))
-                    return done(null, false); // create the loginMessage and save it to session as flashdata
+                    return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
 
                 // all is well, return successful user
                 return done(null, rows[0]);

@@ -7,6 +7,11 @@ body {
 
 #logo {
   color: #eeeeee; }
+  
+.button {
+	background-color: #d72323;
+}
+
 
 a {
   color: #D72323; }

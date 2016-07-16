@@ -7,6 +7,8 @@ var exphbs = require('express-handlebars');
 var methodOverride = require('method-override');
 var connection = require('./config/connection.js');
 var passport = require('passport');
+var morgan = require('morgan');
+var flash    = require('connect-flash');
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -18,6 +20,7 @@ require('./config/passport')(passport); // pass passport for configuration
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.urlencoded({
 	extended: true
@@ -30,6 +33,7 @@ app.use(session({
  } )); // session secret
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash()); // use connect-flash for flash messages stored in session
 
 
 require('./controllers/tech_controller.js')(app, passport);

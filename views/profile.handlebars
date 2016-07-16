@@ -58,39 +58,35 @@
 <div style="clear:both"></div>
 
 <div>
-    <div class="heading_bg"><h2>Job Search</h2></div>
-    <form action="#" class="TTWForm" method="post" novalidate=""> 
-    <div id="field1-container" class="field f_50">
-         <label for="field1">Name</label>
-         <input name="name" id="field1" required="required" type="text" value="Search For Jobs">
-    </div>
-  </form>
-</div>
-
-<div>
-    <div class="heading_bg"><h2>Job Search</h2></div>
+    <div class="heading_bg"><h2>Contact Information</h2></div>
 <form action="#" class="TTWForm" method="post" novalidate=""> 
-  <div id="field1-container" class="field f_50">         
-       <input name="name" id="name" required="required" type="text" value="Search For Jobs">
-      <input name="location" id="location" required="required" type="text" value="Location">
+  <div id="field1-container" class="field f_50">
+    <label for="firstName">First Name</label>         
+    {{firstName}}
+    <label for="lastName">Last Name</label>
+    {{lastName}}
+    <label for="email">Email Address</label>
+    {{emailAddress}}    
+    <label for="address">Address</label>
+    {{Address}}
+    <label for="zip">Zip Code</label>
+    {{Zip}}
+    <label for="country">Country</label>
+    {{country}}
   </div>
   <p><input type="submit" value="Submit"></p>
 </form>
 </div>
 
-
-
-
-
 </div><!-- close two third -->
 
       <!-- Right Picture Nar -->
       <div class="sidebar_right">
-        <h4>Richard Garcia</h4>
+        <h4>{{user.firstName}} {{user.lastName}}</h4>
         <img src="assets/img/headshot.jpg" style="width:200px">
     
           <ul class="sidebar_menu" style="margin:0">
-            <li><a href="#">Contact Information</a></li>
+            <li><a href="/edit_profile">Contact Information</a></li>
             <li><a href="#">Photo</a></li>
             <li><a href="#">Edit Resume</a></li>
             <li><a href="#">Skills</a></li>
