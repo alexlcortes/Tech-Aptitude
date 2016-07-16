@@ -50,6 +50,16 @@ OPT1 varchar (100),
 OPT2 varchar (100),
 OPT3 varchar (100),
 OPT4 varchar (100),
-ANSWER INT(1),
+ANSWER varchar(100),
 PRIMARY KEY (id)
+);
+
+CREATE TABLE users_table 
+(
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    username VARCHAR(20) NOT NULL,
+    password CHAR(60) NOT NULL,
+        PRIMARY KEY (id),
+    UNIQUE INDEX id_UNIQUE (id ASC),
+    UNIQUE INDEX username_UNIQUE (username ASC)
 );
