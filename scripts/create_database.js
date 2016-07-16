@@ -12,7 +12,7 @@ connection.query('CREATE DATABASE ' + dbconfig.database);
 connection.query('\
 CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.users_table + '` ( \
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
-    `email` VARCHAR(20) NOT NULL, \
+    `email` VARCHAR(60) NOT NULL, \
     `password` CHAR(60) NOT NULL, \
     `firstName` CHAR(60) NOT NULL, \
     `lastName` CHAR(60) NOT NULL, \

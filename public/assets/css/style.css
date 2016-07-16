@@ -13,7 +13,7 @@ html {
 body {	font-family: Arial, Helvetica, sans-serif;
 		font-size: .875em;
 	    line-height: 1.6em;
-		border-top: 7px solid #fc4903;
+		/*border-top: 7px solid #fc4903;*/
 		background: #eaeaea url(img/body_bg.png) repeat-x;
 		color: #666;
 }

@@ -5,7 +5,6 @@ $ff: inherit;
 
 body {
 	background-color: $sb;
-	border-top: 7px solid $bc;
 }
 
 .row {
@@ -15,9 +14,18 @@ body {
 }
 
 #logo {
-	color: $bt;
+	color: $bc;
+	font-size: 50px;
 }
 
 a {
+	color: $bc;
+}
+
+.space {
+	height: 100px;
+}
+
+#mainLogo {
 	color: $bc;
 }

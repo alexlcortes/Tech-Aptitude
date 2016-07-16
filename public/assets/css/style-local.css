@@ -1,17 +1,18 @@
 body {
-  background-color: #3A4750;
-  border-top: 7px solid #D72323; }
+  background-color: #3A4750; }
 
 .row .button {
   background-color: #3A4750; }
 
 #logo {
-  color: #eeeeee; }
-  
-.button {
-	background-color: #d72323;
-}
-
+  color: #D72323;
+  font-size: 50px; }
 
 a {
+  color: #D72323; }
+
+.space {
+  height: 100px; }
+
+#mainLogo {
   color: #D72323; }
