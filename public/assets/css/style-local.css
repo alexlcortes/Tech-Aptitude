@@ -1,0 +1,23 @@
+@import "compass/css3";
+
+body {
+  background: #2DAF94;
+}
+.login-box {
+  background: #fff;
+  border: 1px solid #ddd; 
+  margin: 100px 0;
+  padding: 40px 20px 0 20px;
+}
+
+#logo {
+	color: white;
+}
+
+.button {
+	background-color: #d72323;
+}
+
+a {
+	color: #2DAF94;
+}
