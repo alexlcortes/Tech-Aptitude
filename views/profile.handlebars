@@ -61,18 +61,20 @@
     <div class="heading_bg"><h2>Contact Information</h2></div>
 <form action="#" class="TTWForm" method="post" novalidate=""> 
   <div id="field1-container" class="field f_50">
-    <label for="firstName">First Name</label>         
-    {{firstName}}
-    <label for="lastName">Last Name</label>
-    {{lastName}}
-    <label for="email">Email Address</label>
-    {{emailAddress}}    
-    <label for="address">Address</label>
-    {{Address}}
-    <label for="zip">Zip Code</label>
-    {{Zip}}
-    <label for="country">Country</label>
-    {{country}}
+    <label for="firstName">First Name: </label>         
+    {{user.firstName}}
+    <label for="lastName">Last Name: </label>
+    {{user.lastName}}
+    <label for="email">Email Address: </label>
+    {{user.email}}    
+    <label for="street_address">Street Address: </label>
+    {{user.street_address}}
+    <label for="city">City: </label>
+    {{user.city}}
+    <label for="state">State: </label>
+    {{user.state}}
+    <label for="zip">Zip Code: </label>
+    {{user.zip}}
   </div>
   <p><input type="submit" value="Submit"></p>
 </form>
