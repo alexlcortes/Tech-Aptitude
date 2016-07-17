@@ -167,7 +167,7 @@ module.exports = function(app, passport) {
 		// load the edit_profile file
 		res.render('employeer/employeer_edit_test'); 
 	});
->>>>>>> 875986e38257622f3903850d7d8a3a755b75ac6d
+
 };
 
 // route middleware to make sure

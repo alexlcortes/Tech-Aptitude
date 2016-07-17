@@ -5,7 +5,7 @@ module.exports = {
     'connection': {
         'host': 'localhost',
         'user': 'root',
-        'password': 'family99'
+        'password': 'root'
     },
 	'database': 'tech_db',
     'users_table': 'users'
