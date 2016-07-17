@@ -61,24 +61,28 @@
     <div class="heading_bg"><h2>Contact Information</h2></div>
 <form action="#" class="TTWForm" method="post" novalidate=""> 
   <div id="field1-container" class="field f_50">
+  {{#each user}}
     <label for="firstName">First Name: </label>         
-    {{user.firstName}}
+    {{firstName}}
     <label for="lastName">Last Name: </label>
-    {{user.lastName}}
+    {{lastName}}
     <label for="email">Email Address: </label>
-    {{user.email}}    
+    {{email}}    
     <label for="street_address">Street Address: </label>
-    {{user.street_address}}
+    {{street_address}}
     <label for="city">City: </label>
-    {{user.city}}
+    {{city}}
     <label for="state">State: </label>
-    {{user.state}}
+    {{state}}
     <label for="zip">Zip Code: </label>
-    {{user.zip}}
+    {{zip}}
+    {{/each}}
+
   </div>
   <p><input type="submit" value="Submit"></p>
 </form>
 </div>
+
 
 </div><!-- close two third -->
 

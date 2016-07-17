@@ -5,7 +5,7 @@ var connection = mysql.createConnection(dbconfig.connection);
 
 var orm = {
 
-        getPersonalData: function(table, userID, cb) {
+    getPersonalData: function(table, userID, cb) {
             var queryString = 'select * from tech_db.' + table + ' where id = ' + userID;
             console.log(queryString);
             connection.query(queryString, function(err, res) {
@@ -13,9 +13,9 @@ var orm = {
                 console.log(res);
                 return cb(res);
 
-            });  // end of connection query
+            }); // end of connection query
         } // end of getPersonalData
 
 
-};// end of orm
-        module.exports = orm;
+}; // end of orm
+module.exports = orm;
