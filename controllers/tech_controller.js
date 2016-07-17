@@ -1,4 +1,10 @@
 // Creating Routes
+var express = require('express');
+var bodyParser = require('body-parser');
+var html = require('../views/index.handlebars');
+var orm = require('../config/orm.js');
+var app = express();
+
 module.exports = function(app, passport) {
 
 	// =====================================
@@ -50,10 +56,14 @@ module.exports = function(app, passport) {
 	// we will want this protected so you have to be logged in to visit
 	// we will use route middleware to verify this (the isLoggedIn function)
 	app.get('/profile', isLoggedIn, function(req, res) {
-		res.render('profile', {
-			user : req.user // get the user out of session and pass to template
+		var userid = req.user.id
+		orm.getPersonalData('users', 'userid', function(data){
+			res.render('profile', data)
+			 // get the user out of session and pass to template
+		})
+		
+		
 		});
-	});
 
 	// =====================================
 	// LOGOUT ==============================
