@@ -57,10 +57,8 @@ module.exports = function(app, passport) {
 	// we will use route middleware to verify this (the isLoggedIn function)
 	app.get('/profile', isLoggedIn, function(req, res) {
 		var userid = req.user.id
-		console.log(userid);
-		orm.getPersonalData('users', userid, function(data){
-			console.log(data);
-			res.render('profile', {user: data})
+		orm.getPersonalData('users', 'userid', function(data){
+			res.render('profile', data)
 			 // get the user out of session and pass to template
 		})
 		
