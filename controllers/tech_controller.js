@@ -11,24 +11,7 @@ var app = express();
 
 module.exports = function(app, passport) {
 
-<<<<<<< HEAD
-    // =====================================
-    // LOGIN ===============================
-    // =====================================
-    // show the login form
-    app.get('/', function(req, res) {
 
-        // render the page and pass in any flash data if it exists
-        res.render('index', { message: req.flash('loginMessage'), background: true });
-    });
-
-    // process the login form
-    app.post('/', passport.authenticate('local-login', {
-            successRedirect: '/profile', // redirect to the secure profile section
-            failureRedirect: '/', // redirect back to the signup page if there is an error
-            failureFlash: true // allow flash messages
-        }),
-=======
 	// =====================================
 	// LOGIN ===============================
 	// =====================================
@@ -45,7 +28,6 @@ module.exports = function(app, passport) {
             failureRedirect : '/', // redirect back to the signup page if there is an error
 			failureFlash : true // allow flash messages
 		}),
->>>>>>> 875986e38257622f3903850d7d8a3a755b75ac6d
         function(req, res) {
             console.log("hello");
 
