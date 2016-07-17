@@ -62,7 +62,11 @@ CREATE TABLE users
     password CHAR(60) NOT NULL,
     firstName varchar(60) NOT NULL,
     lastName varchar (60) NOT NULL,
-        PRIMARY KEY (id),
+    street_address varchar (60),
+    city varchar (60),
+    state varchar (2),
+    zip INT,
+    PRIMARY KEY (id),
 	
     UNIQUE INDEX id_UNIQUE (id ASC),
     UNIQUE INDEX email_UNIQUE (email ASC)
