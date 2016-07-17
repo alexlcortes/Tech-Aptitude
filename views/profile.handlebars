@@ -62,33 +62,31 @@
 <form action="#" class="TTWForm" method="post" novalidate=""> 
   <div id="field1-container" class="field f_50">
   {{#each user}}
-    <label for="firstName">First Name: </label>         
+    <label for="firstName">First Name</label>         
     {{firstName}}
-    <label for="lastName">Last Name: </label>
+    <label for="lastName">Last Name</label>
     {{lastName}}
-    <label for="email">Email Address: </label>
-    {{email}}    
-    <label for="street_address">Street Address: </label>
-    {{street_address}}
-    <label for="city">City: </label>
-    {{city}}
-    <label for="state">State: </label>
-    {{state}}
-    <label for="zip">Zip Code: </label>
-    {{zip}}
+    <label for="email">Email Address</label>
+    {{emailAddress}}    
+    <label for="address">Address</label>
+    {{Address}}
+    <label for="zip">Zip Code</label>
+    {{Zip}}
+    <label for="country">Country</label>
+    {{country}}
     {{/each}}
-
   </div>
   <p><input type="submit" value="Submit"></p>
 </form>
 </div>
 
-
 </div><!-- close two third -->
 
       <!-- Right Picture Nar -->
       <div class="sidebar_right">
+      {{#each user}}
         <h4>{{user.firstName}} {{user.lastName}}</h4>
+        {{/each}}
         <img src="assets/img/headshot.jpg" style="width:200px">
     
           <ul class="sidebar_menu" style="margin:0">

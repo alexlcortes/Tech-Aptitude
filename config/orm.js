@@ -6,6 +6,7 @@ var connection = mysql.createConnection(dbconfig.connection);
 var orm = {
 
     getPersonalData: function(table, userID, cb) {
+
             var queryString = 'select * from tech_db.' + table + ' where id = ' + userID;
             console.log(queryString);
             connection.query(queryString, function(err, res) {
