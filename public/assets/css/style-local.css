@@ -6,7 +6,7 @@ body {
 
 #logo {
   color: #D72323;
-  font-size: 50px; }
+  font-size: 40px; }
 
 a {
   color: #D72323; }
@@ -15,4 +15,7 @@ a {
   height: 100px; }
 
 #mainLogo {
+  color: #D72323; }
+
+#bulbIcon {
   color: #D72323; }
