@@ -4,18 +4,14 @@ body {
 .row .button {
   background-color: #3A4750; }
 
-#logo {
-  color: #D72323;
-  font-size: 40px; }
-
 a {
-  color: #D72323; }
+  color: #e63d00; }
 
 .space {
   height: 100px; }
 
 #mainLogo {
-  color: #D72323; }
+  color: #e63d00; }
 
 #bulbIcon {
-  color: #D72323; }
+  color: #e63d00; }
