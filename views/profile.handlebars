@@ -27,6 +27,8 @@
     <div class="heading_bg"><h2>Contact Information</h2></div>
 <form action="#" class="TTWForm" method="post" novalidate=""> 
   <div id="field1-container" class="field f_50">
+
+  {{#each user}}
     <label for="firstName">First Name</label>         
     {{firstName}}
     <label for="lastName">Last Name</label>
@@ -39,6 +41,7 @@
     {{Zip}}
     <label for="country">Country</label>
     {{country}}
+    {{/each}}
   </div>
   <p><input type="submit" value="Submit"></p>
 </form>
@@ -48,7 +51,9 @@
 
       <!-- Right Picture Nar -->
       <div class="sidebar_right">
-        <h4>{{user.firstName}} {{user.lastName}}</h4>
+      {{#each user}}
+        <h4>{{firstName}} {{lastName}}</h4>
+        {{/each}}
         <img src="assets/img/headshot.jpg" style="width:200px">
     
           <ul class="sidebar_menu" style="margin:0">
