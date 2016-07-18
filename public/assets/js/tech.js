@@ -1,9 +1,10 @@
 
 // Code used to upload a file.
-$('#uploadButton').click(function(){
+$('#uploadButton').click(function(event){
 
-//$('#upload-input').on('change', function(){
- //var files = $(this).get(0).files;
+ // This prevents the default from happening. I.E. - the page reloading.
+ event.preventDefault();
+
  var files = $('#upload-input').get(0).files;
 
   if (files.length > 0){
