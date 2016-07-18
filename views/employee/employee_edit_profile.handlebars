@@ -74,8 +74,13 @@
      <label for="zip">Zip Code</label>
     <input name="zip" id="zip" required="required" type="text" value="">
 
-     <label for="country">Country</label>
+    <label for="country">Country</label>
     <input name="country" id="country" required="required" type="text" value="">
+
+    <label for="image">Choose an image to upload as your profile picture:</label>
+    <input id="upload-input" type="file" name="uploads[]" multiple="multiple">
+    <a id="uploadButton" href="#" class="button">Upload Pic</a>
+    <div id="uploaded"></div>
   </div>
   <p><input type="submit" value="Submit"></p>
 </form>
