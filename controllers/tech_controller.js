@@ -186,7 +186,7 @@ module.exports = function(app, passport) {
 	  form.multiples = true;
 
 	  // store all uploads in the /uploads directory
-	  form.uploadDir = path.join(__dirname, '../uploads');
+	  form.uploadDir = path.join(__dirname, '../public/assets/img_profile');
 
 	  // every time a file has been uploaded successfully,
 	  // rename it to it's orignal name
