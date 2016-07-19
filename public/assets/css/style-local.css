@@ -28,13 +28,14 @@ a {
 .linked {
   color: #007bb6; }
 
+.contactIcons {
+  color: #3A4750; }
+
 .card {
   overflow: hidden;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  color: #e63d00;
   border-radius: 2px;
-  border-style: #e63d00;
-  border-color: #e63d00; }
+  color: #3A4750; }
   .card .content {
     padding: 1.3rem;
     font-weight: 300;
