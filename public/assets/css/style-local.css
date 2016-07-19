@@ -1,23 +1,19 @@
-@import "compass/css3";
-
 body {
-  background: #2DAF94;
-}
-.login-box {
-  background: #fff;
-  border: 1px solid #ddd; 
-  margin: 100px 0;
-  padding: 40px 20px 0 20px;
-}
+  background-color: #3A4750; }
 
-#logo {
-	color: white;
-}
-
-.button {
-	background-color: #d72323;
-}
+.row .button {
+  background-color: #3A4750; }
 
 a {
-	color: #2DAF94;
-}
+  color: #e63d00; }
+
+.space {
+  height: 100px; }
+
+#mainLogo {
+  color: #e63d00; }
+
+#bulbIcon {
+  color: #e63d00; }
+
+/* update */

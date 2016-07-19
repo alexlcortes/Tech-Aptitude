@@ -26,6 +26,7 @@ module.exports = function(app, passport) {
         res.render('index', { message: req.flash('loginMessage'), background: true });
     });
 
+
     // process the login form
     app.post('/', passport.authenticate('local-login', {
             successRedirect: '/employee_profile', // redirect to the secure profile section

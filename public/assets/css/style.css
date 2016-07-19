@@ -13,7 +13,7 @@ html {
 body {	font-family: Arial, Helvetica, sans-serif;
 		font-size: .875em;
 	    line-height: 1.6em;
-		border-top: 7px solid #fc4903;
+		/*border-top: 7px solid #fc4903;*/
 		background: #eaeaea url(img/body_bg.png) repeat-x;
 		color: #666;
 }
@@ -320,8 +320,12 @@ color: #fff;
 /**************************************************************************************/
 /*------------------------------------- Buttons -------------------------------------*/
 /************************************************************************************/
+
+/*.button {
+=======
 /*
 .button {
+>>>>>>> master
     -moz-border-bottom-colors: none;
     -moz-border-image: none;
     -moz-border-left-colors: none;
@@ -347,9 +351,9 @@ color: #fff;
    background-image: -ms-linear-gradient(top, #fafafa, #E0E0E0);
    background-image: -o-linear-gradient(top, #fafafa, #E0E0E0);
    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#E0E0E0')
-}
+}*/
 
-.button:hover {  
+/*.button:hover {  
   -webkit-box-shadow: 0 0 6px #cccccc;
   -moz-box-shadow: 0 0 6px #cccccc;
    box-shadow: 0 0 6px #cccccc;
@@ -359,11 +363,11 @@ color: #fff;
 	   background-image: -ms-linear-gradient(top, #E0E0E0, #fafafa);
 	   background-image: -o-linear-gradient(top, #E0E0E0, #fafafa);
 	   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E0E0E0', endColorstr='#fafafa')
-   }
-*/
+<<<<<<< HEAD
+   }*/
 /* button small */
  
-.button_small {
+/*.button_small {
     -moz-border-bottom-colors: none;
     -moz-border-image: none;
     -moz-border-left-colors: none;
@@ -396,7 +400,7 @@ color: #fff;
   -moz-box-shadow: 0 0 6px #cccccc;
    box-shadow: 0 0 6px #cccccc; }
 
-
+*/
 
 
 /**************************************************************************************/

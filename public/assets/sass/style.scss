@@ -1,2 +1,34 @@
-$ff: 'times';
-$bg: #fa5555;
+$bc: #e63d00;
+$sb: #3A4750;
+$bt: #eeeeee;
+$ff: inherit;
+
+body {
+	background-color: $sb;
+}
+
+.row {
+	.button {
+		background-color: $sb;
+	}
+}
+
+a {
+	color: $bc;
+}
+
+.space {
+	height: 100px;
+}
+
+#mainLogo {
+	color: $bc;
+}
+
+#bulbIcon {
+	color: $bc;
+}
+
+// Height and margin
+$topbar-height: rem-calc(45);
+$topbar-margin-bottom: 0;
