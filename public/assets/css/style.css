@@ -66,7 +66,7 @@ body {	font-family: Arial, Helvetica, sans-serif;
 
 .tab_article h3 {height: 30px}
 
-.sidebar_right {float: right; width:200px}
+.sidebar_right {width:160px;}
 
 
 #footer { font-size: .8em;

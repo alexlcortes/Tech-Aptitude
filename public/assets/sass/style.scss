@@ -2,7 +2,7 @@ $bc: #e63d00;
 $sb: #3A4750;
 $bt: #eeeeee;
 $ff: inherit;
-$cb: #fadb3f;
+$cb: #eeeeee;
 $facebook: #3b5998;
 $twitter: #00aced;
 $linkedin: #007bb6;
@@ -14,8 +14,8 @@ body {
 .row {
 	.button {
 		background-color: $sb;
+		}
 	}
-}
 
 a {
 	color: $bc;
@@ -23,6 +23,14 @@ a {
 
 .space {
 	height: 100px;
+}
+
+.space2 {
+	height: 50px;
+}
+
+.cardSpace{
+	height: 25px;
 }
 
 #mainLogo {
@@ -50,7 +58,7 @@ a {
 }
 
 .contactIcons {
-	color: $sb;
+	color: $bc;
 }
 
 .card {
@@ -58,9 +66,13 @@ a {
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   	border-radius: 2px;
   	color: $sb;
+  	background-color: $cb;
   		.content {
     		padding: 1.3rem;
     		font-weight: 300;
     		border-radius: 0 0 2px 2px; 
+    			.sIcons {
+    				color: $bc;
+    			}
     	}
 }
