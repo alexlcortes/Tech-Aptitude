@@ -1,49 +1,59 @@
 <div class="header">
+
+  <!-- spacing --!>
+    <div class="row">
+      <div class="large-12 columns space">
+      </div>
+    </div>
     
-    
-    </div><!-- END header -->
+</div><!-- END header -->
 
+<div id="container">
+  <div class="two-third">  
+    <div class="row">
+      <div class="large-12 columns">
+        <h2 id="mainLogo"><img src="/assets/img/loginBackground/icon-clear-thinkers.jpg" style="color: #D72323" alt="lightBulb" height="60" width="60"> Tech Aptitude</h2>
+      </div>
+    </div>  
+  
+  <div style="clear:both"></div>
 
-    <div id="container">
-
-
-<div class="two-third">
-
-<h1>Profile</h1>       
-
-<div style="clear:both"></div>
-
-<div>
-    <div class="heading_bg"><h2>Contact Information</h2></div>
-<form action="#" class="TTWForm" method="post" novalidate=""> 
-  <div id="field1-container" class="field f_50">
-    {{#each user}}
-    <label for="firstName">First Name</label>         
-    {{firstName}}
-    <label for="lastName">Last Name</label>
-    {{lastName}}
-    <label for="email">Email Address</label>
-    {{email}}    
-    <label for="address">Street Address</label>
-    {{street_address}}
-    <label for="city">City: </label>
-    {{city}}
-     <label for="state">State: </label>
-    {{state}}
-    <label for="zip">Zip Code</label>
-    {{zip}}
-    {{/each}}
-  </div>
-  <p><input type="submit" value="Submit"></p>
-</form>
-</div>
+  <div class="row">
+    <div class="medium-8 columns">
+      <div class="card">
+        <div class="content">
+          <div>
+            <form action="#" class="TTWForm" method="post" novalidate=""> 
+              <div id="field1-container" class="field f_50">
+                {{#each user}}
+                <label for="firstName">First Name</label>         
+                {{firstName}}
+                <label for="lastName">Last Name</label>
+                {{lastName}}
+                <label for="email">Email Address</label>
+                {{email}}    
+                <label for="address">Street Address</label>
+                {{street_address}}
+                <label for="city">City: </label>
+                {{city}}
+                 <label for="state">State: </label>
+                {{state}}
+                <label for="zip">Zip Code</label>
+                {{zip}}
+                {{/each}}
+              </div>
+            </form>
+          </div>
+        </div> <!-- closing content --!>
+      </div> <!-- closing card --!>
+    </div> <!-- closing columns --!>
+  </div> <!-- closing row --!>
 
 </div><!-- close two third -->
 
       <!-- Right Picture Nar -->
       <div class="sidebar_right">
       {{#each user}}
-        <h4>{{firstName}} {{lastName}}</h4>
         {{/each}}
         <img src="assets/img/headshot.jpg" style="width:200px">
     
@@ -56,58 +66,29 @@
       </div><!-- end sidebar right -->
       
       
-      <div style="clear:both; height: 40px"></div>
+  <div style="clear:both; height: 40px"></div>
       
-      </div><!-- end container -->
+</div><!-- end container -->
 
 
-    <div id="footer">
+  <div id="footer">
 
     <!-- First Column -->
-
-    <div class="one-fourth">
-        <h3>Useful Links</h3>
-            <ul class="footer_links">
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Ellem Ciet</a></li>
-                <li><a href="#">Currivitas</a></li>
-                <li><a href="#">Salim Aritu</a></li>
-            </ul>
-    </div>
+      <div class="one-fourth">
+      </div>
     
     <!-- Second Column -->
-    
-    <div class="one-fourth">
-        <h3>Terms</h3>
-            <ul class="footer_links">
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Ellem Ciet</a></li>
-                <li><a href="#">Currivitas</a></li>
-                <li><a href="#">Salim Aritu</a></li>
-            </ul>
-    </div>
+      <div class="one-fourth">
+      </div>
     
     <!-- Third Column -->
-    
-    <div class="one-fourth">
-        <h3>Information</h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet enim id dui tincidunt vestibulum rhoncus a felis.
-        
-        <div id="social_icons">
-        Theme by <a href="http://www.csstemplateheaven.com">CssTemplateHeaven</a><br /> Photos © <a href="http://dieterschneider.net" title="Dieter Schneider Photography">Dieter Schneider</a>
-        </div>
-        
-    </div>
+      <div class="one-fourth">
+      </div>
     
     <!-- Fourth Column -->
-    
-    <div class="one-fourth last">
-        <h3>Socialize</h3>
-            <img src="img/icon_fb.png" alt="Facebook">
-            <img src="img/icon_twitter.png" alt="Facebook">
-            <img src="img/icon_in.png" alt="Facebook">
-    </div>
+      <div class="one-fourth last">
+      </div>
 
     <div style="clear:both"></div>
     
-    </div> <!-- END footer -->
+  </div> <!-- END footer -->
