@@ -2,6 +2,10 @@ $bc: #e63d00;
 $sb: #3A4750;
 $bt: #eeeeee;
 $ff: inherit;
+$cb: #fadb3f;
+$facebook: #3b5998;
+$twitter: #00aced;
+$linkedin: #007bb6;
 
 body {
 	background-color: $sb;
@@ -29,15 +33,29 @@ a {
 	color: $bc;
 }
 
+.stack {
+	color: $bc;
+}
+
+.fBookIcon {
+	color: $facebook;
+}
+
+.twitIcon {
+	color: $twitter;
+}
+
+.linked {
+	color: $linkedin;
+}
+
 .card {
 	overflow: hidden;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-	color: #272727;
+	color: $bc;
   	border-radius: 2px;
-  		.title {
-    		line-height: 3rem;
-    		font-size: 1.5rem;
-    		font-weight: 300; }
+  	border-style: $bc;
+  	border-color: $bc;
   		.content {
     		padding: 1.3rem;
     		font-weight: 300;

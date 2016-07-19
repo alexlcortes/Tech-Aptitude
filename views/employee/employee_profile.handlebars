@@ -13,16 +13,24 @@
   <div class="two-third">  
 
     <div class="row">
-      <div class="medium-12 columns">
+      <div class="medium-9 columns">
         <h2 id="mainLogo"><img src="/assets/img/loginBackground/icon-clear-thinkers.jpg" style="color: #D72323" alt="lightBulb" height="60" width="60"> Tech Aptitude</h2>
       </div>
+
+      <div class="medium-3 columns">
+        <i class="fa fa-facebook-official fa-2x fBookIcon" aria-hidden="true"></i>
+        <i class="fa fa-twitter-square fa-2x twitIcon" aria-hidden="true"></i>
+        <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
+        <i class="fa fa-stack-overflow fa-2x stack" aria-hidden="true"></i>
+        <i class="fa fa-linkedin-square fa-2x linked" aria-hidden="true"></i>
+      </div>
+
     </div> <!-- close row --!> 
   
     <div style="clear:both"></div>
 
     <div class="row">
-
-      <div class="medium-4 columns">
+      <div class="medium-3 columns">
           <div class="content">
             <!-- Right Picture Nar -->
             <div class="sidebar_right">
@@ -40,26 +48,26 @@
           </div> <!-- closing content --!>
       </div> <!-- closing columns --!>
 
-      <div class="medium-8 columns">
+      <div class="medium-5 columns">
         <div class="card">
           <div class="content">
             <div>
               <form action="#" class="TTWForm" method="post" novalidate=""> 
                 <div id="field1-container" class="field f_50">
                   {{#each user}}
-                  <label for="firstName">First Name</label>         
+                  <label for="firstName"></label>         
                   {{firstName}}
-                  <label for="lastName">Last Name</label>
+                  <label for="lastName"></label>
                   {{lastName}}
-                  <label for="email">Email Address</label>
+                  <label for="email"></label>
                   {{email}}    
-                  <label for="address">Street Address</label>
+                  <label for="address"></label>
                   {{street_address}}
-                  <label for="city">City: </label>
+                  <label for="city"></label>
                   {{city}}
-                   <label for="state">State: </label>
+                   <label for="state"></label>
                   {{state}}
-                  <label for="zip">Zip Code</label>
+                  <label for="zip"></label>
                   {{zip}}
                   {{/each}}
                 </div>
@@ -67,14 +75,21 @@
             </div>
           </div> <!-- closing content --!>
         </div> <!-- closing card --!>
-      </div> <!-- closing columns --!>
+      </div> <!-- closing columns --!> 
     
+      <div class="medium-4 columns">
+        <div class="card">
+          <div class="content">
+            <h3>Skill Boxes</h3>
+          </div>
+        </div>
+      </div
     </div> <!-- closing row --!>
 
   </div><!-- close two third -->
       
       
-  <div style="clear:both; height: 40px"></div>
+<div style="clear:both; height: 40px"></div>
       
 </div><!-- end container -->
 
