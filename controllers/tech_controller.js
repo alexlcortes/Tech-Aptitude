@@ -199,9 +199,18 @@ module.exports = function(app, passport) {
 	  // store all uploads in the /uploads directory
 	  form.uploadDir = path.join(__dirname, '../public/assets/img_profile');
 
+	  form.keepExtensions = true;
+
 	  // every time a file has been uploaded successfully,
 	  // rename it to it's orignal name
 	  form.on('file', function(field, file) {
+	  	console.log('file.path: ' + file.path);
+	  	console.log('path.join(form.uploadDir: ') + path.join(form.uploadDir);
+	  	console.log('file.name: ' + file.name);
+	  	console.log('req.user.id: ' + req.user.id);
+	  	console.log('req.user.firstName: ' + req.user.firstName);
+	  	console.log('req.user.lastName: ' + req.user.lastName);
+	  	file.name = req.user.id + '_' + req.user.firstName + '_' + req.user.lastName;
 	    fs.rename(file.path, path.join(form.uploadDir, file.name));
 	  });
 
