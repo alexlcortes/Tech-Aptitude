@@ -183,7 +183,12 @@ module.exports = function(app, passport) {
 	// =====================================
 
 	app.post('/upload', function(req, res){
-
+		
+	  var id = req.user.id;
+	  //var profile_pic = req.user.profile_pic;
+	  //console.log("profile_pic:"+profile_pic);
+	  //id = id.replace(/\.[^/.]+$/, "")
+		console.log("ID:"+id);
 	  // create an incoming form object
 	  var form = new formidable.IncomingForm();
 
@@ -196,8 +201,19 @@ module.exports = function(app, passport) {
 	  // every time a file has been uploaded successfully,
 	  // rename it to it's orignal name
 	  form.on('file', function(field, file) {
+	  	// Pull the extension off the file
+	  	file.name = file.name.split('.').pop();
+	  	console.log("FILE NAME:"+file.name);
+	  	// Add the user ID in front of the extension
+	  	file.name = id + "." + file.name;
 	    fs.rename(file.path, path.join(form.uploadDir, file.name));
-	  });
+
+	    // Add photo name to the database
+	    orm.addPhoto('users', file.name, function(data) {
+	    	res.render('employee/employee_edit_resume', { user: data });
+		});
+
+	  });	 
 
 	  // log any errors that occur
 	  form.on('error', function(err) {

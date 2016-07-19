@@ -78,16 +78,17 @@
       <input name="state" id="state" required="required" type="text" value="{{state}}">
       <label for="zip">Zip Code</label>
       <input name="zip" id="zip" required="required" type="text" value="{{zip}}">
+      <input type="hidden" name="profile_pic" value="{{profile_pic}}">
     {{/each}}
       </div>
-    <p><input type="submit" value="Submit"></p>
+    <p>
+    <input type="submit" value="Submit"></p>
     </form>
     <label for="image">Choose an image to upload as your profile picture:</label>
     <input id="upload-input" type="file" name="uploads[]" multiple="multiple">
     <a id="uploadButton" href="#" class="button">Upload Pic</a>
     <div id="uploaded"></div>
   </div>
-  <p><input type="submit" value="Submit"></p>
 </div>
 
 </div><!-- close two third -->
@@ -95,8 +96,10 @@
       <!-- Right Picture Nar -->
       <div class="sidebar_right">
         <h4>Richard Garcia</h4>
-        <img src="assets/img/headshot.jpg" style="width:200px">
-    
+        <!-- <img src="assets/img/headshot.jpg" style="width:200px"> -->
+        {{#each user}}
+          <img src="assets/img_profile/{{profile_pic}}" style="width:200px">         
+        {{/each}}
            <ul class="sidebar_menu" style="margin:0">
             <li><a href="/employee_edit_profile">Contact Information</a></li>
             <li><a href="/employee_edit_resume">Edit Resume</a></li>
