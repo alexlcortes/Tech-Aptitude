@@ -2,68 +2,76 @@
 
   <!-- spacing --!>
     <div class="row">
-      <div class="large-12 columns space">
+      <div class="medium-12 columns space">
       </div>
     </div>
     
 </div><!-- END header -->
 
 <div id="container">
+
   <div class="two-third">  
+
     <div class="row">
-      <div class="large-12 columns">
+      <div class="medium-12 columns">
         <h2 id="mainLogo"><img src="/assets/img/loginBackground/icon-clear-thinkers.jpg" style="color: #D72323" alt="lightBulb" height="60" width="60"> Tech Aptitude</h2>
       </div>
-    </div>  
+    </div> <!-- close row --!> 
   
-  <div style="clear:both"></div>
+    <div style="clear:both"></div>
 
-  <div class="row">
-    <div class="medium-8 columns">
-      <div class="card">
-        <div class="content">
-          <div>
-            <form action="#" class="TTWForm" method="post" novalidate=""> 
-              <div id="field1-container" class="field f_50">
-                {{#each user}}
-                <label for="firstName">First Name</label>         
-                {{firstName}}
-                <label for="lastName">Last Name</label>
-                {{lastName}}
-                <label for="email">Email Address</label>
-                {{email}}    
-                <label for="address">Street Address</label>
-                {{street_address}}
-                <label for="city">City: </label>
-                {{city}}
-                 <label for="state">State: </label>
-                {{state}}
-                <label for="zip">Zip Code</label>
-                {{zip}}
-                {{/each}}
-              </div>
-            </form>
-          </div>
-        </div> <!-- closing content --!>
-      </div> <!-- closing card --!>
-    </div> <!-- closing columns --!>
-  </div> <!-- closing row --!>
+    <div class="row">
 
-</div><!-- close two third -->
+      <div class="medium-4 columns">
+          <div class="content">
+            <!-- Right Picture Nar -->
+            <div class="sidebar_right">
+            {{#each user}}
+              {{/each}}
+              <img src="assets/img/headshot.jpg" style="width:200px">
+          
+                <ul class="sidebar_menu" style="margin:0">
+                  <li><a href="/employee_edit_profile">Contact Information</a></li>
+                  <li><a href="/employee_edit_resume">Edit Resume</a></li>
+                  <li><a href="/employee_skills">Skills</a></li>
+                </ul>
 
-      <!-- Right Picture Nar -->
-      <div class="sidebar_right">
-      {{#each user}}
-        {{/each}}
-        <img src="assets/img/headshot.jpg" style="width:200px">
+            </div><!-- end sidebar right -->
+          </div> <!-- closing content --!>
+      </div> <!-- closing columns --!>
+
+      <div class="medium-8 columns">
+        <div class="card">
+          <div class="content">
+            <div>
+              <form action="#" class="TTWForm" method="post" novalidate=""> 
+                <div id="field1-container" class="field f_50">
+                  {{#each user}}
+                  <label for="firstName">First Name</label>         
+                  {{firstName}}
+                  <label for="lastName">Last Name</label>
+                  {{lastName}}
+                  <label for="email">Email Address</label>
+                  {{email}}    
+                  <label for="address">Street Address</label>
+                  {{street_address}}
+                  <label for="city">City: </label>
+                  {{city}}
+                   <label for="state">State: </label>
+                  {{state}}
+                  <label for="zip">Zip Code</label>
+                  {{zip}}
+                  {{/each}}
+                </div>
+              </form>
+            </div>
+          </div> <!-- closing content --!>
+        </div> <!-- closing card --!>
+      </div> <!-- closing columns --!>
     
-          <ul class="sidebar_menu" style="margin:0">
-            <li><a href="/employee_edit_profile">Contact Information</a></li>
-            <li><a href="/employee_edit_resume">Edit Resume</a></li>
-            <li><a href="/employee_skills">Skills</a></li>
-          </ul>
-      
-      </div><!-- end sidebar right -->
+    </div> <!-- closing row --!>
+
+  </div><!-- close two third -->
       
       
   <div style="clear:both; height: 40px"></div>
