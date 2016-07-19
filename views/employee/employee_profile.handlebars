@@ -69,6 +69,8 @@
               <form action="#" class="TTWForm" method="post" novalidate=""> 
                 <div id="field1-container" class="field f_50">
                   {{#each user}}
+                  <label for="title"></label>
+                  <i class="fa fa-code fa-1x contactIcons" aria-hidden="true"></i> {{title}}
                   <label for="firstName"></label>         
                   <i class="fa fa-user fa-1x contactIcons" aria-hidden="true"></i>  {{firstName}} {{lastName}}
                   <label for="lastName"></label>
@@ -83,6 +85,8 @@
                   {{state}}
                   <label for="zip"></label>
                   {{zip}}
+                  <label for="mobile"></label>
+                  <i class="fa fa-mobile fa-1x contactIcons" aria-hidden="true"></i> {{mobile}}
                   {{/each}}
                 </div>
               </form>
