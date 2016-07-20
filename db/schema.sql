@@ -54,6 +54,17 @@ ANSWER varchar(100),
 PRIMARY KEY (id)
 );
 
+CREATE TABLE portfolio
+(
+id INT NOT NULL AUTO_INCREMENT,
+tite varchar (100),
+startDate varchar (100),
+endDate varchar (100),
+description varchar (250),
+skillsUsed varchar(100),
+PRIMARY KEY (id)
+);
+
 
 CREATE TABLE users 
 (

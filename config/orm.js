@@ -30,6 +30,19 @@ var orm = {
 
     }, // end of updateEmployeeProfile
 
+    updateEmployeePortfolio: function(title, startDate, endDate, desc, skills, userID) {
+        console.log(title, startDate, endDate, desc, skills, userID);
+        return new Promise(function(resolve, reject) {
+            var queryString = "INSERT INTO tech_db.portfolio ( id, tite, startDate, endDate, description, skillsUsed ) values (?,?,?,?,?,?)"
+            console.log(queryString);
+            connection.query(queryString, [userID, title, startDate, endDate, desc, skills], function(err, res) {
+                if (err) reject(err);
+                else resolve(res);
+            })
+        })
+
+    }, // end of updateEmployeeProfile
+
     addPhoto: function(table, userID, fileName, cb) {
         return new Promise(function(resolve, reject) {
         var queryString = 'UPDATE tech_db.' + table + ' SET profile_img = ? where id = ?'

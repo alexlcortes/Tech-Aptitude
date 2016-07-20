@@ -1,181 +1,76 @@
 <div class="header">
+
+    <div class="row">
+      <div class="medium-12 columns space2">
+      </div>
+    </div>
     
-    <div id="site_title"><a href="index.html"><img src="assets/img/tech.jpg" /></a></div>
-
-    <!-- Main Menu -->
-    
-    <ol id="menu">
-             <li class="active_menu_item"><a href="index.html">Home</a>
-        
-              <!-- sub menu -->
-              <ol>  
-                <li><a href="nivo.html">Nivo Slider</a></li>
-                <li><a href="ei_slider.html">EI Slider</a></li>
-                <li><a href="fullscreen_gallery.html">Fullscreen Slider</a></li>
-                <li><a href="image_frontpage.html">Static Image</a></li>
-              </ol>
-              </li><!-- END sub menu -->
-        
-        <li><a href="#">Pages</a>
-        
-              <!-- sub menu -->
-              <ol>     
-                <li><a href="magazine.html">Magazine</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="full-width.html">Full Width Page</a></li>
-                <li><a href="columns.html">Columns</a></li>
-              </ol>
-        </li><!-- END sub menu -->
-        
-        <li><a href="elements.html">Elements</a></li>
-              
-        <li><a href="#">Galleries</a>
-        
-              <!-- sub menu -->
-              <ol>     
-                <li><a href="gallery-simple.html">Simple</a></li>
-                <li><a href="portfolio.html">Filterable</a></li>
-                <li><a href="gallery_fader.html">Fade Scroll</a></li>
-                <li><a href="video.html">Video</a></li>
-                <li class="last"><a href="photogrid.html">PhotoGrid</a></li>
-              </ol>
-        </li><!-- END sub menu -->
-        
-               <li><a href="contact.html">Contact</a></li>
-    </ol>
-    
-    
-    </div><!-- END header -->
-
-
-    <div id="container">
-
-
-<div class="two-third">
+</div> 
 
 <div id="container">
+ 
+  <div class="two-third"> 
+    <!-- Projects You've Worked On -->
+<h1>Projects You've Worked On </h1>
+<form action="/employee_edit_portfolio" method="post">
 
-<div class="two-third">
+<p>Please enter in any project(s) you have worked on previously. </p>
 
-<!-- logo icon --!>
-  <div class="row">
-    <div class="large-12 columns">
-      <h2 id="mainLogo"><img src="/assets/img/loginBackground/icon-clear-thinkers.jpg" style="color: #D72323" alt="lightBulb" height="60" width="60"> Tech Aptitude</h2>
-    </div>
-  </div> 
+   <fieldset class="form-group">
+    <label for="projectTitle">Project Title</label>
+    <input type="text" class="form-control" id="ProjectTitle1" placeholder="Enter Project Title" name="title">
+  </fieldset>
+
+  <fieldset class="form-group">
+    <label for="projectBegDate">Project Beginning Date</label>
+    <br>
+    <input type="date" name="startDate">
+  </fieldset>
+
+  <fieldset class="form-group">
+    <label for="projectEndDate">Project Ending Date</label>
+    <br>
+    <input type="date" name="endDate">
+  </fieldset>
+
+   <fieldset class="form-group">
+    <label for="projectTextarea">Enter in Project Description(Max 250 Char)</label>
+    <textarea class="form-control" name="description" rows="3"></textarea>
+  </fieldset>
+
+  <fieldset class="form-group">
+      <label for="projectSkillsarea">Enter in Skills Learned During Project</label>
+      <textarea class="form-control" name="skillsUsed" rows="3"></textarea>
+    </fieldset>
+   <input type="submit" class="button" value="Add Project"/>
+</form>
+
+
+  </div><!-- close two third -->
       
-  <div class="row">
-    <div class="large-6 columns">
-      <div class="card">
-        <div class="content">
-
-            <form action="#" class="TTWForm" method="post" novalidate=""> 
-              <div id="field1-container" class="field f_50">
-                {{#each user}}
-                <label for="firstName">First Name</label>         
-                {{firstName}}
-                <label for="lastName">Last Name</label>
-                {{lastName}}
-                <label for="email">Email Address</label>
-                {{email}}    
-                <label for="address">Street Address</label>
-                {{street_address}}
-                <label for="city">City: </label>
-                {{city}}
-                 <label for="state">State: </label>
-                {{state}}
-                <label for="zip">Zip Code</label>
-                {{zip}}
-                {{/each}}
-              </div>
-              <p><input type="submit" value="Submit"></p>
-            </form>
-
-          </div>
-        </div>
-      </div>
-
-    <div class="large-6 columns">
-       <div class="card">
-        <div class="content">
-
-          <!-- Right Picture Nar -->
-            <div class="sidebar_right">
-            {{#each user}}
-            <!-- not sure we need these --1>
-            <!-- <h4>{{firstName}} {{lastName}}</h4> --!>
-            {{/each}}
-              <img src="assets/img/headshot.jpg" style="width:200px">
-    
-              <ul class="sidebar_menu" style="margin:0">
-                <li><a href="/employee_edit_profile">Contact Information</a></li>
-                <li><a href="/employee_edit_resume">Edit Resume</a></li>
-                <li><a href="/employee_skills">Skills</a></li>
-              </ul>
-
-            </div>
-          </div>
-        </div>
-      </div>
+<div style="clear:both; height: 40px"></div>
       
-</div><!-- end sidebar right -->
-
-</div><!-- end of two-third --!>
-   
-</div><!-- end container -->     
+</div><!-- end containerPro -->
 
 
-      
-</div><!-- end container -->
-
-
-    <div id="footer">
+  <div id="footer">
 
     <!-- First Column -->
-
-    <div class="one-fourth">
-        <h3>Useful Links</h3>
-            <ul class="footer_links">
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Ellem Ciet</a></li>
-                <li><a href="#">Currivitas</a></li>
-                <li><a href="#">Salim Aritu</a></li>
-            </ul>
-    </div>
+      <div class="one-fourth">
+      </div>
     
     <!-- Second Column -->
-    
-    <div class="one-fourth">
-        <h3>Terms</h3>
-            <ul class="footer_links">
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Ellem Ciet</a></li>
-                <li><a href="#">Currivitas</a></li>
-                <li><a href="#">Salim Aritu</a></li>
-            </ul>
-    </div>
+      <div class="one-fourth">
+      </div>
     
     <!-- Third Column -->
-    
-    <div class="one-fourth">
-        <h3>Information</h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet enim id dui tincidunt vestibulum rhoncus a felis.
-        
-        <div id="social_icons">
-        Theme by <a href="http://www.csstemplateheaven.com">CssTemplateHeaven</a><br /> Photos © <a href="http://dieterschneider.net" title="Dieter Schneider Photography">Dieter Schneider</a>
-        </div>
-        
-    </div>
+      <div class="one-fourth">
+      </div>
     
     <!-- Fourth Column -->
-    
-    <div class="one-fourth last">
-        <h3>Socialize</h3>
-            <img src="img/icon_fb.png" alt="Facebook">
-            <img src="img/icon_twitter.png" alt="Facebook">
-            <img src="img/icon_in.png" alt="Facebook">
-    </div>
+      <div class="one-fourth last">
+      </div>
 
     <div style="clear:both"></div>
     
-    </div> <!-- END footer -->
+  </div> <!-- END footer -->

@@ -106,6 +106,12 @@ module.exports = function(app, passport) {
         // load the edit_profile file
         res.render('employee/employee_edit_portfolio');
     });
+    app.post('/employee_edit_portfolio', function(req, res) {
+        // load the edit_profile file
+        console.log(req);
+        orm.updateEmployeePortfolio(req.body.title, req.body.startDate, req.body.endDate, req.body.description , req.body.skillsUsed, req.user.id)
+        res.redirect('/employee_profile')
+    });
 
 
     // =====================================
