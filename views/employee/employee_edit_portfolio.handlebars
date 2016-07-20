@@ -53,57 +53,80 @@
 
 <div class="two-third">
 
-<h1>Profile</h1>       
+<div id="container">
 
-<div style="clear:both"></div>
+<div class="two-third">
 
-<div>
-    <div class="heading_bg"><h2>Contact Information</h2></div>
-<form action="#" class="TTWForm" method="post" novalidate=""> 
-  <div id="field1-container" class="field f_50">
-    {{#each user}}
-    <label for="firstName">First Name</label>         
-    {{firstName}}
-    <label for="lastName">Last Name</label>
-    {{lastName}}
-    <label for="email">Email Address</label>
-    {{email}}    
-    <label for="address">Street Address</label>
-    {{street_address}}
-    <label for="city">City: </label>
-    {{city}}
-     <label for="state">State: </label>
-    {{state}}
-    <label for="zip">Zip Code</label>
-    {{zip}}
-    {{/each}}
-  </div>
-  <p><input type="submit" value="Submit"></p>
-</form>
-</div>
+<!-- logo icon --!>
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 id="mainLogo"><img src="/assets/img/loginBackground/icon-clear-thinkers.jpg" style="color: #D72323" alt="lightBulb" height="60" width="60"> Tech Aptitude</h2>
+    </div>
+  </div> 
+      
+  <div class="row">
+    <div class="large-6 columns">
+      <div class="card">
+        <div class="content">
 
-</div><!-- close two third -->
+            <form action="#" class="TTWForm" method="post" novalidate=""> 
+              <div id="field1-container" class="field f_50">
+                {{#each user}}
+                <label for="firstName">First Name</label>         
+                {{firstName}}
+                <label for="lastName">Last Name</label>
+                {{lastName}}
+                <label for="email">Email Address</label>
+                {{email}}    
+                <label for="address">Street Address</label>
+                {{street_address}}
+                <label for="city">City: </label>
+                {{city}}
+                 <label for="state">State: </label>
+                {{state}}
+                <label for="zip">Zip Code</label>
+                {{zip}}
+                {{/each}}
+              </div>
+              <p><input type="submit" value="Submit"></p>
+            </form>
 
-      <!-- Right Picture Nar -->
-      <div class="sidebar_right">
-      {{#each user}}
-        <h4>{{firstName}} {{lastName}}</h4>
-        {{/each}}
-        <img src="assets/img/headshot.jpg" style="width:200px">
+          </div>
+        </div>
+      </div>
+
+    <div class="large-6 columns">
+       <div class="card">
+        <div class="content">
+
+          <!-- Right Picture Nar -->
+            <div class="sidebar_right">
+            {{#each user}}
+            <!-- not sure we need these --1>
+            <!-- <h4>{{firstName}} {{lastName}}</h4> --!>
+            {{/each}}
+              <img src="assets/img/headshot.jpg" style="width:200px">
     
-          <ul class="sidebar_menu" style="margin:0">
-            <li><a href="/employee_edit_profile">Contact Information</a></li>
-            <li><a href="/employee_edit_resume">Edit Resume</a></li>
-            <li><a href="/employee_edit_portfolio">Portfolio</a></li>
-            <li><a href="/employee_skills">Skills</a></li>
-          </ul>
+              <ul class="sidebar_menu" style="margin:0">
+                <li><a href="/employee_edit_profile">Contact Information</a></li>
+                <li><a href="/employee_edit_resume">Edit Resume</a></li>
+                <li><a href="/employee_skills">Skills</a></li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
       
-      </div><!-- end sidebar right -->
+</div><!-- end sidebar right -->
+
+</div><!-- end of two-third --!>
+   
+</div><!-- end container -->     
+
+
       
-      
-      <div style="clear:both; height: 40px"></div>
-      
-      </div><!-- end container -->
+</div><!-- end container -->
 
 
     <div id="footer">

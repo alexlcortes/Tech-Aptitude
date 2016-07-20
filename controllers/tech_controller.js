@@ -152,6 +152,10 @@ module.exports = function(app, passport) {
         // load the edit_profile file
         res.render('employee/employee_edit_resume');
     });
+    app.get('/employee_edit_portfolio', function(req, res) {
+        // load the edit_profile file
+        res.render('employee/employee_edit_portfolio');
+    });
 
 
     // =====================================
