@@ -1,3 +1,6 @@
+.two-thirds {
+  background-color: #eeeeee; }
+
 body {
   background-color: #3A4750; }
 
@@ -44,6 +47,9 @@ a {
 
 .contactIcons {
   color: #e63d00; }
+
+.contactIcons2 {
+  color: #eeeeee; }
 
 .portPadding {
   padding-top: 15px; }

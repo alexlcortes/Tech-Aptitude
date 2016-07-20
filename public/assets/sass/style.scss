@@ -7,6 +7,10 @@ $facebook: #3b5998;
 $twitter: #00aced;
 $linkedin: #007bb6;
 
+.two-thirds {
+	background-color: $bt;
+}
+
 body {
 	background-color: $sb;
 }
@@ -72,6 +76,10 @@ a {
 
 .contactIcons {
 	color: $bc;
+}
+
+.contactIcons2 {
+	color: $cb;
 }
 
 .portPadding {
