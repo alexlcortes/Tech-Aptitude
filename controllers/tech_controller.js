@@ -76,21 +76,24 @@ module.exports = function(app, passport) {
 
     app.get('/employee_profile', isLoggedIn, function(req, res) {
         var userid = req.user.id;
-        var userData;
-        var skillData;
         orm.getPersonalData('users', userid, function(data) {
             //console.log(data);
-            userData = data;
+            var userData = data;
             console.log(userData);
-        });           
-        orm.getSkills(userid, function(data){
-            skillData = data;
-            console.log(skillData);
-            // get the user out of session and pass to template
-        });
-        console.log(userData + skillData);
-        res.render('employee/employee_profile', { user: userData, skills: skillData})
-    });  //end of get employee Profile///
+            
+            orm.getSkills(userid, function(data){
+                var skillData = data;
+                console.log(skillData);
+
+                orm.getPortfolio(userid, function(data){
+                    var portfolioData = data;
+                    
+                    res.render('employee/employee_profile', { user: userData, skills: skillData, portfolio: portfolioData})
+                    // get the user out of session and pass to template
+                });
+            });
+        });  //end of get employee Profile///
+    });
 
 
     app.get('/employee_edit_profile', isLoggedIn ,function(req, res) {

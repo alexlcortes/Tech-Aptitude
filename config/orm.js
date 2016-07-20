@@ -87,7 +87,21 @@ var orm = {
                       //  else resolve(res);
                     }) //end of connection.query
           //  }) // end of return new Promise for getSkills
-    } // end of getSkills
+    }, // end of getSkills
+
+     getPortfolio: function(empID, cb) {
+           // select * from skills s left join emp_skills e on s.id = e.skillID where empID = 1;
+                var queryString = 'SELECT * from tech_db.portfolio where id = ?'
+                //var values = {empID: empID, skillID: skillID} 
+                console.log(queryString);
+                //console.log(values);
+                connection.query(queryString, [empID], function(err, res) {
+                    if (err) throw err;
+                       return cb(res);
+                      //  if (err) reject(err);
+                      //  else resolve(res);
+                    })
+     }
 
 }; // end of orm
 module.exports = orm;
