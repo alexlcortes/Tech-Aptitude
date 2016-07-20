@@ -1,5 +1,5 @@
 <div class="header">
-
+  <!-- spacing -->
     <div class="row">
       <div class="medium-12 columns space2">
       </div>
@@ -8,14 +8,75 @@
 </div> 
 
 <div id="container">
- 
   <div class="two-third"> 
 
     <div class="row">
       <div class="medium-7 columns">
-            <h2 id="mainLogo"><img src="/assets/img/loginBackground/icon-clear-thinkers.jpg" style="color: #D72323" alt="lightBulb" height="60" width="60"> Tech Aptitude</h2>
+        <h2 id="mainLogo"><img src="/assets/img/loginBackground/icon-clear-thinkers.jpg" style="color: #D72323" alt="lightBulb" height="60" width="60"> Tech Aptitude</h2>
+      </div>
+    </div>
+
+    <!-- spacing -->
+    <div class="row">
+      <div class="medium-12 columns cardSpace">
+      </div>
+    </div> 
+
+<div style="clear:both"></div>
+
+    <div class="row">
+      <div class="medium-4 columns">
+        <div class="card">
+          <div class="content centered">
+              <!-- Right Picture Nar -->
+              <div class="sidebar_right">
+              {{#each user}}
+                <img src="assets/img_profile/{{id}}_{{firstName}}_{{lastName}}.jpg" style="width:200px">
+              {{/each}}
+                <ul class="sidebar_menu" style="margin:0">
+                  <li><a href="/employee_edit_profile">Edit Contact Information</a></li>
+                  <li><a href="/employee_edit_resume">Edit Resume</a></li>
+                  <li><a href="/employee_edit_social_links">Edit Social Links
+                  <li><a href="/employee_edit_portfolio">Edit Portfolio</a></li>
+                </ul>
+              </div>
+          </div>
+        </div>
       </div>
 
+      <div class="medium-8 columns">
+        <div class="card">
+          <div class="content">
+            <div>
+              <form action="#" class="TTWForm" method="post" novalidate=""> 
+                <div id="field1-container" class="field f_50">
+                  {{#each user}}
+                  <label for="firstName"></label>         
+                  <i class="fa fa-user fa-1x contactIcons" aria-hidden="true"></i>  {{firstName}} {{lastName}}
+                  <label for="lastName"></label>
+                  <label for="email"></label>
+                  <i class="fa fa-envelope-o fa-1x contactIcons" aria-hidden="true"></i>  {{email}}    
+                  <label for="address"></label>
+                  <i class="fa fa-home fa-1x contactIcons" aria-hidden="true"></i>  {{street_address}}
+                  <label for="city"></label>
+                  <i class="fa fa-home fa-1x contactIcons2" aria-hidden="true"></i>  {{city}}, {{state}} {{zip}}
+                  <label for="city"></label>
+                  {{/each}}
+                </div>
+              </form>
+            </div>
+          </div> {{!-- closing content --}}
+        </div> <!-- closing card -->
+      </div> <!-- closing columns --> 
+    </div>
+
+  <!-- spacing -->
+    <div class="row">
+      <div class="medium-12 columns cardSpace">
+      </div>
+    </div> 
+
+  <div class="row">
     <div class="medium-3 columns">
       <div class="card">
         <div class="content">
@@ -27,110 +88,34 @@
         </div>
       </div>
     </div>
+  </div>
 
-  </div> 
-
-
+  <!-- spacing -->
     <div class="row">
       <div class="medium-12 columns cardSpace">
       </div>
     </div> 
-  
-    <div style="clear:both"></div>
-
+    
     <div class="row">
-      <div class="medium-3 columns">
-        <div class="card">
-          <div class="content centered">
-
-              <!-- Right Picture Nar -->
-              <div class="sidebar_right">
-              {{#each user}}
-                <img src="assets/img_profile/{{id}}_{{firstName}}_{{lastName}}.jpg" style="width:200px">
-              {{/each}}
-          
-                <ul class="sidebar_menu" style="margin:0">
-                  <li><a href="/employee_edit_profile">Contact Information</a></li>
-                  <li><a href="/employee_edit_resume">Edit Resume</a></li>
-                  <li><a href="/employee_edit_portfolio">Edit Portfolio</a></li>
-                  <li><a href="/employee_skills">Skills</a></li>
-                </ul>
-
-            </div><!-- end sidebar right -->
-          </div> <!-- closing content -->
-        </div>
-      </div> {{!-- closing columns --}}
-
-      <div class="medium-4 columns">
-        <div class="card">
-          <div class="content">
-            <div>
-              <form action="#" class="TTWForm" method="post" novalidate=""> 
-                <div id="field1-container" class="field f_50">
-                  {{#each user}}
-                  <label for="title"></label>
-                  <i class="fa fa-code fa-1x contactIcons" aria-hidden="true"></i> {{title}}
-                  <label for="firstName"></label>         
-                  <i class="fa fa-user fa-1x contactIcons" aria-hidden="true"></i>  {{firstName}} {{lastName}}
-                  <label for="lastName"></label>
-                  <label for="email"></label>
-                  <i class="fa fa-envelope-o fa-1x contactIcons" aria-hidden="true"></i>  {{email}}    
-                  <label for="address"></label>
-                  <i class="fa fa-home fa-1x contactIcons" aria-hidden="true"></i>  {{street_address}}
-                  <label for="city"></label>
-                  {{city}}, {{state}} {{zip}}
-                  <label for="mobile"></label>
-                  <i class="fa fa-mobile fa-1x contactIcons" aria-hidden="true"></i> {{mobile}}
-                  {{/each}}
-                </div>
-              </form>
-            </div>
-          </div> {{!-- closing content --}}
-        </div> <!-- closing card -->
-      </div> <!-- closing columns --> 
+      {{!-- skill button effect --}}
       <div class="medium-5 columns">
         <div class="card">
           <div class="content">
             <h3>Skills</h3>
-            
-            {{!-- james adding this stuff --}}
 
-            <ul class="dropdown menu" data-dropdown-menu>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
-
-            <ul class="dropdown menu" data-dropdown-menu>
-              <li>
-                <a href="#">Item 2</a>
-                <ul class="menu">
-                  <li><a href="#">Item 2A</a></li>
-                  <li><a href="#">Item 2B</a></li>
-                </ul>
-              </li>
-            </ul>
-
-          {{#each skills}}
-            {{skill}}
-          {{/each}}
-
-            <span class="input-group-btn">
-                <button id = 'addEmotion' class="btn btn-default" type="button">Add!</button>
-              </span>
-                <input type="text" class="form-control" placeholder="Add a new skill...">
-            {{!-- end of james additions --}}
-
-              <i class="fa fa-html5 fa-3x sIcons" aria-hidden="true"></i>
-              <i class="fa fa-css3 fa-3x sIcons" aria-hidden="true"></i>
-              <i class="fa fa-git-square fa-3x sIcons" aria-hidden="true"></i>
-              <i class="fa fa-database fa-3x sIcons" aria-hidden="true"></i>
           </div>
         </div>
       </div
     </div> <!-- closing row -->
-
+    <div class="row">
+      <div class="medium-9 columns portPadding">
+        <div class="card">
+          <div class="content">
+            <h3 class="portText">Portfolio</h3>
+          </div>
+        </div>
+      </div>
+    </div><!-- closing row -->
 
   </div><!-- close two third -->
       
@@ -159,4 +144,6 @@
 
     <div style="clear:both"></div>
     
-  </div> <!-- END footer -->
+</div> <!-- END footer -->
+
+<!-- js cdn -->
