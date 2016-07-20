@@ -111,30 +111,49 @@ module.exports = function(app, passport) {
         res.render('employee/employee_edit_resume');
     });
 
+    //======================================
+    // END OF EMPLOYEE
+    //======================================
 
     // =====================================
-    // Employeer ==============================
+    // Skills Tests ==============================
     // =====================================
-    app.get('/employeer', function(req, res) {
+    app.get('/html_test', function(req, res) {
         // load the edit_profile file
-        res.render('employeer/employeer');
+        res.render('skill_tests/html_test');
     });
-    app.get('/employeer_search', function(req, res) {
+
+    //======================================
+    // END OF Skill Tests
+    //======================================
+
+    // =====================================
+    // Employer ==============================
+    // =====================================
+    app.get('/employer', function(req, res) {
         // load the edit_profile file
-        res.render('employeer/employeer_search');
+        res.render('employer/employer');
     });
-    app.get('/employeer_edit_contact', function(req, res) {
+    app.get('/employer_search', function(req, res) {
         // load the edit_profile file
-        res.render('employeer/employeer_edit_contact');
+        res.render('employer/employer_search');
     });
-    app.get('/employeer_add_test', function(req, res) {
+    app.get('/employer_edit_contact', function(req, res) {
         // load the edit_profile file
-        res.render('employeer/employeer_add_test');
+        res.render('employer/employer_edit_contact');
     });
-    app.get('/employeer_edit_test', function(req, res) {
+    app.get('/employer_add_test', function(req, res) {
         // load the edit_profile file
-        res.render('employeer/employeer_edit_test');
+        res.render('employer/employer_add_test');
     });
+    app.get('/employer_edit_test', function(req, res) {
+        // load the edit_profile file
+        res.render('employer/employer_edit_test');
+    });
+    //======================================
+    // END OF Employer
+    //======================================
+
 
 	// =====================================
 	// Post for uploading a file ===========
