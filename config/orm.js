@@ -31,17 +31,17 @@ var orm = {
     }, // end of updateEmployeeProfile
 
     addPhoto: function(table, userID, fileName, cb) {
-        //return new Promise(function(resolve, reject) {
+        return new Promise(function(resolve, reject) {
                 var queryString = 'UPDATE tech_db.' + table + ' SET profile_img = ? where id = ?'
                 console.log(queryString);
                 var values = [fileName, userID];
                 console.log(values);
                 connection.query(queryString, values, function(err, res) {
                         console.log(res);
-                        if (err) throw err;
-                        else cb(res);
+                        if (err) reject(err);
+                        else resolve(res);
                     }) //end of connection.query
-          //  }) // end of return new Promise for addPhoto
+        }) // end of return new Promise for addPhoto
     }, // end of addPhoto 
 
     addSkill: function(table, empID, skillID, cb) {
