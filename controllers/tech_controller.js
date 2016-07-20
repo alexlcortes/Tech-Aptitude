@@ -76,18 +76,20 @@ module.exports = function(app, passport) {
 
     app.get('/employee_profile', isLoggedIn, function(req, res) {
         var userid = req.user.id;
+        var userData;
+        var skillData;
         orm.getPersonalData('users', userid, function(data) {
             //console.log(data);
-            var userData = data;
+            userData = data;
             console.log(userData);
-            
-            orm.getSkills(userid, function(data){
-                var skillData = data;
-                console.log(skillData);
-            res.render('employee/employee_profile', { user: userData, skills: skillData})
-                // get the user out of session and pass to template
-            })
+        });           
+        orm.getSkills(userid, function(data){
+            skillData = data;
+            console.log(skillData);
+            // get the user out of session and pass to template
         });
+        console.log(userData + skillData);
+        res.render('employee/employee_profile', { user: userData, skills: skillData})
     });  //end of get employee Profile///
 
 
