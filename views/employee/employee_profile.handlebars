@@ -92,6 +92,36 @@
         <div class="card">
           <div class="content">
             <h3>Skills</h3>
+            
+            {{!-- james adding this stuff --}}
+
+            <ul class="dropdown menu" data-dropdown-menu>
+              <li><a href="#">Item 1</a></li>
+              <li><a href="#">Item 2</a></li>
+              <li><a href="#">Item 3</a></li>
+              <li><a href="#">Item 4</a></li>
+            </ul>
+
+            <ul class="dropdown menu" data-dropdown-menu>
+              <li>
+                <a href="#">Item 2</a>
+                <ul class="menu">
+                  <li><a href="#">Item 2A</a></li>
+                  <li><a href="#">Item 2B</a></li>
+                </ul>
+              </li>
+            </ul>
+
+          {{#each skills}}
+            {{skill}}
+          {{/each}}
+
+            <span class="input-group-btn">
+                <button id = 'addEmotion' class="btn btn-default" type="button">Add!</button>
+              </span>
+                <input type="text" class="form-control" placeholder="Add a new skill...">
+            {{!-- end of james additions --}}
+
               <i class="fa fa-html5 fa-3x sIcons" aria-hidden="true"></i>
               <i class="fa fa-css3 fa-3x sIcons" aria-hidden="true"></i>
               <i class="fa fa-git-square fa-3x sIcons" aria-hidden="true"></i>

@@ -77,6 +77,9 @@ CREATE TABLE users
     city varchar (60),
     state varchar (2),
     zip INT,
+    profile_img varchar(50),
+    mobile_number varchar(50),
+    
     PRIMARY KEY (id),
         
 	
