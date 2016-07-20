@@ -141,13 +141,19 @@ module.exports = function(app, passport) {
     // });
     app.get('/employee_edit_profile', function(req, res) {
         // load the edit_profile file
-        console.log(req);
         var userid = req.user.id;
         orm.getPersonalData('users', userid, function(data) {
             console.log(data);
             res.render('employee/employee_edit_profile', { user: data });
         });
     });
+
+    app.post('/update_employee_profile', function(req,res) {
+    	console.log('DO I GET HERE');
+    	console.log(req);
+    	orm.updateEmployeeProfile('users', req.body.firstName, req.body.lastName, req.body.email, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.id)
+    	res.redirect('/employee_profile')
+    })
     app.get('/employee_edit_resume', function(req, res) {
         // load the edit_profile file
         res.render('employee/employee_edit_resume');
@@ -193,9 +199,18 @@ module.exports = function(app, passport) {
 	  // store all uploads in the /uploads directory
 	  form.uploadDir = path.join(__dirname, '../public/assets/img_profile');
 
+	  form.keepExtensions = true;
+
 	  // every time a file has been uploaded successfully,
 	  // rename it to it's orignal name
 	  form.on('file', function(field, file) {
+	  	console.log('file.path: ' + file.path);
+	  	console.log('path.join(form.uploadDir: ') + path.join(form.uploadDir);
+	  	console.log('file.name: ' + file.name);
+	  	console.log('req.user.id: ' + req.user.id);
+	  	console.log('req.user.firstName: ' + req.user.firstName);
+	  	console.log('req.user.lastName: ' + req.user.lastName);
+	  	file.name = req.user.id + '_' + req.user.firstName + '_' + req.user.lastName;
 	    fs.rename(file.path, path.join(form.uploadDir, file.name));
 	  });
 

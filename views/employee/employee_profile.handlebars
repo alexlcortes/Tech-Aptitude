@@ -65,9 +65,31 @@
             </div><!-- end sidebar right -->
 
 
+
 </div><!-- end of two-third --!>
    
 </div><!-- end container -->
+
+      <!-- Right Picture Nar -->
+      <div class="sidebar_right">
+      {{#each user}}
+        <h4>{{firstName}} {{lastName}}</h4>
+        {{/each}}
+        {{#each user}}
+        <img src="assets/img_profile/{{this.id}}_{{firstName}}_{{lastName}}" style="width:200px">
+        {{/each}}
+          <ul class="sidebar_menu" style="margin:0">
+            <li><a href="/employee_edit_profile">Contact Information</a></li>
+            <li><a href="/employee_edit_resume">Edit Resume</a></li>
+            <li><a href="/employee_skills">Skills</a></li>
+          </ul>
+      
+      </div><!-- end sidebar right -->
+      
+      
+      <div style="clear:both; height: 40px"></div>
+      
+      </div><!-- end container -->
 
 
     <div id="footer">
