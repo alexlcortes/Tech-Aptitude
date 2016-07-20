@@ -1,4 +1,6 @@
 // config/database.js
+var mysql = require('mysql');
+
 module.exports = {
     'connection': {
         'host': 'localhost',

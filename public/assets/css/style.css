@@ -13,7 +13,7 @@ html {
 body {	font-family: Arial, Helvetica, sans-serif;
 		font-size: .875em;
 	    line-height: 1.6em;
-		border-top: 7px solid #fc4903;
+		/*border-top: 7px solid #fc4903;*/
 		background: #eaeaea url(img/body_bg.png) repeat-x;
 		color: #666;
 }
@@ -66,7 +66,7 @@ body {	font-family: Arial, Helvetica, sans-serif;
 
 .tab_article h3 {height: 30px}
 
-.sidebar_right {float: right; width:200px}
+.sidebar_right {width:160px;}
 
 
 #footer { font-size: .8em;
@@ -320,8 +320,12 @@ color: #fff;
 /**************************************************************************************/
 /*------------------------------------- Buttons -------------------------------------*/
 /************************************************************************************/
+
+/*.button {
+=======
 /*
 .button {
+>>>>>>> master
     -moz-border-bottom-colors: none;
     -moz-border-image: none;
     -moz-border-left-colors: none;
@@ -347,9 +351,9 @@ color: #fff;
    background-image: -ms-linear-gradient(top, #fafafa, #E0E0E0);
    background-image: -o-linear-gradient(top, #fafafa, #E0E0E0);
    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#E0E0E0')
-}
+}*/
 
-.button:hover {  
+/*.button:hover {  
   -webkit-box-shadow: 0 0 6px #cccccc;
   -moz-box-shadow: 0 0 6px #cccccc;
    box-shadow: 0 0 6px #cccccc;
@@ -359,11 +363,11 @@ color: #fff;
 	   background-image: -ms-linear-gradient(top, #E0E0E0, #fafafa);
 	   background-image: -o-linear-gradient(top, #E0E0E0, #fafafa);
 	   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E0E0E0', endColorstr='#fafafa')
-   }
-*/
+<<<<<<< HEAD
+   }*/
 /* button small */
  
-.button_small {
+/*.button_small {
     -moz-border-bottom-colors: none;
     -moz-border-image: none;
     -moz-border-left-colors: none;
@@ -396,7 +400,7 @@ color: #fff;
   -moz-box-shadow: 0 0 6px #cccccc;
    box-shadow: 0 0 6px #cccccc; }
 
-
+*/
 
 
 /**************************************************************************************/
@@ -555,10 +559,10 @@ a.nivo-prevNav {background:url(img/slide-next-prev.png) left no-repeat;left:5px;
 	float:right;
 }
 .one, .one-half, .two-third, .one-third, .one-fourth, .one-fifth, .one-sixth ,.inner-content, .one-third-big { 
-	float:left; 
+	/*float:left; */
 }
 .one-half, .two-third, .one-third, .one-fourth, .one-fifth, .one-sixth, .inner-content,.one-third-big  {
-	margin-right: 30px;
+	/*margin-right: 30px;*/
 }
 .one {
 	width:960px;
@@ -567,7 +571,7 @@ a.nivo-prevNav {background:url(img/slide-next-prev.png) left no-repeat;left:5px;
 	width:465px;
 }
 .two-third {
-	width:630px;
+	/*width:630px;*/
 }
 .one-third  {
 	width:300px;
@@ -1144,3 +1148,16 @@ div.dark_rounded #pp_full_res .pp_inline,div.dark_square #pp_full_res .pp_inline
 * html .pp_top .pp_middle,* html .pp_bottom .pp_middle{left:0;position:static}
 .pp_top .pp_right,.pp_bottom .pp_right{height:20px;left:auto;position:absolute;right:0;top:0;width:20px}
 .pp_fade,.pp_gallery li.default a img{display:none}
+
+
+/***************************************************
+		  File Upload CSS
+***************************************************/
+#fileUpload {
+	color: blue;
+	font-weight: bold;
+}
+#fileEmpty {
+	color: red;
+	font-weight: bold;
+}

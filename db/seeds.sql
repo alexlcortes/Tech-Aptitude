@@ -32,5 +32,3 @@ INSERT INTO skill_level (skill_level, empID, skillsID) VALUES ('Senior',2, 4);
 INSERT INTO skill_level (skill_level, empID, skillsID) VALUES ('Junior', 3, 4);
 INSERT INTO skill_level (skill_level, empID, skillsID) VALUES ('Mid-Level', 3, 5);
 
--- creating questions into test table
-INSERT INTO test (skillID, question, weight, OPT1, OPT2, OPT3, OPT4, ANSWER) VALUES (
