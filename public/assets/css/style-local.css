@@ -1,8 +1,13 @@
 body {
   background-color: #3A4750; }
 
+.row .signUpLogo {
+  color: #e63d00; }
 .row .button {
   background-color: #3A4750; }
+
+.form-group .labels {
+  color: #e63d00; }
 
 a {
   color: #e63d00; }

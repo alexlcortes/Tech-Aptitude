@@ -12,10 +12,19 @@ body {
 }
 
 .row {
+	.signUpLogo{
+		color: $bc;
+	}
 	.button {
 		background-color: $sb;
-		}
 	}
+}
+
+.form-group {
+	.labels {
+		color: $bc;
+	}
+}
 
 a {
 	color: $bc;
