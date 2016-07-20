@@ -38,8 +38,8 @@ var orm = {
                 console.log(values);
                 connection.query(queryString, values, function(err, res) {
                         console.log(res);
-                        if (err) reject(err);
-                        else resolve(res);
+                        if (err) throw err;
+                        else cb(res);
                     }) //end of connection.query
           //  }) // end of return new Promise for addPhoto
     }, // end of addPhoto 
