@@ -60,22 +60,7 @@ module.exports = function(app, passport) {
         failureFlash: true // allow flash messages	
     }));
 
-    // =====================================
-    // PROFILE SECTION =========================
-    // =====================================
-    // we will want this protected so you have to be logged in to visit
-    // we will use route middleware to verify this (the isLoggedIn function)
-    app.get('/profile', isLoggedIn, function(req, res) {
-        var userid = req.user.id
-        console.log(userid);
-        orm.getPersonalData('users', userid, function(data) {
-            console.log(data);
-            res.render('profile', { user: data });
-            // get the user out of session and pass to template
-        })
-
-
-    }); // end of get profile...
+   
 
     // =====================================
     // LOGOUT ==============================
@@ -204,14 +189,11 @@ module.exports = function(app, passport) {
 	  // every time a file has been uploaded successfully,
 	  // rename it to it's orignal name
 	  form.on('file', function(field, file) {
-	  	console.log('file.path: ' + file.path);
-	  	console.log('path.join(form.uploadDir: ') + path.join(form.uploadDir);
-	  	console.log('file.name: ' + file.name);
-	  	console.log('req.user.id: ' + req.user.id);
-	  	console.log('req.user.firstName: ' + req.user.firstName);
-	  	console.log('req.user.lastName: ' + req.user.lastName);
-	  	file.name = req.user.id + '_' + req.user.firstName + '_' + req.user.lastName;
+        var ext = file.name.split('.').pop();
+	  	file.name = req.user.id + '_' + req.user.firstName + '_' + req.user.lastName + '.' + ext;
 	    fs.rename(file.path, path.join(form.uploadDir, file.name));
+        orm.addPhoto('users', req.user.id, file.name);
+
 	  });
 
 	  // log any errors that occur
@@ -226,7 +208,7 @@ module.exports = function(app, passport) {
 
 	  // parse the incoming request containing the form data
 	  form.parse(req);
-
+    res.redirect('/employee_profile')
 	});
 
 };

@@ -1,12 +1,11 @@
 <div class="header">
 
-  <!-- spacing --!>
     <div class="row">
       <div class="medium-12 columns space2">
       </div>
     </div>
     
-</div><!-- END header -->
+</div> 
 
 <div id="container">
  
@@ -29,9 +28,9 @@
       </div>
     </div>
 
-  </div> <!-- close row --!>
+  </div> 
 
-  <!-- spacing --!>
+
     <div class="row">
       <div class="medium-12 columns cardSpace">
       </div>
@@ -47,9 +46,8 @@
               <!-- Right Picture Nar -->
               <div class="sidebar_right">
               {{#each user}}
-                {{/each}}
-                <img src="assets/img/headshot.jpg" style="width:200px">
-
+                <img src="assets/img_profile/{{profile_img}}" style="width:200px">
+              {{/each}}
           
                 <ul class="sidebar_menu" style="margin:0">
                   <li><a href="/employee_edit_profile">Contact Information</a></li>
@@ -80,11 +78,7 @@
                   <label for="address"></label>
                   <i class="fa fa-home fa-1x contactIcons" aria-hidden="true"></i>  {{street_address}}
                   <label for="city"></label>
-                  {{city}}
-                   <label for="state"></label>
-                  {{state}}
-                  <label for="zip"></label>
-                  {{zip}}
+                  {{city}}, {{state}} {{zip}}
                   <label for="mobile"></label>
                   <i class="fa fa-mobile fa-1x contactIcons" aria-hidden="true"></i> {{mobile}}
                   {{/each}}
