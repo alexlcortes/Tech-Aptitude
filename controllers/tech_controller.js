@@ -20,7 +20,7 @@ module.exports = function(app, passport) {
     // LOGIN ===============================
     // =====================================
     // show the login form
-    app.get('/', function(req, res) {
+    app.get('/', isLoggedInIndex ,function(req, res) {
 
         // render the page and pass in any flash data if it exists
         res.render('index', { message: req.flash('loginMessage'), background: true });
@@ -45,39 +45,6 @@ module.exports = function(app, passport) {
         });
 
     // =====================================
-    // SIGNUP ==============================
-    // =====================================
-    // show the signup form
-    app.get('/signup', function(req, res) {
-        // render the page and pass in any flash data if it exists
-        res.render('signup', { message: req.flash('signupMessage') });
-    });
-
-    // process the signup form
-    app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: '/profile', // redirect to the secure profile section
-        failureRedirect: '/signup', // redirect back to the signup page if there is an error
-        failureFlash: true // allow flash messages	
-    }));
-
-    // =====================================
-    // PROFILE SECTION =========================
-    // =====================================
-    // we will want this protected so you have to be logged in to visit
-    // we will use route middleware to verify this (the isLoggedIn function)
-    app.get('/profile', isLoggedIn, function(req, res) {
-        var userid = req.user.id
-        console.log(userid);
-        orm.getPersonalData('users', userid, function(data) {
-            console.log(data);
-            res.render('profile', { user: data });
-            // get the user out of session and pass to template
-        })
-
-
-    }); // end of get profile...
-
-    // =====================================
     // LOGOUT ==============================
     // =====================================
     app.get('/logout', function(req, res) {
@@ -90,7 +57,7 @@ module.exports = function(app, passport) {
     // SIGNUP ==============================
     // =====================================
     // show the signup form
-    app.get('/signup', function(req, res) {
+    app.get('/signup', isLoggedInIndex ,function(req, res) {
         // render the page and pass in any flash data if it exists
         res.render('signup', { message: req.flash('signupMessage') });
     });
@@ -102,52 +69,35 @@ module.exports = function(app, passport) {
         failureFlash: true // allow flash messages	
     }));
 
-    // =====================================
-    // PROFILE SECTION =========================
-    // =====================================
-    // we will want this protected so you have to be logged in to visit
-    // we will use route middleware to verify this (the isLoggedIn function)
-    app.get('/employee_profile', isLoggedIn, function(req, res) {
-        var userid = req.user.id;
-        orm.getPersonalData('users', userid, function(data) {
-            console.log(data);
-            res.render('employee/employee_profile', { user: data })
-                // get the user out of session and pass to template
-        });
-        // res.render('employee/employee_profile', {
-        // 	user : req.user // get the user out of session and pass to template
-        // });
-    });
-
-    // =====================================
-    // LOGOUT ==============================
-    // =====================================
-    app.get('/logout', function(req, res) {
-        req.logout();
-        res.redirect('/');
-    });
-
 
     // =====================================
     // Employee ==============================
     // =====================================
-    // app.get('/profile', function(req, res) {
-    // 	// load the edit_profile file
-    // 	res.render('profile'); 
-    // });
-    // app.get('/employee_profile', function(req, res) {
-    // 	// load the edit_profile file
-    // 	res.render('employee/employee_profile'); 
-    // });
-    app.get('/employee_edit_profile', function(req, res) {
+
+    app.get('/employee_profile', isLoggedIn, function(req, res) {
+    var userid = req.user.id;
+    orm.getPersonalData('users', userid, function(data) {
+        console.log(data);
+        res.render('employee/employee_profile', { user: data })
+            // get the user out of session and pass to template
+        });
+    });
+
+    app.get('/employee_edit_profile', isLoggedIn ,function(req, res) {
         // load the edit_profile file
-        console.log(req);
         var userid = req.user.id;
         orm.getPersonalData('users', userid, function(data) {
             console.log(data);
             res.render('employee/employee_edit_profile', { user: data });
         });
     });
+
+    app.post('/update_employee_profile', isLoggedIn ,function(req,res) {
+    	console.log('DO I GET HERE');
+    	console.log(req);
+    	orm.updateEmployeeProfile('users', req.body.firstName, req.body.lastName, req.body.email, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.id)
+    	res.redirect('/employee_profile')
+    })
     app.get('/employee_edit_resume', function(req, res) {
         // load the edit_profile file
         res.render('employee/employee_edit_resume');
@@ -186,7 +136,7 @@ module.exports = function(app, passport) {
 	// Post for uploading a file ===========
 	// =====================================
 
-	app.post('/upload', function(req, res){
+	app.post('/upload', isLoggedIn , function(req, res){
 
 	  // create an incoming form object
 	  var form = new formidable.IncomingForm();
@@ -197,10 +147,16 @@ module.exports = function(app, passport) {
 	  // store all uploads in the /uploads directory
 	  form.uploadDir = path.join(__dirname, '../public/assets/img_profile');
 
+	  form.keepExtensions = true;
+
 	  // every time a file has been uploaded successfully,
 	  // rename it to it's orignal name
 	  form.on('file', function(field, file) {
+        var ext = file.name.split('.').pop();
+	  	file.name = req.user.id + '_' + req.user.firstName + '_' + req.user.lastName + '.' + ext;
 	    fs.rename(file.path, path.join(form.uploadDir, file.name));
+        orm.addPhoto('users', req.user.id, file.name);
+
 	  });
 
 	  // log any errors that occur
@@ -215,7 +171,7 @@ module.exports = function(app, passport) {
 
 	  // parse the incoming request containing the form data
 	  form.parse(req);
-
+    res.redirect('/employee_profile')
 	});
 
 };
@@ -229,4 +185,15 @@ function isLoggedIn(req, res, next) {
 
     // if they aren't redirect them to the home page
     res.redirect('/');
+}
+
+// route middleware to make sure
+function isLoggedInIndex(req, res, next) {
+
+    // if user is authenticated in the session, carry on
+    if (!req.isAuthenticated())
+        return next();
+
+    // if they aren't redirect them to the home page
+    res.redirect('/employee_profile');
 }
