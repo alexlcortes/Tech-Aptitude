@@ -1,23 +1,51 @@
-@import "compass/css3";
-
 body {
-  background: #2DAF94;
-}
-.login-box {
-  background: #fff;
-  border: 1px solid #ddd; 
-  margin: 100px 0;
-  padding: 40px 20px 0 20px;
-}
+  background-color: #3A4750; }
 
-#logo {
-	color: white;
-}
-
-.button {
-	background-color: #d72323;
-}
+.row .button {
+  background-color: #3A4750; }
 
 a {
-	color: #2DAF94;
-}
+  color: #e63d00; }
+
+.space {
+  height: 100px; }
+
+.space2 {
+  height: 50px; }
+
+.cardSpace {
+  height: 25px; }
+
+#mainLogo {
+  color: #e63d00; }
+
+#bulbIcon {
+  color: #e63d00; }
+
+.stack {
+  color: #e63d00; }
+
+.fBookIcon {
+  color: #3b5998; }
+
+.twitIcon {
+  color: #00aced; }
+
+.linked {
+  color: #007bb6; }
+
+.contactIcons {
+  color: #e63d00; }
+
+.card {
+  overflow: hidden;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  color: #3A4750;
+  background-color: #eeeeee; }
+  .card .content {
+    padding: 1.3rem;
+    font-weight: 300;
+    border-radius: 0 0 2px 2px; }
+    .card .content .sIcons {
+      color: #e63d00; }

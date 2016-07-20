@@ -5,9 +5,9 @@ The Demise of Linkedin
 - [x] Login page (Paul Newman)
 - [x] Create new account
 - [x] Existing account
-- [ ] Profile page employee/employer (Richard Garcia)
+- [x] Profile page employee/employer (Richard Garcia)
 - [ ] Resume builder (Stretch Goal)
-- [ ] Upload Existing Resume (Stretch Goal)
+- [ ] Upload Existing Resume (Stretch Goal)(Richard)
 - [ ] Create Resume from Scratch (Paul Newman)
 - [ ] Skills Page
 - [X] Junior, Mid-Level, Senior developer tests

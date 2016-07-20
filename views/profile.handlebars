@@ -1,66 +1,32 @@
 <div class="header">
-    
-    <div id="site_title"><a href="index.html"><img src="assets/img/tech.jpg" /></a></div>
-
-    <!-- Main Menu -->
-    
-    <ol id="menu">
-             <li class="active_menu_item"><a href="index.html">Home</a>
-        
-              <!-- sub menu -->
-              <ol>  
-                <li><a href="nivo.html">Nivo Slider</a></li>
-                <li><a href="ei_slider.html">EI Slider</a></li>
-                <li><a href="fullscreen_gallery.html">Fullscreen Slider</a></li>
-                <li><a href="image_frontpage.html">Static Image</a></li>
-              </ol>
-              </li><!-- END sub menu -->
-        
-        <li><a href="#">Pages</a>
-        
-              <!-- sub menu -->
-              <ol>     
-                <li><a href="magazine.html">Magazine</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="full-width.html">Full Width Page</a></li>
-                <li><a href="columns.html">Columns</a></li>
-              </ol>
-        </li><!-- END sub menu -->
-        
-        <li><a href="elements.html">Elements</a></li>
-              
-        <li><a href="#">Galleries</a>
-        
-              <!-- sub menu -->
-              <ol>     
-                <li><a href="gallery-simple.html">Simple</a></li>
-                <li><a href="portfolio.html">Filterable</a></li>
-                <li><a href="gallery_fader.html">Fade Scroll</a></li>
-                <li><a href="video.html">Video</a></li>
-                <li class="last"><a href="photogrid.html">PhotoGrid</a></li>
-              </ol>
-        </li><!-- END sub menu -->
-        
-               <li><a href="contact.html">Contact</a></li>
-    </ol>
-    
-    
-    </div><!-- END header -->
 
 
-    <div id="container">
+  <!-- spacing --!>
+  <div class="row">
+    <div class="large-12 columns space">
+    </div>
+  </div>
+    
+</div><!-- END header -->
 
+
+<div id="container">
 
 <div class="two-third">
 
-<h1>Profile</h1>       
+<div class="row">
+  <div class="large-12 columns">
+    <h2 id="mainLogo"><img src="/assets/img/loginBackground/icon-clear-thinkers.jpg" style="color: #D72323" alt="lightBulb" height="60" width="60"></h2>
+  </div>
+</div>      
 
 <div style="clear:both"></div>
 
 <div>
-    <div class="heading_bg"><h2>Contact Information</h2></div>
-<form action="#" class="TTWForm" method="post" novalidate=""> 
-  <div id="field1-container" class="field f_50">
+  <form action="#" class="TTWForm" method="post" novalidate=""> 
+    <div id="field1-container" class="field f_50">
+
+  {{#each user}}
     <label for="firstName">First Name</label>         
     {{firstName}}
     <label for="lastName">Last Name</label>
@@ -73,6 +39,7 @@
     {{Zip}}
     <label for="country">Country</label>
     {{country}}
+    {{/each}}
   </div>
   <p><input type="submit" value="Submit"></p>
 </form>
@@ -82,7 +49,9 @@
 
       <!-- Right Picture Nar -->
       <div class="sidebar_right">
-        <h4>{{user.firstName}} {{user.lastName}}</h4>
+      {{#each user}}
+        <h4>{{firstName}} {{lastName}}</h4>
+        {{/each}}
         <img src="assets/img/headshot.jpg" style="width:200px">
     
           <ul class="sidebar_menu" style="margin:0">
