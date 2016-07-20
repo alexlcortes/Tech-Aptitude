@@ -20,7 +20,7 @@ module.exports = function(app, passport) {
     // LOGIN ===============================
     // =====================================
     // show the login form
-    app.get('/', isLoggedInIndex ,function(req, res) {
+    app.get('/', isLoggedInIndex, function(req, res) {
 
         // render the page and pass in any flash data if it exists
         res.render('index', { message: req.flash('loginMessage'), background: true });
@@ -57,7 +57,7 @@ module.exports = function(app, passport) {
     // SIGNUP ==============================
     // =====================================
     // show the signup form
-    app.get('/signup', isLoggedInIndex ,function(req, res) {
+    app.get('/signup', isLoggedInIndex, function(req, res) {
         // render the page and pass in any flash data if it exists
         res.render('signup', { message: req.flash('signupMessage') });
     });
@@ -66,7 +66,7 @@ module.exports = function(app, passport) {
     app.post('/signup', passport.authenticate('local-signup', {
         successRedirect: '/employee_profile', // redirect to the secure profile section
         failureRedirect: '/signup', // redirect back to the signup page if there is an error
-        failureFlash: true // allow flash messages	
+        failureFlash: true // allow flash messages  
     }));
 
 
@@ -80,18 +80,18 @@ module.exports = function(app, passport) {
             //console.log(data);
             var userData = data;
             console.log(userData);
-            
-            orm.getSkills(userid, function(data){
+
+            orm.getSkills(userid, function(data) {
                 var skillData = data;
                 console.log(skillData);
-            res.render('employee/employee_profile', { user: userData, skills: skillData})
-                // get the user out of session and pass to template
+                res.render('employee/employee_profile', { user: userData, skills: skillData })
+                    // get the user out of session and pass to template
             })
         });
-    });  //end of get employee Profile///
+    }); //end of get employee Profile///
 
 
-    app.get('/employee_edit_profile', isLoggedIn ,function(req, res) {
+    app.get('/employee_edit_profile', isLoggedIn, function(req, res) {
         // load the edit_profile file
         var userid = req.user.id;
         orm.getPersonalData('users', userid, function(data) {
@@ -100,11 +100,11 @@ module.exports = function(app, passport) {
         });
     });
 
-    app.post('/update_employee_profile', isLoggedIn ,function(req,res) {
-    	console.log('DO I GET HERE');
-    	console.log(req);
-    	orm.updateEmployeeProfile('users', req.body.firstName, req.body.lastName, req.body.email, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.id)
-    	res.redirect('/employee_profile')
+    app.post('/update_employee_profile', isLoggedIn, function(req, res) {
+        console.log('DO I GET HERE');
+        console.log(req);
+        orm.updateEmployeeProfile('users', req.body.firstName, req.body.lastName, req.body.email, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.id)
+        res.redirect('/employee_profile')
     })
     app.get('/employee_edit_resume', function(req, res) {
         // load the edit_profile file
@@ -115,69 +115,59 @@ module.exports = function(app, passport) {
     // =====================================
     // Employeer ==============================
     // =====================================
-    app.get('/employeer', function(req, res) {
-        // load the edit_profile file
-        res.render('employeer/employeer');
+    // app.get('/employeer', function(req, res) {
+    //     // load the edit_profile file
+    //     res.render('employeer/employeer');
+    // });
+    // app.get('/employeer_search', function(req, res) {
+    //     // load the edit_profile file
+    //     res.render('employeer/employeer_search');
+    // });
+    // app.get('/employeer_edit_contact', function(req, res) {
+    //     // load the edit_profile file
+    //     res.render('employeer/employeer_edit_contact');
+    // });
+    // app.get('/employeer_add_test', function(req, res) {
+    //     // load the edit_profile file
+    //     res.render('employeer/employeer_add_test');
+    // });
+    // app.get('/employeer_edit_test', function(req, res) {
+    //     // load the edit_profile file
+    //     res.render('employeer/employeer_edit_test');
+    // });
+
+    // =====================================
+    // Post for uploading a file ===========
+    // =====================================
+
+    app.post('/upload', isLoggedIn, function(req, res) {
+        // create an incoming form object
+        var form = new formidable.IncomingForm();
+        // specify that we want to allow the user to upload multiple files in a single request
+        form.multiples = true;
+        // store all uploads in the /uploads directory
+        form.uploadDir = path.join(__dirname, '../public/assets/img_profile');
+        form.keepExtensions = true;
+        // every time a file has been uploaded successfully,
+        // rename it to it's orignal name
+        form.on('file', function(field, file) {
+            var ext = file.name.split('.').pop();
+            file.name = req.user.id + '_' + req.user.firstName + '_' + req.user.lastName + '.' + ext;
+            fs.rename(file.path, path.join(form.uploadDir, file.name));
+            orm.addPhoto('users', req.user.id, file.name);
+        });
+        // log any errors that occur
+        form.on('error', function(err) {
+            console.log('An error has occured: \n' + err);
+        });
+        // once all the files have been uploaded, send a response to the client
+        form.on('end', function() {
+            res.end('success');
+        });
+        // parse the incoming request containing the form data
+        form.parse(req);
+        res.redirect('/employee_profile')
     });
-    app.get('/employeer_search', function(req, res) {
-        // load the edit_profile file
-        res.render('employeer/employeer_search');
-    });
-    app.get('/employeer_edit_contact', function(req, res) {
-        // load the edit_profile file
-        res.render('employeer/employeer_edit_contact');
-    });
-    app.get('/employeer_add_test', function(req, res) {
-        // load the edit_profile file
-        res.render('employeer/employeer_add_test');
-    });
-    app.get('/employeer_edit_test', function(req, res) {
-        // load the edit_profile file
-        res.render('employeer/employeer_edit_test');
-    });
-
-	// =====================================
-	// Post for uploading a file ===========
-	// =====================================
-
-	app.post('/upload', isLoggedIn , function(req, res){
-
-	  // create an incoming form object
-	  var form = new formidable.IncomingForm();
-
-	  // specify that we want to allow the user to upload multiple files in a single request
-	  form.multiples = true;
-
-	  // store all uploads in the /uploads directory
-	  form.uploadDir = path.join(__dirname, '../public/assets/img_profile');
-
-	  form.keepExtensions = true;
-
-	  // every time a file has been uploaded successfully,
-	  // rename it to it's orignal name
-	  form.on('file', function(field, file) {
-        var ext = file.name.split('.').pop();
-	  	file.name = req.user.id + '_' + req.user.firstName + '_' + req.user.lastName + '.' + ext;
-	    fs.rename(file.path, path.join(form.uploadDir, file.name));
-        orm.addPhoto('users', req.user.id, file.name);
-
-	  });
-
-	  // log any errors that occur
-	  form.on('error', function(err) {
-	    console.log('An error has occured: \n' + err);
-	  });
-
-	  // once all the files have been uploaded, send a response to the client
-	  form.on('end', function() {
-	    res.end('success');
-	  });
-
-	  // parse the incoming request containing the form data
-	  form.parse(req);
-    res.redirect('/employee_profile')
-	});
-
 };
 
 // route middleware to make sure
