@@ -21,6 +21,9 @@ a {
 .cardSpace {
   height: 25px; }
 
+.portText {
+  color: #e63d00; }
+
 #mainLogo {
   color: #e63d00; }
 
@@ -41,6 +44,9 @@ a {
 
 .contactIcons {
   color: #e63d00; }
+
+.portPadding {
+  padding-top: 15px; }
 
 .card {
   overflow: hidden;
