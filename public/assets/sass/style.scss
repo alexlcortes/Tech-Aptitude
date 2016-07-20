@@ -12,10 +12,19 @@ body {
 }
 
 .row {
+	.signUpLogo{
+		color: $bc;
+	}
 	.button {
 		background-color: $sb;
-		}
 	}
+}
+
+.form-group {
+	.labels {
+		color: $bc;
+	}
+}
 
 a {
 	color: $bc;
@@ -31,6 +40,10 @@ a {
 
 .cardSpace{
 	height: 25px;
+}
+
+.portText {
+	color: $bc;
 }
 
 #mainLogo {
@@ -59,6 +72,10 @@ a {
 
 .contactIcons {
 	color: $bc;
+}
+
+.portPadding {
+	padding-top: 15px;
 }
 
 .card {
