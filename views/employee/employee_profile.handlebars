@@ -1,27 +1,27 @@
 <div class="header">
+
   <!-- spacing -->
-    <div class="row">
-      <div class="medium-12 columns space2">
-      </div>
+  <div class="row">
+    <div class="medium-12 columns space2">
     </div>
-    
+  </div>
 </div> 
 
 <div id="container">
-  <div class="two-third"> 
-
+  <div class="two-third">
     <div class="row">
       <div class="medium-7 columns">
         <h2 id="mainLogo"><img src="/assets/img/loginBackground/icon-clear-thinkers.jpg" style="color: #D72323" alt="lightBulb" height="60" width="60"> Tech Aptitude</h2>
       </div>
     </div>
 
-<div style="clear:both"></div>
+  <div style="clear:both"></div>
 
     <div class="row">
       <div class="medium-3 columns">
         <div class="card">
           <div class="content">
+
             <!-- Right Picture Nar -->
             <div class="sidebar_right">
             {{#each user}}
@@ -37,6 +37,7 @@
 
               <div class="row">
                 <div class="medium-11 medium-centered columns">
+
                   <!-- social icons -->
                   <i class="fa fa-facebook-official fa-2x fBookIcon" aria-hidden="true"></i>
                   <i class="fa fa-twitter-square fa-2x twitIcon" aria-hidden="true"></i>
@@ -45,13 +46,14 @@
                   <i class="fa fa-linkedin-square fa-2x linked" aria-hidden="true"></i>
                 </div>
               </div>
-
-
           </div>
+
+          <!-- edit wrench -->
           <a href="/employee_edit_profile"><i class="fa fa-wrench fa-1x editButton" aria-hidden="true"></i></a>
         </div>
       </div>
 
+      <!-- contact card -->
       <div class="medium-6 columns">
         <div class="card">
           <div class="content">
@@ -100,9 +102,8 @@
         <div class="card">
           <div class="content">
 
-            <h3>Skills</h3>
+            <h3 class="portText">Skills</h3>
             
-            {{!-- start of drop-down menu --}}
             <ul class="vertical dropdown menu" data-dropdown-menu style="max-width: 120px;">
               <li  class="is-dropdown-submenu-parent"><a href="#">Skill Options...</a>
                 <ul class="menu">
@@ -123,25 +124,17 @@
           {{!-- end of buttons for each skill --}}
             
 
-          
-            
-          
+          <!-- modal test -->
+          <a href="#" data-reveal-id="myModal" class="button success">Click Me For A Modal</a>
 
-      
-            {{!-- end of james additions --}}
+            <div id="myModal" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+              <h2 id="modalTitle">Awesome. I have it.</h2>
+              <p class="lead">Your couch.  It is mine.</p>
+              <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+              <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+            </div>
 
-
-            <h3 class="portText">Skills</h3>
-
-            <!-- modal test -->
-              <a href="#" data-reveal-id="myModal" class="button success">Click Me For A Modal</a>
-
-                <div id="myModal" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-                  <h2 id="modalTitle">Awesome. I have it.</h2>
-                  <p class="lead">Your couch.  It is mine.</p>
-                  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-                  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-                </div>
+            {{!-- end of james and alex additions --}}
 
           </div>
         </div>
