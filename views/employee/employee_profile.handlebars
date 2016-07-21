@@ -98,22 +98,24 @@
 
             <h3>Skills</h3>
             
-            {{!-- james adding this stuff --}}
-            
-
+            {{!-- start of drop-down menu --}}
             <ul class="vertical dropdown menu" data-dropdown-menu style="max-width: 120px;">
-              <li  class="is-dropdown-submenu-parent"><a href="#">Item 1</a>
+              <li  class="is-dropdown-submenu-parent"><a href="#">Skill Options...</a>
                 <ul class="menu">
+                  
                   <li><a href="#">Item 1A</a></li>
-                  <!-- ... -->
-              </ul>
+                </ul>
               </li>
-            </ul>
+            </ul>  
+            {{!-- end of dropdown menu --}}
+          
+          {{!-- placing buttons for each skill that has been added by the drop-down --}}
           <div class="button-group">
           {{#each skills}}
             <a href = "/{{skill}}_test" class="button">{{skill}}</a>
             {{/each}}
           </div>
+          {{!-- end of buttons for each skill --}}
             
 
           
