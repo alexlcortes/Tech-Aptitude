@@ -25,6 +25,12 @@ body {
 	.heading_bg {
 		color: $sb;
 	}
+	.instructions {
+		color: $sb;
+	}
+	.space3 {
+		height: 15px;
+	}
 }
 
 .form-group {
@@ -89,9 +95,6 @@ a {
 	color: $cb;
 }
 
-.portPadding {
-	padding-top: 15px;
-}
 
 .card {
 	overflow: hidden;

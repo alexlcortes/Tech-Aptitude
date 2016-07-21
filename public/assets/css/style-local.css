@@ -10,6 +10,10 @@ body {
   background-color: #3A4750; }
 .row .heading_bg {
   color: #3A4750; }
+.row .instructions {
+  color: #3A4750; }
+.row .space3 {
+  height: 15px; }
 
 .form-group .labels {
   color: #e63d00; }
@@ -55,9 +59,6 @@ a {
 
 .contactIcons2 {
   color: #eeeeee; }
-
-.portPadding {
-  padding-top: 15px; }
 
 .card {
   overflow: hidden;
