@@ -109,12 +109,16 @@
               </ul>
               </li>
             </ul>
-
+          <div class="button-group">
+          {{#each skills}}
+            <a href = "/{{skill}}_test" class="button">{{skill}}</a>
+            {{/each}}
+          </div>
             
 
-          {{#each skills}}
-            {{skill}}
-          {{/each}}
+          
+            
+          
 
       
             {{!-- end of james additions --}}
