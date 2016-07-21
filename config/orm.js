@@ -30,13 +30,13 @@ var orm = {
 
     }, // end of updateEmployeeProfile
 
-    updateEmployeePortfolio: function(title, startDate, endDate, desc, skills, userID) {
-        console.log(title, startDate, endDate, desc, skills, userID);
+    updateEmployeePortfolio: function(title, startDate, endDate, desc, skills, userID, pic) {
+        console.log(title, startDate, endDate, desc, skills, userID, pic);
         return new Promise(function(resolve, reject) {
-            var queryString = "INSERT INTO tech_db.portfolio ( id, tite, startDate, endDate, description, skillsUsed ) values (?,?,?,?,?,?)"
+            var queryString = "INSERT INTO tech_db.portfolio ( id, title, startDate, endDate, description, skillsUsed, photo ) values (?,?,?,?,?,?,?)"
             console.log(queryString);
-            connection.query(queryString, [userID, title, startDate, endDate, desc, skills], function(err, res) {
-                if (err) reject(err);
+            connection.query(queryString, [userID, title, startDate, endDate, desc, skills , pic], function(err, res) {
+                if (err) console.log(err);
                 else resolve(res);
             })
         })

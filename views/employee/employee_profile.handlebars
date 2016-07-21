@@ -112,6 +112,21 @@
         <div class="card">
           <div class="content">
             <h3 class="portText">Portfolio</h3>
+              <div class="row">
+
+             {{#each portfolio}}
+                  <div class="medium-4 columns">
+                  <div clas="content">
+             <h4>{{title}}</h4>
+             <img src="{{photo}}">
+             <h5>{{startDate}} - {{endDate}}</h5>
+             <h5>{{description}}</h5>
+             <h5>{{skillsUsed}}</h5>
+                </div>
+            </div>
+             {{/each}}
+          </div>
+
           </div>
         </div>
       </div>

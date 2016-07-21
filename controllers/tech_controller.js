@@ -122,7 +122,7 @@ module.exports = function(app, passport) {
     app.post('/employee_edit_portfolio', function(req, res) {
         // load the edit_profile file
         console.log(req);
-        orm.updateEmployeePortfolio(req.body.title, req.body.startDate, req.body.endDate, req.body.description , req.body.skillsUsed, req.user.id)
+        orm.updateEmployeePortfolio(req.body.title, req.body.startDate, req.body.endDate, req.body.description , req.body.skillsUsed, req.user.id, req.body.photourl)
         res.redirect('/employee_profile')
     });
 
