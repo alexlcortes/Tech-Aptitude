@@ -1,5 +1,4 @@
 <div class="header">
-
   <!-- spacing -->
     <div class="row">
       <div class="medium-12 columns space2">
@@ -9,7 +8,6 @@
 </div> 
 
 <div id="container">
-
   <div class="two-third"> 
 
     <div class="row">
@@ -30,42 +28,47 @@
               <img src="assets/img_profile/{{profile_img}}" style="width:200px">
             {{/each}}
             </div>
-            <!-- social icons -->
-            <i class="fa fa-facebook-official fa-2x fBookIcon" aria-hidden="true"></i>
-            <i class="fa fa-twitter-square fa-2x twitIcon" aria-hidden="true"></i>
-            <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
-            <i class="fa fa-stack-overflow fa-2x stack" aria-hidden="true"></i>
-            <i class="fa fa-linkedin-square fa-2x linked" aria-hidden="true"></i>
+
+            <!-- spacing -->
+            <div class="row">
+              <div class="medium-12 columns space3">
+              </div>
+            </div>
+
+              <div class="row">
+                <div class="medium-11 medium-centered columns">
+                  <!-- social icons -->
+                  <i class="fa fa-facebook-official fa-2x fBookIcon" aria-hidden="true"></i>
+                  <i class="fa fa-twitter-square fa-2x twitIcon" aria-hidden="true"></i>
+                  <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
+                  <i class="fa fa-stack-overflow fa-2x stack" aria-hidden="true"></i>
+                  <i class="fa fa-linkedin-square fa-2x linked" aria-hidden="true"></i>
+                </div>
+              </div>
+
+
           </div>
           <a href="/employee_edit_profile"><i class="fa fa-wrench fa-1x editButton" aria-hidden="true"></i></a>
         </div>
       </div>
 
-      <div class="medium-7 columns">
+      <div class="medium-6 columns">
         <div class="card">
           <div class="content">
             <div>
               <form action="#" class="TTWForm" method="post" novalidate=""> 
                 <div id="field1-container" class="field f_50">
                   {{#each user}}
-
                   <label for="firstName"></label>         
                   <i class="fa fa-user fa-1x contactIcons" aria-hidden="true"></i>  {{firstName}} {{lastName}}
-
+                  <label for="lastName"></label>
                   <label for="email"></label>
-                  <i class="fa fa-envelope-o fa-1x contactIcons" aria-hidden="true"></i>  {{email}}
-
-                  <label for="mobile"></label>
-                  <i class="fa fa-mobile fa-1x contactIcons" aria-hidden="true"></i><br>  {{mobile}}
-
+                  <i class="fa fa-envelope-o fa-1x contactIcons" aria-hidden="true"></i>  {{email}}    
                   <label for="address"></label>
-
                   <i class="fa fa-home fa-1x contactIcons" aria-hidden="true"></i>  {{street_address}}
                   <label for="city"></label>
-
                   <i class="fa fa-home fa-1x contactIcons2" aria-hidden="true"></i>  {{city}}, {{state}} {{zip}}
                   <label for="city"></label>
-
                   {{/each}}
                 </div>
               </form>
@@ -75,7 +78,7 @@
         </div> <!-- closing card -->
       </div> <!-- closing columns --> 
 
-      <div class="medium-2 columns">
+      <div class="medium-3 columns">
         <div class="content">
         </div>
       </div>
@@ -89,7 +92,6 @@
     </div> 
     
     <div class="row">
-      {{!-- skill button effect --}}
       <div class="medium-10 columns">
         <div class="card">
           <div class="content">
@@ -120,6 +122,16 @@
 
             <h3 class="portText">Skills</h3>
 
+            <!-- modal test -->
+              <a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
+
+                <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                  <h2 id="modalTitle">Awesome. I have it.</h2>
+                  <p class="lead">Your couch.  It is mine.</p>
+                  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+                  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+                </div>
+
           </div>
         </div>
       </div>
@@ -132,10 +144,25 @@
     </div> 
 
     <div class="row">
-      <div class="medium-10 columns portPadding">
+      <div class="medium-10 columns">
         <div class="card">
           <div class="content">
             <h3 class="portText">Portfolio</h3>
+              <div class="row">
+
+             {{#each portfolio}}
+                  <div class="medium-4 columns">
+                  <div clas="content">
+             <h4>{{title}}</h4>
+             <img src="{{photo}}">
+             <h5>{{startDate}} - {{endDate}}</h5>
+             <h5>{{description}}</h5>
+             <h5>{{skillsUsed}}</h5>
+                </div>
+            </div>
+             {{/each}}
+          </div>
+
           </div>
           <a href="/employee_edit_portfolio"><i class="fa fa-wrench fa-1x editButton" aria-hidden="true"></i></a>
         </div>
@@ -143,15 +170,15 @@
     </div><!-- closing row -->
 
   </div><!-- close two third -->
-   
+      
 <div style="clear:both; height: 40px"></div>
       
 </div><!-- end containerPro -->
 
 
-<div id="footer">
+  <div id="footer">
 
-  <div style="clear:both"></div>
+    <div style="clear:both"></div>
     
 </div> <!-- END footer -->
 

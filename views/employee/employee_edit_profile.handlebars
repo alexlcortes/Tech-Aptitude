@@ -9,6 +9,7 @@
 </div><!-- END header -->
 
 <div id="container">
+
   <div class="two-third"> 
 
     <div class="row">
@@ -16,117 +17,61 @@
             <h2 id="mainLogo"><img src="/assets/img/loginBackground/icon-clear-thinkers.jpg" style="color: #D72323" alt="lightBulb" height="60" width="60"> Tech Aptitude</h2>
       </div>
 
-  <div style="clear:both"></div>
+<div style="clear:both"></div>
 
 <div>
-    <div class="heading_bg"><h2>Update Information</h2></div>
-    
-      <form action="/update_employee_profile?_method=PUT" class="TTWForm" method="post" novalidate=""> 
-  
-      <div id="field1-container" class="field f_50">
-  {{#each user}}
-      <input type="hidden" name="id" value="{{this.id}}">
-      <label for="firstName">First Name</label>         
-      <input name="firstName" id="firstName" required="required" type="text" value="{{firstName}}">
-      <label for="lastName">Last Name</label>
-      <input name="lastName" id="lastName" required="required" type="text" value="{{lastName}}">
-      <label for="email">Email Address</label>
-      <input name="email" id="email" required="required" type="text" value="{{email}}">
-      <label for="phone">Phone Number</label>
-      <input name="phone" id="phone" required="required" type="text" value="{{mobile_number}}">
-      <label for="address">Street Address</label>
-      <input name="address" id="address" required="required" type="text" value="{{street_address}}">
-      <label for="city">City</label>
-      <input name="city" id="city" required="required" type="text" value="{{city}}">
-      <label for="state">state</label>
-      <input name="state" id="state" required="required" type="text" value="{{state}}">
-      <label for="zip">Zip Code</label>
-      <input name="zip" id="zip" required="required" type="text" value="{{zip}}">
-    {{/each}}
-      </div>
-    <p><input type="submit" value="Submit"></p>
-    </form>
-    <label for="image">Choose an image to upload as your profile picture:</label>
-    <input id="upload-input" type="file" name="uploads[]" multiple="multiple">
-    <a id="uploadButton" href="#" class="button">Upload Pic</a>
-    <div id="uploaded"></div>
+
+  <!-- section title -->
+  <div class="row">
+    <div class="medium-4 medium-centered heading_bg"><h5>Update Information</h5></div>
   </div>
+    <div class="row">
+      <div class="medium-10 columns">
+        <div class="card">
+          <div class="content">
+            <form action="/update_employee_profile?_method=PUT" class="TTWForm" method="post" novalidate=""> 
+            <div id="field1-container" class="field f_50">
+          {{#each user}}
+            <input type="hidden" name="id" value="{{this.id}}">
+            <label class="profileLabels" for="firstName">First Name</label>         
+            <input name="firstName" id="firstName" required="required" type="text" value="{{firstName}}">
+            <label class="profileLabels" for="lastName">Last Name</label>
+            <input name="lastName" id="lastName" required="required" type="text" value="{{lastName}}">
+            <label class="profileLabels" for="email">Email Address</label>
+            <input name="email" id="email" required="required" type="text" value="{{email}}">
+            <label class="profileLabels" for="address">Street Address</label>
+            <input name="address" id="address" required="required" type="text" value="{{street_address}}">
+            <label class="profileLabels" for="city">City</label>
+            <input name="city" id="city" required="required" type="text" value="{{city}}">
+            <label class="profileLabels" for="state">state</label>
+            <input name="state" id="state" required="required" type="text" value="{{state}}">
+            <label class="profileLabels" for="zip">Zip Code</label>
+            <input name="zip" id="zip" required="required" type="text" value="{{zip}}">
+          {{/each}}
+            </div>
+              <p><input type="submit" value="Submit"></p>
+            </form>
+
+            <label for="image">Choose an image to upload as your profile picture:</label>
+            <input id="upload-input" type="file" name="uploads[]" multiple="multiple">
+            <a id="uploadButton" href="#" class="button">Upload Pic</a>
+            <div id="uploaded"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- row -->
 </div>
 
 </div><!-- close two third -->
-
-      <!-- Right Picture Nar -->
-      <div class="sidebar_right">
-        {{#each user}}
-        <h4>{{firstName}} {{lastName}}</h4>
-        {{/each}}
-        {{#each user}}
-                <img src="assets/img_profile/{{profile_img}}" style="width:200px">
-              {{/each}}
-           <ul class="sidebar_menu" style="margin:0">
-            <li><a href="/employee_edit_profile">Contact Information</a></li>
-            <li><a href="/employee_edit_resume">Edit Resume</a></li>
-            <li><a href="/employee_skills">Skills</a></li>
-          </ul>
+       
+<div style="clear:both; height: 40px"></div>
       
-      </div><!-- end sidebar right -->
-      
-      
-      <div style="clear:both; height: 40px"></div>
-      
-      </div><!-- end container -->
+</div><!-- end container -->
 
-
-    <div id="footer">
-
-    <!-- First Column -->
-
-    <div class="one-fourth">
-        <h3>Useful Links</h3>
-            <ul class="footer_links">
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Ellem Ciet</a></li>
-                <li><a href="#">Currivitas</a></li>
-                <li><a href="#">Salim Aritu</a></li>
-            </ul>
-    </div>
-    
-    <!-- Second Column -->
-    
-    <div class="one-fourth">
-        <h3>Terms</h3>
-            <ul class="footer_links">
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Ellem Ciet</a></li>
-                <li><a href="#">Currivitas</a></li>
-                <li><a href="#">Salim Aritu</a></li>
-            </ul>
-    </div>
-    
-    <!-- Third Column -->
-    
-    <div class="one-fourth">
-        <h3>Information</h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet enim id dui tincidunt vestibulum rhoncus a felis.
-        
-        <div id="social_icons">
-        Theme by <a href="http://www.csstemplateheaven.com">CssTemplateHeaven</a><br /> Photos © <a href="http://dieterschneider.net" title="Dieter Schneider Photography">Dieter Schneider</a>
-        </div>
-        
-    </div>
-    
-    <!-- Fourth Column -->
-    
-    <div class="one-fourth last">
-        <h3>Socialize</h3>
-            <img src="img/icon_fb.png" alt="Facebook">
-            <img src="img/icon_twitter.png" alt="Facebook">
-            <img src="img/icon_in.png" alt="Facebook">
-    </div>
-
-    <div style="clear:both"></div>
-    
-    </div> <!-- END footer -->
+<div id="footer">
+  
+</div> <!-- END footer -->
 
      <!-- Javascript that controls the upload of a file -->
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>

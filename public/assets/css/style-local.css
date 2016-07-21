@@ -8,6 +8,12 @@ body {
   color: #e63d00; }
 .row .button {
   background-color: #3A4750; }
+.row .heading_bg {
+  color: #3A4750; }
+.row .instructions {
+  color: #3A4750; }
+.row .space3 {
+  height: 15px; }
 
 .form-group .labels {
   color: #e63d00; }
@@ -54,9 +60,6 @@ a {
 .contactIcons2 {
   color: #eeeeee; }
 
-.portPadding {
-  padding-top: 15px; }
-
 .card {
   overflow: hidden;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -68,4 +71,6 @@ a {
     font-weight: 300;
     border-radius: 0 0 2px 2px; }
     .card .content .sIcons {
+      color: #e63d00; }
+    .card .content .profileLabels {
       color: #e63d00; }

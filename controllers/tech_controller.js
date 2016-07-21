@@ -84,11 +84,16 @@ module.exports = function(app, passport) {
             orm.getSkills(userid, function(data){
                 var skillData = data;
                 console.log(skillData);
-            res.render('employee/employee_profile', { user: userData, skills: skillData})
-                // get the user out of session and pass to template
-            })
-        });
-    });  //end of get employee Profile///
+
+                orm.getPortfolio(userid, function(data){
+                    var portfolioData = data;
+                    
+                    res.render('employee/employee_profile', { user: userData, skills: skillData, portfolio: portfolioData})
+                    // get the user out of session and pass to template
+                });
+            });
+        });  //end of get employee Profile///
+    });
 
 
     app.get('/employee_edit_profile', isLoggedIn ,function(req, res) {
@@ -111,6 +116,16 @@ module.exports = function(app, passport) {
     app.get('/employee_edit_resume', function(req, res) {
         // load the edit_profile file
         res.render('employee/employee_edit_resume');
+    });
+    app.get('/employee_edit_portfolio', function(req, res) {
+        // load the edit_profile file
+        res.render('employee/employee_edit_portfolio');
+    });
+    app.post('/employee_edit_portfolio', function(req, res) {
+        // load the edit_profile file
+        console.log(req);
+        orm.updateEmployeePortfolio(req.body.title, req.body.startDate, req.body.endDate, req.body.description , req.body.skillsUsed, req.user.id, req.body.photourl)
+        res.redirect('/employee_profile')
     });
 
     //======================================
