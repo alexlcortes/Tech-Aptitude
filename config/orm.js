@@ -11,7 +11,6 @@ var orm = {
         console.log(queryString);
         connection.query(queryString, function(err, res) {
             if (err) throw err;
-            //console.log(res);
             return cb(res);
 
         }); // end of connection query
@@ -77,6 +76,17 @@ var orm = {
                     }) //end of connection.query
             }) // end of return new Promise for addskill
     }, // end of addSkill
+
+    skillOptions: function(userID, cb){
+       // return new Promise(function(resolve, reject) {
+            var queryString = 'select skill from tech_db.skills where skill not in (select skill from tech_db.skills s left  join tech_db.emp_skills e on s.id = e.skillID where empID = ' + userID + ')';
+            console.log(queryString);
+            connection.query(queryString, function(err, res) {
+            if (err) throw err;
+            return cb(res);
+            }) // end of connection.query
+      //  }) // end of return new Promise
+    }, // end of skillOptions
 
     getSkills: function(empID, cb) {
        // return new Promise(function(resolve, reject) {

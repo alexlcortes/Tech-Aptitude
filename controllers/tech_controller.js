@@ -81,11 +81,17 @@ module.exports = function(app, passport) {
             var userData = data;
             console.log(userData);
 
-            orm.getSkills(userid, function(data) {
-                var skillData = data;
-                console.log(skillData);
-                res.render('employee/employee_profile', { user: userData, skills: skillData })
+            orm.skillOptions(userid, function(data) {
+                                var skillOptions = data;
+                                console.log(skillOptions);
+                                
+                orm.getSkills(userid, function(data) {
+                    var skillData = data;
+                    console.log(skillData);
+                
+                    res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillData })
                     // get the user out of session and pass to template
+                })
             })
         });
     }); //end of get employee Profile///
@@ -115,7 +121,7 @@ module.exports = function(app, passport) {
     //======================================
 
     // =====================================
-    // Skills Tests ==============================
+    // Skills & Skill Tests ================
     // =====================================
 
     app.get('/html_test', function(req, res) {
@@ -123,8 +129,13 @@ module.exports = function(app, passport) {
         res.render('skill_tests/html_test');
     });
 
+    app.post('/addSkill', isLoggedIn, function(req, res) {
+        orm.addSkill('skills', req.body.id)
+    res.redirect('/employee_profile')
+    })
+
     //======================================
-    // END OF Skill Tests
+    // END OF Skill & Skill Tests
     //======================================
 
     // =====================================
