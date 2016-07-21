@@ -30,6 +30,19 @@ var orm = {
 
     }, // end of updateEmployeeProfile
 
+    updateEmployeePortfolio: function(title, startDate, endDate, desc, skills, userID, pic) {
+        console.log(title, startDate, endDate, desc, skills, userID, pic);
+        return new Promise(function(resolve, reject) {
+            var queryString = "INSERT INTO tech_db.portfolio ( id, title, startDate, endDate, description, skillsUsed, photo ) values (?,?,?,?,?,?,?)"
+            console.log(queryString);
+            connection.query(queryString, [userID, title, startDate, endDate, desc, skills , pic], function(err, res) {
+                if (err) console.log(err);
+                else resolve(res);
+            })
+        })
+
+    }, // end of updateEmployeeProfile
+
     addPhoto: function(table, userID, fileName, cb) {
         return new Promise(function(resolve, reject) {
                 var queryString = 'UPDATE tech_db.' + table + ' SET profile_img = ? where id = ?'
@@ -74,7 +87,21 @@ var orm = {
                       //  else resolve(res);
                     }) //end of connection.query
           //  }) // end of return new Promise for getSkills
-    } // end of getSkills
+    }, // end of getSkills
+
+     getPortfolio: function(empID, cb) {
+           // select * from skills s left join emp_skills e on s.id = e.skillID where empID = 1;
+                var queryString = 'SELECT * from tech_db.portfolio where id = ?'
+                //var values = {empID: empID, skillID: skillID} 
+                console.log(queryString);
+                //console.log(values);
+                connection.query(queryString, [empID], function(err, res) {
+                    if (err) throw err;
+                       return cb(res);
+                      //  if (err) reject(err);
+                      //  else resolve(res);
+                    })
+     }
 
 }; // end of orm
 module.exports = orm;

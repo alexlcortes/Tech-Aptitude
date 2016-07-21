@@ -1,5 +1,4 @@
 <div class="header">
-
   <!-- spacing -->
     <div class="row">
       <div class="medium-12 columns space2">
@@ -9,7 +8,6 @@
 </div> 
 
 <div id="container">
-
   <div class="two-third"> 
 
     <div class="row">
@@ -48,24 +46,16 @@
               <form action="#" class="TTWForm" method="post" novalidate=""> 
                 <div id="field1-container" class="field f_50">
                   {{#each user}}
-
                   <label for="firstName"></label>         
                   <i class="fa fa-user fa-1x contactIcons" aria-hidden="true"></i>  {{firstName}} {{lastName}}
-
+                  <label for="lastName"></label>
                   <label for="email"></label>
-                  <i class="fa fa-envelope-o fa-1x contactIcons" aria-hidden="true"></i>  {{email}}
-
-                  <label for="mobile"></label>
-                  <i class="fa fa-mobile fa-1x contactIcons" aria-hidden="true"></i><br>  {{mobile}}
-
+                  <i class="fa fa-envelope-o fa-1x contactIcons" aria-hidden="true"></i>  {{email}}    
                   <label for="address"></label>
-
                   <i class="fa fa-home fa-1x contactIcons" aria-hidden="true"></i>  {{street_address}}
                   <label for="city"></label>
-
                   <i class="fa fa-home fa-1x contactIcons2" aria-hidden="true"></i>  {{city}}, {{state}} {{zip}}
                   <label for="city"></label>
-
                   {{/each}}
                 </div>
               </form>
@@ -96,20 +86,33 @@
             <h3 class="portText">Skills</h3>
           </div>
         </div>
-      </div>
+      </div
     </div> <!-- closing row -->
-
     <!-- spacing -->
     <div class="row">
       <div class="medium-12 columns cardSpace">
       </div>
     </div> 
-
     <div class="row">
       <div class="medium-10 columns portPadding">
         <div class="card">
           <div class="content">
             <h3 class="portText">Portfolio</h3>
+              <div class="row">
+
+             {{#each portfolio}}
+                  <div class="medium-4 columns">
+                  <div clas="content">
+             <h4>{{title}}</h4>
+             <img src="{{photo}}">
+             <h5>{{startDate}} - {{endDate}}</h5>
+             <h5>{{description}}</h5>
+             <h5>{{skillsUsed}}</h5>
+                </div>
+            </div>
+             {{/each}}
+          </div>
+
           </div>
           <a href="/employee_edit_portfolio"><i class="fa fa-wrench fa-1x editButton" aria-hidden="true"></i></a>
         </div>
@@ -117,15 +120,31 @@
     </div><!-- closing row -->
 
   </div><!-- close two third -->
-   
+      
 <div style="clear:both; height: 40px"></div>
       
 </div><!-- end containerPro -->
 
 
-<div id="footer">
+  <div id="footer">
 
-  <div style="clear:both"></div>
+    <!-- First Column -->
+      <div class="one-fourth">
+      </div>
+    
+    <!-- Second Column -->
+      <div class="one-fourth">
+      </div>
+    
+    <!-- Third Column -->
+      <div class="one-fourth">
+      </div>
+    
+    <!-- Fourth Column -->
+      <div class="one-fourth last">
+      </div>
+
+    <div style="clear:both"></div>
     
 </div> <!-- END footer -->
 
