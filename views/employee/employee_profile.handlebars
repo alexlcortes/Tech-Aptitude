@@ -1,6 +1,5 @@
 <div class="header">
 
-
   <!-- spacing -->
 
     <div class="row">
@@ -106,23 +105,18 @@
             <h3>Skills</h3>
             
             {{!-- james adding this stuff --}}
+            
 
-            <ul class="dropdown menu" data-dropdown-menu>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
-
-            <ul class="dropdown menu" data-dropdown-menu>
-              <li>
-                <a href="#">Item 2</a>
+            <ul class="vertical dropdown menu" data-dropdown-menu style="max-width: 120px;">
+              <li  class="is-dropdown-submenu-parent"><a href="#">Item 1</a>
                 <ul class="menu">
-                  <li><a href="#">Item 2A</a></li>
-                  <li><a href="#">Item 2B</a></li>
-                </ul>
+                  <li><a href="#">Item 1A</a></li>
+                  <!-- ... -->
+              </ul>
               </li>
             </ul>
+
+            
 
           {{#each skills}}
             {{skill}}
@@ -161,3 +155,8 @@
   <div style="clear:both"></div>
     
 </div> <!-- END footer -->
+
+
+
+<!-- Compressed JavaScript -->
+{{!-- <script src="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.js"></script> --}}
