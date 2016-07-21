@@ -120,7 +120,7 @@ p {
 .post_meta_date{background: url("img/sprite.png") no-repeat 0 -80px}
 .post_meta_comments{background: url("img/sprite.png") no-repeat 0 0}
 
-.excerpt {font-size: 1.4em; border-top: 1px dotted #999; border-bottom: 1px dotted #999; padding: 30px;}
+.excerpt {font-size: 1.4em; border-top: 1px dotted #999; padding: 30px;}
 
 
 small {font-family: Georgia, "Times New Roman", Times, serif; color: #999}
@@ -140,7 +140,7 @@ blockquote {font-family:Georgia, "Times New Roman", Times, serif; font-style: it
 /* Lists *
 
 dt {font-size: 1.4em;}
-dd {margin-bottom: 30px; font-size: 1em; color: gray; border-bottom: 1px dotted gray; padding-bottom: 30px;}
+dd {margin-bottom: 30px; font-size: 1em; color: gray; padding-bottom: 30px;}
 
 /**************************** Tables *****************************/
 
@@ -176,13 +176,13 @@ table td {
 
 table tr:last-child td:first-child {
 	-moz-border-radius-bottomleft: 5px;
-	-webkit-border-bottom-left-radius: 5px;
-	border-bottom-left-radius: 5px}
+	/*-webkit-border-bottom-left-radius: 5px;*/
+	/*border-bottom-left-radius: 5px*/}
 	
 table tr:last-child td:last-child {
 	-moz-border-radius-bottomright: 5px;
-	-webkit-border-bottom-right-radius:5px;
-	border-bottom-right-radius: 5px}
+	/*-webkit-border-bottom-right-radius:5px*/;
+	/*border-bottom-right-radius: 5px*/}
 
 /**************************** Forms *****************************/
 
@@ -439,7 +439,6 @@ color: #fff;
     height:450px;
 	float:left;
 	border-top: 0px solid #CCC;
-	border-bottom: 1px solid #eaeaea;
 }
  .nivoSlider img {
 	position:absolute;
@@ -482,7 +481,7 @@ a.nivo-prevNav {background:url(img/slide-next-prev.png) left no-repeat;left:5px;
 
 .menu_tab { padding: 0; clear: both}
 .menu_tab li { display: inline; }
-.menu_tab li a { background: #3d4753; padding:5px 10px; float:left; border-right: 1px solid #f5f5f5; border-bottom: none; text-decoration: none; color: #FFF; font-weight: normal;}
+.menu_tab li a { background: #3d4753; padding:5px 10px; float:left; border-right: 1px solid #f5f5f5; text-decoration: none; color: #FFF; font-weight: normal;}
 .menu_tab li.active a { background: #f5f5f5;color:#272727; }
 
 .tab_content { float: left; clear: both; border-top: none; border-left: none; background: #f5f5f5; padding: 4%; width: 92%; }
@@ -603,7 +602,7 @@ a.nivo-prevNav {background:url(img/slide-next-prev.png) left no-repeat;left:5px;
 
 /* navigation */
 
-#prod_wrapper {border-bottom: 1px solid #e3e3e3; height: 501px; margin-bottom: 30px; padding: 0}
+#prod_wrapper {height: 501px; margin-bottom: 30px; padding: 0}
 
 #prod_nav {
 	height:156px;	
@@ -640,7 +639,6 @@ a.nivo-prevNav {background:url(img/slide-next-prev.png) left no-repeat;left:5px;
 	border-top-right-radius: 5px;
 	float: none;
 	margin:0;
-	border-bottom: 3px solid #000
 }
 
 #prod_nav img {
@@ -714,7 +712,6 @@ a.nivo-prevNav {background:url(img/slide-next-prev.png) left no-repeat;left:5px;
 	position: relative;
 	width: 100%;
 	max-width: 1920px;
-	border-bottom: 1px solid #EAEAEA;
 	height: 400px;
 	margin: 0 auto;
 }

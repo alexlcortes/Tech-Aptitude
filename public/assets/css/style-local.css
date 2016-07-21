@@ -1,3 +1,6 @@
+.two-thirds {
+  background-color: #eeeeee; }
+
 body {
   background-color: #3A4750; }
 
@@ -5,12 +8,21 @@ body {
   color: #e63d00; }
 .row .button {
   background-color: #3A4750; }
+.row .heading_bg {
+  color: #3A4750; }
+.row .instructions {
+  color: #3A4750; }
+.row .space3 {
+  height: 15px; }
 
 .form-group .labels {
   color: #e63d00; }
 
 a {
   color: #e63d00; }
+
+.editButton {
+  float: right; }
 
 .space {
   height: 100px; }
@@ -45,8 +57,8 @@ a {
 .contactIcons {
   color: #e63d00; }
 
-.portPadding {
-  padding-top: 15px; }
+.contactIcons2 {
+  color: #eeeeee; }
 
 .card {
   overflow: hidden;
@@ -59,4 +71,6 @@ a {
     font-weight: 300;
     border-radius: 0 0 2px 2px; }
     .card .content .sIcons {
+      color: #e63d00; }
+    .card .content .profileLabels {
       color: #e63d00; }

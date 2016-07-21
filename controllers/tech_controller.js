@@ -100,15 +100,11 @@ module.exports = function(app, passport) {
         });
     });
 
-    app.post('/update_employee_profile', isLoggedIn ,function(req,res) {
-    	console.log('DO I GET HERE');
-    	console.log(req);
-        console.log('req.body: **********************');
-        console.log(req.body);
-    	orm.updateEmployeeProfile('users', req.body.firstName, req.body.lastName, req.body.email, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.id)
-    	res.redirect('/employee_profile')
+    app.post('/update_employee_profile', isLoggedIn, function(req, res) {
+        orm.updateEmployeeProfile('users', req.body.firstName, req.body.lastName, req.body.email, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.id)
+        res.redirect('/employee_profile')
     })
-    
+
     app.get('/employee_edit_resume', function(req, res) {
         // load the edit_profile file
         res.render('employee/employee_edit_resume');
@@ -157,16 +153,6 @@ module.exports = function(app, passport) {
     //======================================
     // END OF Employer
     //======================================
-
-
-	// =====================================
-	// Post for uploading a file ===========
-	// =====================================
-
-	app.post('/upload', isLoggedIn , function(req, res){
-
-	  // create an incoming form object
-	  var form = new formidable.IncomingForm();
 
     // =====================================
     // Post for uploading a file ===========
