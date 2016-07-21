@@ -19,6 +19,12 @@ var orm = {
 
     updateEmployeeProfile: function(table, firstName, lastName, email, street_address, city, state, zip, userID, cb) {
         return new Promise(function(resolve, reject) {
+            if (zip == '') {
+                zip = null;
+            }
+            if (street_address == ''){
+                street_address = null;
+            }
             console.log(table + ',' + firstName + ',' + lastName + ',' + street_address + ',' + city + ',' + state + ',' + zip);
             var queryString = 'UPDATE tech_db.' + table + ' SET firstName = ?, lastName = ?, email = ?, street_address = ?, city = ?, state = ?, zip = ? where id = ?'
             console.log(queryString);
@@ -31,7 +37,7 @@ var orm = {
     }, // end of updateEmployeeProfile
 
     addPhoto: function(table, userID, fileName, cb) {
-        //return new Promise(function(resolve, reject) {
+        return new Promise(function(resolve, reject) {
                 var queryString = 'UPDATE tech_db.' + table + ' SET profile_img = ? where id = ?'
                 console.log(queryString);
                 var values = [fileName, userID];
@@ -41,7 +47,7 @@ var orm = {
                         if (err) reject(err);
                         else resolve(res);
                     }) //end of connection.query
-          //  }) // end of return new Promise for addPhoto
+        }) // end of return new Promise for addPhoto
     }, // end of addPhoto 
 
     addSkill: function(table, empID, skillID, cb) {

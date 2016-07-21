@@ -100,41 +100,73 @@ module.exports = function(app, passport) {
         });
     });
 
-    app.post('/update_employee_profile', isLoggedIn, function(req, res) {
-        console.log('DO I GET HERE');
-        console.log(req);
-        orm.updateEmployeeProfile('users', req.body.firstName, req.body.lastName, req.body.email, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.id)
-        res.redirect('/employee_profile')
+    app.post('/update_employee_profile', isLoggedIn ,function(req,res) {
+    	console.log('DO I GET HERE');
+    	console.log(req);
+        console.log('req.body: **********************');
+        console.log(req.body);
+    	orm.updateEmployeeProfile('users', req.body.firstName, req.body.lastName, req.body.email, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.id)
+    	res.redirect('/employee_profile')
     })
+    
     app.get('/employee_edit_resume', function(req, res) {
         // load the edit_profile file
         res.render('employee/employee_edit_resume');
     });
 
+    //======================================
+    // END OF EMPLOYEE
+    //======================================
 
     // =====================================
-    // Employeer ==============================
+    // Skills Tests ==============================
     // =====================================
-    // app.get('/employeer', function(req, res) {
-    //     // load the edit_profile file
-    //     res.render('employeer/employeer');
-    // });
-    // app.get('/employeer_search', function(req, res) {
-    //     // load the edit_profile file
-    //     res.render('employeer/employeer_search');
-    // });
-    // app.get('/employeer_edit_contact', function(req, res) {
-    //     // load the edit_profile file
-    //     res.render('employeer/employeer_edit_contact');
-    // });
-    // app.get('/employeer_add_test', function(req, res) {
-    //     // load the edit_profile file
-    //     res.render('employeer/employeer_add_test');
-    // });
-    // app.get('/employeer_edit_test', function(req, res) {
-    //     // load the edit_profile file
-    //     res.render('employeer/employeer_edit_test');
-    // });
+
+    app.get('/html_test', function(req, res) {
+        // load the edit_profile file
+        res.render('skill_tests/html_test');
+    });
+
+    //======================================
+    // END OF Skill Tests
+    //======================================
+
+    // =====================================
+    // Employer ==============================
+    // =====================================
+    app.get('/employer', function(req, res) {
+        // load the edit_profile file
+        res.render('employer/employer');
+    });
+    app.get('/employer_search', function(req, res) {
+        // load the edit_profile file
+        res.render('employer/employer_search');
+    });
+    app.get('/employer_edit_contact', function(req, res) {
+        // load the edit_profile file
+        res.render('employer/employer_edit_contact');
+    });
+    app.get('/employer_add_test', function(req, res) {
+        // load the edit_profile file
+        res.render('employer/employer_add_test');
+    });
+    app.get('/employer_edit_test', function(req, res) {
+        // load the edit_profile file
+        res.render('employer/employer_edit_test');
+    });
+    //======================================
+    // END OF Employer
+    //======================================
+
+
+	// =====================================
+	// Post for uploading a file ===========
+	// =====================================
+
+	app.post('/upload', isLoggedIn , function(req, res){
+
+	  // create an incoming form object
+	  var form = new formidable.IncomingForm();
 
     // =====================================
     // Post for uploading a file ===========
