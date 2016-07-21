@@ -7,6 +7,10 @@ $facebook: #3b5998;
 $twitter: #00aced;
 $linkedin: #007bb6;
 
+.two-thirds {
+	background-color: $bt;
+}
+
 body {
 	background-color: $sb;
 }
@@ -28,6 +32,10 @@ body {
 
 a {
 	color: $bc;
+}
+
+.editButton {
+	float: right;
 }
 
 .space {
@@ -72,6 +80,10 @@ a {
 
 .contactIcons {
 	color: $bc;
+}
+
+.contactIcons2 {
+	color: $cb;
 }
 
 .portPadding {
