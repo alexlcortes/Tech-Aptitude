@@ -30,11 +30,6 @@ The Demise of Linkedin
 - [X] New technology - login using facebook or gmail account.
 - [X] New Technology - sass/css (Paul Newman)
 
-Color Palette:
-#FA5555
-#F7FB76
-#8DED8E
-#2D7D8F
 
 WEDNESDAY SCRUM
 - [ ] drop-down using foundation to populate employee skills to database.
