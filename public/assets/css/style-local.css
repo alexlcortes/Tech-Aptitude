@@ -15,6 +15,9 @@ body {
 a {
   color: #e63d00; }
 
+.editButton {
+  float: right; }
+
 .space {
   height: 100px; }
 

@@ -18,35 +18,30 @@
       </div>
     </div>
 
-    <!-- spacing -->
-    <div class="row">
-      <div class="medium-12 columns cardSpace">
-      </div>
-    </div> 
-
 <div style="clear:both"></div>
 
     <div class="row">
-      <div class="medium-4 columns">
+      <div class="medium-3 columns">
         <div class="card">
-          <div class="content centered">
-              <!-- Right Picture Nar -->
-              <div class="sidebar_right">
-              {{#each user}}
-                <img src="assets/img_profile/{{profile_img}}" style="width:200px">
-              {{/each}}
-                <ul class="sidebar_menu" style="margin:0">
-                  <li><a href="/employee_edit_profile">Edit Contact Information</a></li>
-                  <li><a href="/employee_edit_resume">Edit Resume</a></li>
-                  <li><a href="/employee_edit_social_links">Edit Social Links
-                  <li><a href="/employee_edit_portfolio">Edit Portfolio</a></li>
-                </ul>
-              </div>
+          <div class="content">
+            <!-- Right Picture Nar -->
+            <div class="sidebar_right">
+            {{#each user}}
+              <img src="assets/img_profile/{{profile_img}}" style="width:200px">
+            {{/each}}
+            </div>
+            <!-- social icons -->
+            <i class="fa fa-facebook-official fa-2x fBookIcon" aria-hidden="true"></i>
+            <i class="fa fa-twitter-square fa-2x twitIcon" aria-hidden="true"></i>
+            <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-stack-overflow fa-2x stack" aria-hidden="true"></i>
+            <i class="fa fa-linkedin-square fa-2x linked" aria-hidden="true"></i>
           </div>
+          <a href="/employee_edit_profile"><i class="fa fa-wrench fa-1x editButton" aria-hidden="true"></i></a>
         </div>
       </div>
 
-      <div class="medium-8 columns">
+      <div class="medium-7 columns">
         <div class="card">
           <div class="content">
             <div>
@@ -76,29 +71,16 @@
               </form>
             </div>
           </div> {{!-- closing content --}}
+          <a href="/employee_edit_profile"><i class="fa fa-wrench fa-1x editButton" aria-hidden="true"></i></a>
         </div> <!-- closing card -->
       </div> <!-- closing columns --> 
-    </div>
 
-  <!-- spacing -->
-    <div class="row">
-      <div class="medium-12 columns cardSpace">
-      </div>
-    </div> 
-
-  <div class="row">
-    <div class="medium-3 columns">
-      <div class="card">
+      <div class="medium-2 columns">
         <div class="content">
-          <i class="fa fa-facebook-official fa-2x fBookIcon" aria-hidden="true"></i>
-          <i class="fa fa-twitter-square fa-2x twitIcon" aria-hidden="true"></i>
-          <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
-          <i class="fa fa-stack-overflow fa-2x stack" aria-hidden="true"></i>
-          <i class="fa fa-linkedin-square fa-2x linked" aria-hidden="true"></i>
         </div>
       </div>
+
     </div>
-  </div>
 
   <!-- spacing -->
     <div class="row">
@@ -108,21 +90,28 @@
     
     <div class="row">
       {{!-- skill button effect --}}
-      <div class="medium-5 columns">
+      <div class="medium-10 columns">
         <div class="card">
           <div class="content">
-            <h3>Skills</h3>
+            <h3 class="portText">Skills</h3>
           </div>
         </div>
       </div>
     </div> <!-- closing row -->
 
+    <!-- spacing -->
     <div class="row">
-      <div class="medium-9 columns portPadding">
+      <div class="medium-12 columns cardSpace">
+      </div>
+    </div> 
+
+    <div class="row">
+      <div class="medium-10 columns portPadding">
         <div class="card">
           <div class="content">
             <h3 class="portText">Portfolio</h3>
           </div>
+          <a href="/employee_edit_portfolio"><i class="fa fa-wrench fa-1x editButton" aria-hidden="true"></i></a>
         </div>
       </div>
     </div><!-- closing row -->
