@@ -12,6 +12,8 @@ body {
   color: #3A4750; }
 .row .instructions {
   color: #3A4750; }
+.row .space3 {
+  height: 15px; }
 
 .form-group .labels {
   color: #e63d00; }
