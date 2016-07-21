@@ -40,7 +40,7 @@ WEDNESDAY SCRUM
 - [ ] drop-down using foundation to populate employee skills to database.
 - [ ] create buttons from text of skills for current employee that have been retrieved from database.
 - [ ] upload resume and display (somehow) on profile
-- [ ] transfer test pages into handlebars while retrieving data (questions, option, and answers).
+- [X] transfer test pages into handlebars while retrieving data (questions, option, and answers).
 - [ ] complete CSS for each page -- Sorry Alex, still lots of work for you...
 - [ ] stretch ???
 - [ ] presentation...
