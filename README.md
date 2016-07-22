@@ -44,10 +44,10 @@ WEDNESDAY SCRUM
 - [ ] complete CSS for each page -- Sorry Alex, still lots of work for you...
 - [ ] stretch ???
 - [ ] presentation...
-- [ ] Logout Button
+- [x] Logout Button
 - [ ] Fix HTML test
 - [ ] Update database based on test results
-- [ ] social medie page
+- [x] social medie page
 - [ ] fix skills
 
 
