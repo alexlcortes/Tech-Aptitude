@@ -11,58 +11,54 @@
 <div id="container">
 
   <div class="two-third"> 
-
+    <a href = "/logout"><i class="fa fa-sign-out fa-3x editButton" aria-hidden="true"></i></a>
     <div class="row">
       <div class="medium-7 columns">
-            <h2 id="mainLogo"><img src="/assets/img/loginBackground/icon-clear-thinkers.jpg" style="color: #D72323" alt="lightBulb" height="60" width="60"> Tech Aptitude</h2>
+        <h2 id="mainLogo"><a href="/employee_profile"><img src="/assets/img/loginBackground/icon-clear-thinkers.jpg" style="color: #D72323" alt="lightBulb" height="60" width="60"></a>Tech Aptitude</h2>
       </div>
 
 <div style="clear:both"></div>
 
 <div>
-
-  <!-- section title -->
   <div class="row">
-    <div class="medium-4 medium-centered heading_bg"><h5>Update Information</h5></div>
-  </div>
-    <div class="row">
-      <div class="medium-10 columns">
-        <div class="card">
-          <div class="content">
-            <form action="/update_employee_profile?_method=PUT" class="TTWForm" method="post" novalidate=""> 
-            <div id="field1-container" class="field f_50">
-          {{#each user}}
-            <input type="hidden" name="id" value="{{this.id}}">
-            <label class="profileLabels" for="firstName">First Name</label>         
-            <input name="firstName" id="firstName" required="required" type="text" value="{{firstName}}">
-            <label class="profileLabels" for="lastName">Last Name</label>
-            <input name="lastName" id="lastName" required="required" type="text" value="{{lastName}}">
-            <label class="profileLabels" for="email">Email Address</label>
-            <input name="email" id="email" required="required" type="text" value="{{email}}">
-            <label class="profileLabels" for="phone">Phone Number:</label>
-            <input name="phone" id="phone" required="required" type="text" value="{{mobile_number}}">
-            <label class="profileLabels" for="address">Street Address</label>
-            <input name="address" id="address" required="required" type="text" value="{{street_address}}">
-            <label class="profileLabels" for="city">City</label>
-            <input name="city" id="city" required="required" type="text" value="{{city}}">
-            <label class="profileLabels" for="state">state</label>
-            <input name="state" id="state" required="required" type="text" value="{{state}}">
-            <label class="profileLabels" for="zip">Zip Code</label>
-            <input name="zip" id="zip" required="required" type="text" value="{{zip}}">
-          {{/each}}
-            </div>
-              <p><input type="submit" value="Submit"></p>
-            </form>
+    <div class="medium-10 columns">
+      <div class="card">
+        <div class="content">
+          <h5 class="medium-6 heading_bg">Update Profile Information</h5>
+          <form action="/update_employee_profile?_method=PUT" class="TTWForm" method="post" novalidate=""> 
+          <div id="field1-container" class="field f_50">
+        {{#each user}}
+          <input type="hidden" name="id" value="{{this.id}}">
+          <label class="profileLabels" for="firstName">First Name</label>         
+          <input name="firstName" id="firstName" required="required" type="text" value="{{firstName}}">
+          <label class="profileLabels" for="lastName">Last Name</label>
+          <input name="lastName" id="lastName" required="required" type="text" value="{{lastName}}">
+          <label class="profileLabels" for="email">Email Address</label>
+          <input name="email" id="email" required="required" type="text" value="{{email}}">
+          <label class="profileLabels" for="phone">Phone Number:</label>
+          <input name="phone" id="phone" required="required" type="text" value="{{mobile_number}}">
+          <label class="profileLabels" for="address">Street Address</label>
+          <input name="address" id="address" required="required" type="text" value="{{street_address}}">
+          <label class="profileLabels" for="city">City</label>
+          <input name="city" id="city" required="required" type="text" value="{{city}}">
+          <label class="profileLabels" for="state">state</label>
+          <input name="state" id="state" required="required" type="text" value="{{state}}">
+          <label class="profileLabels" for="zip">Zip Code</label>
+          <input name="zip" id="zip" required="required" type="text" value="{{zip}}">
+        {{/each}}
+          </div>
+            <p><input type="submit" value="Submit"></p>
+          </form>
 
-            <label for="image">Choose an image to upload as your profile picture:</label>
-            <input id="upload-input" type="file" name="uploads[]" multiple="multiple">
-            <a id="uploadButton" href="#" class="button">Upload Pic</a>
-            <div id="uploaded"></div>
-            </div>
+          <label for="image">Choose an image to upload as your profile picture:</label>
+          <input id="upload-input" type="file" name="uploads[]" multiple="multiple">
+          <a id="uploadButton" href="#" class="button">Upload Pic</a>
+          <div id="uploaded"></div>
           </div>
         </div>
       </div>
-    </div><!-- row -->
+    </div>
+  </div><!-- row -->
 </div>
 
 </div><!-- close two third -->
