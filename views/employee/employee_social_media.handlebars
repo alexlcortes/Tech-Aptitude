@@ -10,43 +10,50 @@
 <div id="container">
  
   <div class="two-third"> 
+  <a href = "/logout"><i class="fa fa-sign-out fa-3x editButton" aria-hidden="true"></i></a>  
 
+  <div class="row">
+      <div class="medium-7 columns">
+        <h2 id="mainLogo"><img src="/assets/img/loginBackground/icon-clear-thinkers.jpg" style="color: #D72323" alt="lightBulb" height="60" width="60"> Tech Aptitude</h2>   
+      </div>
+
+    </div>
 
   <!-- Social Media -->
+<div class="row">
+  <div class="medium-10 columns">
+    <div class="card">
+      <div class="content">
+        <h5 class="medium-6 heading_bg">Update Social Media</h5>
+        <form action="/add_social_media" method="post">
+          {{#each user}}
+           <fieldset class="form-group">
+            <label for="facebook">Facebook</label>
+            <input type="text" class="form-control" placeholder="Add Facebook" name="facebook" value="{{facebook}}">
+          </fieldset>
 
+          <fieldset class="form-group">
+            <label for="twitter">Twitter</label>
+            <input type="text" class="form-control" placeholder="Add Twitter" name="twitter" value="{{twitter}}">
+          </fieldset>
 
-<h1>Social Media</h1>
-<form action="/add_social_media" method="post">
+          <fieldset class="form-group">
+            <label for="github">Git Hub</label>
+            <input type="text" class="form-control" placeholder="Add Github" name="github" value="{{github}}">
+          </fieldset>
 
-<p>Please enter your scocial media links</p>
-  {{#each user}}
-   <fieldset class="form-group">
-    <label for="facebook">Facebook</label>
-    <input type="text" class="form-control" placeholder="Add Facebook" name="facebook" value="{{facebook}}">
-  </fieldset>
+           <fieldset class="form-group">
+            <label for="stackoverflow">Stack Overflow</label>
+            <input type="text" class="form-control" placeholder="Add Stack Overflow" name="stackoverflow" value="{{stackoverflow}}">
+          </fieldset>
 
-  <fieldset class="form-group">
-    <label for="twitter">Twitter</label>
-    <input type="text" class="form-control" placeholder="Add Twitter" name="twitter" value="{{twitter}}">
-  </fieldset>
-
-  <fieldset class="form-group">
-    <label for="github">Git Hub</label>
-    <input type="text" class="form-control" placeholder="Add Github" name="github" value="{{github}}">
-  </fieldset>
-
-   <fieldset class="form-group">
-    <label for="stackoverflow">Stack Overflow</label>
-    <input type="text" class="form-control" placeholder="Add Stack Overflow" name="stackoverflow" value="{{stackoverflow}}">
-  </fieldset>
-
-  <fieldset class="form-group">
-    <label for="linkedin">Linked In</label>
-    <input type="text" class="form-control" placeholder="Add Linked In" name="linkedin" value="{{linkedin}}">
-  </fieldset>
-  {{/each}}
-   <input type="submit" class="button" value="Add Social Media"/>
-</form>
+          <fieldset class="form-group">
+            <label for="linkedin">Linked In</label>
+            <input type="text" class="form-control" placeholder="Add Linked In" name="linkedin" value="{{linkedin}}">
+          </fieldset>
+          {{/each}}
+           <input type="submit" class="button" value="Add Social Media"/>
+        </form>
 
 
   </div><!-- close two third -->
@@ -55,25 +62,6 @@
       
 </div><!-- end containerPro -->
 
-
-  <div id="footer">
-
-    <!-- First Column -->
-      <div class="one-fourth">
-      </div>
-    
-    <!-- Second Column -->
-      <div class="one-fourth">
-      </div>
-    
-    <!-- Third Column -->
-      <div class="one-fourth">
-      </div>
-    
-    <!-- Fourth Column -->
-      <div class="one-fourth last">
-      </div>
-
-    <div style="clear:both"></div>
-    
-  </div> <!-- END footer -->
+<div id="footer">
+  <div style="clear:both"></div> 
+</div> <!-- END footer -->
