@@ -119,12 +119,15 @@ module.exports = function(app, passport) {
         res.render('employee/employee_edit_resume');
     });
 
-    app.get('/employee_edit_portfolo', isLoggedIn, function(req, res) {
+   app.get('/employee_edit_portfolio', function(req, res) {
         // load the edit_profile file
-        var userid = req.user.id;
-        orm.getPersonalData('users', userid, function(data) {
-        res.render('employee/employee_edit_profile', { user: data });
-        });
+        res.render('employee/employee_edit_portfolio');
+    });
+    app.post('/employee_edit_portfolio', function(req, res) {
+        // load the edit_profile file
+        console.log(req);
+        orm.updateEmployeePortfolio(req.body.title, req.body.startDate, req.body.endDate, req.body.description , req.body.skillsUsed, req.user.id, req.body.photourl)
+        res.redirect('/employee_profile')
     });
 
      app.get('/employee_social_media', function(req, res) {
