@@ -95,14 +95,11 @@ module.exports = function(app, passport) {
         // load the edit_profile file
         var userid = req.user.id;
         orm.getPersonalData('users', userid, function(data) {
-            console.log(data);
-            res.render('employee/employee_edit_profile', { user: data });
+        res.render('employee/employee_edit_profile', { user: data });
         });
     });
 
-    app.post('/update_employee_profile', isLoggedIn ,function(req,res) {
-    	console.log('DO I GET HERE');
-    	console.log(req);
+    app.post('/update_employee_profile', isLoggedIn ,function(req,res) {        
     	orm.updateEmployeeProfile('users', req.body.firstName, req.body.lastName, req.body.email, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.id)
     	res.redirect('/employee_profile')
     })
@@ -110,6 +107,27 @@ module.exports = function(app, passport) {
         // load the edit_profile file
         res.render('employee/employee_edit_resume');
     });
+     app.get('/employee_social_media', function(req, res) {
+        // load the employee_social_media file
+        var userid = req.user.id;
+        orm.getSocialMedia('social_media', userid, function(data) {
+            var userData = data;
+            console.log(userData);
+            res.render('employee/employee_social_media', { user: userData});
+        });
+        
+    });
+    app.post('/add_social_media', function(req, res) {
+        // load the employee_social_media file
+        console.log("BODY");
+        console.log(req.body);
+        console.log("USER:");
+        console.log(req.user);
+        orm.addSocialMedia('social_media', req.user.id, req.body.facebook, req.body.twitter, req.body.github, req.body.stackoverflow, req.body.linkedin);
+        res.render('employee/employee_social_media');
+    });
+
+
 
     //======================================
     // END OF EMPLOYEE

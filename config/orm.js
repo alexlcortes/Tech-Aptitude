@@ -74,7 +74,33 @@ var orm = {
                       //  else resolve(res);
                     }) //end of connection.query
           //  }) // end of return new Promise for getSkills
-    } // end of getSkills
+    }, // end of getSkills
+
+    addSocialMedia: function(table, empID, facebook, twitter, github, stackoverflow, linkedin) {
+       return new Promise(function(resolve, reject) {
+            var queryString = 'INSERT INTO tech_db.' + table + ' (userid, facebook, twitter, github, stackedoverflow, linkedin) VALUES (?, ?, ?, ?, ?, ?)';          
+            var values = [empID, facebook, twitter, github, stackoverflow, linkedin]; 
+            console.log(queryString);
+            console.log(values);
+            connection.query(queryString, values, function(err, res) {
+                   if (err) throw err;
+                   else resolve(res);
+                    // if (err) reject(err);
+                    // else resolve(res);
+                }) //end of connection.query
+        }) // end of return new Promise for addskill
+    }, // end of addSocialMedia 
+
+     getSocialMedia: function(table, userID, cb) {
+        var queryString = 'SELECT * FROM tech_db.' + table + ' WHERE userid = ' + userID;
+        console.log(queryString);
+        connection.query(queryString, function(err, res) {
+            if (err) throw err;
+            //console.log(res);
+            return cb(res);
+
+        }); // end of connection query
+    } // end of getSocialMedia
 
 }; // end of orm
 module.exports = orm;
