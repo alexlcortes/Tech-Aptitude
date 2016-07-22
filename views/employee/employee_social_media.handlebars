@@ -1,0 +1,79 @@
+<div class="header">
+
+    <div class="row">
+      <div class="medium-12 columns space2">
+      </div>
+    </div>
+    
+</div> 
+
+<div id="container">
+ 
+  <div class="two-third"> 
+
+
+  <!-- Social Media -->
+
+
+<h1>Social Media</h1>
+<form action="/add_social_media" method="post">
+
+<p>Please enter your scocial media links</p>
+  {{#each user}}
+   <fieldset class="form-group">
+    <label for="facebook">Facebook</label>
+    <input type="text" class="form-control" placeholder="Add Facebook" name="facebook2" value="{{facebook}}">
+  </fieldset>
+
+  <fieldset class="form-group">
+    <label for="twitter">Twitter</label>
+    <input type="text" class="form-control" placeholder="Add Twitter" name="twitter" value="{{twitter}}">
+  </fieldset>
+
+  <fieldset class="form-group">
+    <label for="github">Git Hub</label>
+    <input type="text" class="form-control" placeholder="Add Github" name="github" value="{{github}}">
+  </fieldset>
+
+   <fieldset class="form-group">
+    <label for="stackoverflow">Stack Overflow</label>
+    <input type="text" class="form-control" placeholder="Add Stack Overflow" name="stackoverflow" value="{{stackoverflow}}">
+  </fieldset>
+
+  <fieldset class="form-group">
+    <label for="linkedin">Linked In</label>
+    <input type="text" class="form-control" placeholder="Add Linked In" name="linkedin" value="{{linkedin}}">
+  </fieldset>
+  {{/each}}
+   <input type="submit" class="button" value="Add Social Media"/>
+</form>
+
+
+  </div><!-- close two third -->
+      
+<div style="clear:both; height: 40px"></div>
+      
+</div><!-- end containerPro -->
+
+
+  <div id="footer">
+
+    <!-- First Column -->
+      <div class="one-fourth">
+      </div>
+    
+    <!-- Second Column -->
+      <div class="one-fourth">
+      </div>
+    
+    <!-- Third Column -->
+      <div class="one-fourth">
+      </div>
+    
+    <!-- Fourth Column -->
+      <div class="one-fourth last">
+      </div>
+
+    <div style="clear:both"></div>
+    
+  </div> <!-- END footer -->
