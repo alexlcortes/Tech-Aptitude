@@ -43,6 +43,19 @@ var orm = {
 
     }, // end of updateEmployeeProfile
 
+    insertSkillLevel: function(skill, level, userID) {
+        console.log(title, startDate, endDate, desc, skills, userID, pic);
+        return new Promise(function(resolve, reject) {
+            var queryString = "INSERT INTO tech_db.skill_level ( skill_level,empID, skillsID ) values (?,?,?)"
+            console.log(queryString);
+            connection.query(queryString, [skill, userID, skill], function(err, res) {
+                if (err) console.log(err);
+                else resolve(res);
+            })
+        })
+
+    },
+
     addPhoto: function(table, userID, fileName, cb) {
         return new Promise(function(resolve, reject) {
                 var queryString = 'UPDATE tech_db.' + table + ' SET profile_img = ? where id = ?'

@@ -138,6 +138,12 @@ module.exports = function(app, passport) {
         res.render('skill_tests/html_test');
     });
 
+    app.get('/html_test_post', function(req, res) {
+        var userid = req.user.id;
+        orm.insertSkillLevel( 1 ,req.body.level, userid);
+        res.redirect('/employee_profile');
+    });
+
     //======================================
     // END OF Skill Tests
     //======================================
