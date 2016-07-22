@@ -1,21 +1,6 @@
 CREATE DATABASE tech_db;
 USE tech_db;
 
-CREATE TABLE employees
-
-(
-    id int NOT NULL AUTO_INCREMENT,
-    fname varchar(255) NOT NULL,
-    lname varchar(255) NOT NULL,
-    currently_searching boolean,
-    street_address varchar(50), 
-    city varchar(50),
-    state varchar(2),
-    zip INT (11),	
-    PRIMARY KEY (id)
-);
-
-
 CREATE TABLE emp_skills
 (
     id int not null auto_increment,
@@ -52,6 +37,17 @@ CREATE TABLE test
     OPT4 varchar (100),
     ANSWER varchar(100),
     PRIMARY KEY (id)
+);
+
+CREATE TABLE portfolio
+(
+id INT NOT NULL,
+title varchar (100),
+startDate varchar (100),
+endDate varchar (100),
+description varchar (1000),
+skillsUsed varchar(100),
+photo varchar(500) DEFAULT 'http://lorempixel.com/output/abstract-q-c-200-200-9.jpg'
 );
 
 
