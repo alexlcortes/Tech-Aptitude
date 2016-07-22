@@ -80,5 +80,4 @@ CREATE TABLE social_media
     github varchar(100),
     stackedoverflow varchar(100),
     linkedin varchar(100),
-    PRIMARY KEY (userid)
 );
