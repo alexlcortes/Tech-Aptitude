@@ -136,7 +136,7 @@ var orm = {
 
     addSocialMedia: function(table, empID, facebook, twitter, github, stackoverflow, linkedin) {
         return new Promise(function(resolve, reject) {
-                var queryString = 'UPDATE tech_db.' + table + ' SET facebook = ? , twitter = ? , github = ? , stackedoverflow = ? , linkedin = ? where userid = ?';
+                var queryString = 'UPDATE tech_db.' + table + ' SET facebook = ? , twitter = ? , github = ? , stackoverflow = ? , linkedin = ? where userid = ?';
                 var values = [facebook, twitter, github, stackoverflow, linkedin, empID];
                 console.log(queryString);
                 console.log(values);
@@ -149,6 +149,8 @@ var orm = {
 
     getSocialMedia: function(table, userID, cb) {
         var queryString = 'SELECT * FROM tech_db.' + table + ' WHERE userid = ' + userID;
+        console.log(queryString);
+        
         connection.query(queryString, function(err, res) {
             if (err) throw err;
             return cb(res);
