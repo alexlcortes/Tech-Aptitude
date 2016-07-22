@@ -119,9 +119,13 @@
             <ul class="vertical dropdown menu" data-dropdown-menu style="max-width: 120px;">
               <li  class="is-dropdown-submenu-parent"><a href="#">Skill Options...</a>
                 <ul class="menu">
-                <li><a href="#">BullCrap</a></li>
                   {{#each skillOpt}}
-                  <li><a href="/addSkill">{{skill}}</a></li>
+                  <li>
+                    <form action="/add_skill" method="post">
+                    <input type="hidden" name="skill" value="{{skill}}">                   
+                      <button type="submit">{{skill}}</button>
+                    </form>
+                  </li>
                   {{/each}}
                 </ul>
               </li>

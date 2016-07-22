@@ -79,24 +79,24 @@ module.exports = function(app, passport) {
         orm.getPersonalData('users', userid, function(data) {
             //console.log(data);
             var userData = data;
-            console.log(userData);
+            //console.log(userData);
 
             orm.skillOptions(userid, function(data) {
                 var skillOptions = data;
-                console.log(skillOptions);
+                //console.log(skillOptions);
                                 
                 orm.getSkills(userid, function(data) {
                     var skillData = data;
-                    console.log(skillData);
+                    //console.log(skillData);
 
 
                     orm.getPortfolio(userid, function(data) {
                         var portData = data;
-                        console.log(portData);
+                        //console.log(portData);
 
                         orm.getSocialData('social_media', userid,  function(data) {
                             var socialData = data;
-                            console.log(socialData);
+                            //console.log(socialData);
                         
 
                         res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillOptions, portfolio: portData, social: socialData })
@@ -171,9 +171,8 @@ module.exports = function(app, passport) {
         res.render('skill_tests/html_test');
     });
 
-    app.post('/addSkill', isLoggedIn, function(req, res) {
-        console.log(req);
-        orm.addSkill('skills', req.body.id)
+    app.post('/add_skill', isLoggedIn, function(req, res) {
+        orm.addSkill('emp_skills', req.user.id, req.body.skill)
     res.redirect('/employee_profile')
     })
 
