@@ -170,11 +170,16 @@ module.exports = function(app, passport) {
         // load the edit_profile file
         res.render('skill_tests/html_test');
     });
+    
+    app.post('/html_test_post',isLoggedIn, function(req, res) {
+        var userid = req.user.id;
+        orm.updateEmployeeSkills(userid, 'HTML' ,req.body.level);
+    });
 
     app.post('/addSkill', isLoggedIn, function(req, res) {
         console.log(req);
         orm.addSkill('skills', req.body.id)
-    res.redirect('/employee_profile')
+        res.redirect('/employee_profile')
     })
 
     //======================================

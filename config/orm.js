@@ -15,7 +15,7 @@ var orm = {
         }); // end of connection query
     }, // end of getPersonalData
 
-        getSocialData: function(table, userID, cb) {
+    getSocialData: function(table, userID, cb) {
         //var queryString = 'select * from tech_db.' + table + ' where id = ' + userID;
         var queryString = 'SELECT * FROM tech_db.' + table + ' WHERE userid = ' + userID;
         console.log(queryString);
@@ -54,6 +54,18 @@ var orm = {
             })
         })
     }, // end of updateEmployeeProfile
+
+    updateEmployeeSkills: function(empID, skill, skillLevel) {
+        return new Promise(function(resolve, reject) {
+
+            var queryString = 'UPDATE tech_db.skill_level SET HTML = ? WHERE userid = ?'
+            console.log(queryString);
+            connection.query(queryString, [ skillLevel, empID], function(err, res) {
+                if (err) throw err;
+                 else resolve(res);
+            }); //end of connection.query
+        }); // end of return new Promise for getSkills
+    },
 
     addPhoto: function(table, userID, fileName, cb) {
         return new Promise(function(resolve, reject) {

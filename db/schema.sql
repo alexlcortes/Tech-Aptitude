@@ -16,14 +16,6 @@ CREATE TABLE skills
     primary key (id) 
 );
 
-CREATE TABLE skill_level
-(
-    id INT NOT NULL AUTO_INCREMENT,
-    skill_level varchar(10),
-    empID INT NOT NULL,
-    skillsID INT NOT NULL,
-    PRIMARY KEY (id)
-);
 
 CREATE TABLE test
 (
@@ -80,4 +72,14 @@ CREATE TABLE social_media
     github varchar(100),
     stackedoverflow varchar(100),
     linkedin varchar(100),
+);
+
+CREATE TABLE skill_level 
+(
+    userid INT(11) NOT NULL,
+    HTML varchar(100),
+    CSS varchar(100),
+    JavaScript varchar(100),
+    Node varchar(100),
+    JQuery varchar(100),
 );

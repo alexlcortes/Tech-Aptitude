@@ -92,7 +92,7 @@ var game = {
     timer = setInterval(game.countdown, 1000);
     panel.html('<h2>' + questions[this.currentQuestion].question + '</h2>' );
     for (var i = 0; i<questions[this.currentQuestion].answers.length; i++){
-      panel.append('<button class="answer-button button success id="button"' + 'data-name="' + questions[this.currentQuestion].answers[i] + '">' + questions[this.currentQuestion].answers[i]+ '</button>');
+      panel.append('<button class="answer-button button success" id="button"' + 'data-name="' + questions[this.currentQuestion].answers[i] + '">' + questions[this.currentQuestion].answers[i]+ '</button>');
     }
   },
   nextQuestion: function(){
@@ -122,14 +122,17 @@ var game = {
     panel.html('<h5 class="heading_bg">Thank you for completing the HTML Test. Your results are displayed below. </h5>');
     $('#counter-number').html(game.counter);
         if (game.correct < 4) {
-      panel.html('<h5class="heading_bg"> Congratulations you are a Junior HTML Developer! </h5>')
+      panel.html('<h5 class="heading_bg"> Congratulations you are a Junior HTML Developer! </h5>' + '<br> <button class="button success"><a href="/employee_profile">Return to Profile</a></button>')
+      game.passOnInfo({level: 'Junior'});
     }; 
 
      if (game.correct == 5) {
-      panel.html('<h2> Congratulations you are a Mid-Level HTML Developer! </h2>')
+      panel.html('<h2> Congratulations you are a Mid-Level HTML Developer! </h2>' + '<br> <button class="button success"><a href="/employee_profile">Return to Profile</a></button>')
+      game.passOnInfo({level: 'Mid-Level'});
     }; 
      if (game.correct > 6) {
-      panel.html('<h5class="heading_bg"> Congratulations you are a Senior HTML Developer! </h5>')
+      panel.html('<h5 class="heading_bg"> Congratulations you are a Senior HTML Developer! </h5>' + '<br> <button class="button success"><a href="/employee_profile">Return to Profile</a></button>')
+      game.passOnInfo({level: 'Senior'});
     };
     // panel.append('<h3>Incorrect Answers: ' + game.incorrect + '</h3>');
     // panel.append('<h3>Unanswered: ' + (questions.length - (game.incorrect + game.correct)) + '</h3>');
@@ -178,6 +181,12 @@ var game = {
     this.correct = 0;
     this.incorrect = 0;
     this.loadQuestion();
+  },
+
+  passOnInfo: function(level){
+    var currentURL = window.location.origin;
+    $.post(currentURL + "/html_test_post", level, function(data){
+      });
   }
 };
 

@@ -73,6 +73,10 @@ module.exports = function(passport) {
                         connection.query(insertQuery, [rows.insertId], function(err, rows){
                             //this adds userId into 
                         })
+                        insertQuery = 'INSERT INTO skill_level ( userid, HTML, CSS, JavaScript, Node, JQuery ) values (?,?,?,?,?,?)'
+                        connection.query(insertQuery, [rows.insertId, "Untested", "Untested", "Untested", "Untested", "Untested"], function(err, rows){
+                            //this adds userId into 
+                        })
                        // connection.query('INSERT INTO social_media (userid) values ('+ rows.insertID +')';)
 
                         return done(null, newUserMysql);
