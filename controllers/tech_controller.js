@@ -76,7 +76,7 @@ module.exports = function(app, passport) {
 
     app.get('/employee_profile', isLoggedIn, function(req, res) {
         var userid = req.user.id;
-        orm.getPersonalData('users', userid, function(data) {
+        orm.getPersonalData('users', 'social_media', userid, function(data) {
             //console.log(data);
             var userData = data;
             console.log(userData);
@@ -100,7 +100,7 @@ module.exports = function(app, passport) {
     app.get('/employee_edit_profile', isLoggedIn, function(req, res) {
         // load the edit_profile file
         var userid = req.user.id;
-        orm.getPersonalData('users', userid, function(data) {
+        orm.getPersonalData('users', 'social_media', userid, function(data) {
         res.render('employee/employee_edit_profile', { user: data });
         });
     });
@@ -114,23 +114,23 @@ module.exports = function(app, passport) {
         // load the edit_profile file
         res.render('employee/employee_edit_resume');
     });
-     app.get('/employee_social_media', function(req, res) {
+
+    // SOCIAL MEDIA
+    app.get('/employee_social_media', function(req, res) {
         // load the employee_social_media file
         var userid = req.user.id;
         orm.getSocialMedia('social_media', userid, function(data) {
             var userData = data;
-            console.log(userData);
+            // load the employee_social_media file
             res.render('employee/employee_social_media', { user: userData});
         });
         
     });
+
+    // SOCIAL MEDIA
     app.post('/add_social_media', function(req, res) {
-        // load the employee_social_media file
-        console.log("BODY");
-        console.log(req.body);
-        console.log("USER:");
-        console.log(req.user);
         orm.addSocialMedia('social_media', req.user.id, req.body.facebook, req.body.twitter, req.body.github, req.body.stackoverflow, req.body.linkedin);
+        // load the employee_social_media file
         res.render('employee/employee_social_media');
     });
 
@@ -197,8 +197,8 @@ module.exports = function(app, passport) {
         // store all uploads in the /uploads directory
         form.uploadDir = path.join(__dirname, '../public/assets/img_profile');
         form.keepExtensions = true;
-        // every time a file has been uploaded successfully,
-        // rename it to it's orignal name
+        // every time a file has been uploaded successfully, rename it
+        // to the userid_firstname_lastname
         form.on('file', function(field, file) {
             var ext = file.name.split('.').pop();
             file.name = req.user.id + '_' + req.user.firstName + '_' + req.user.lastName + '.' + ext;

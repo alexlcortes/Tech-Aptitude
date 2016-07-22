@@ -5,9 +5,9 @@ var connection = mysql.createConnection(dbconfig.connection);
 
 var orm = {
 
-    getPersonalData: function(table, userID, cb) {
-
-        var queryString = 'select * from tech_db.' + table + ' where id = ' + userID;
+    getPersonalData: function(table1, table2, userID, cb) {
+        //var queryString = 'select * from tech_db.' + table + ' where id = ' + userID;
+        var queryString = 'SELECT * FROM tech_db.' + table1 + ' AS u INNER JOIN tech_db.' + table2 + ' AS sm ON (u.id = sm.userid) WHERE u.id = ' + userID;
         console.log(queryString);
         connection.query(queryString, function(err, res) {
             if (err) throw err;
