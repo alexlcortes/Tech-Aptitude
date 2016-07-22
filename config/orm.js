@@ -23,7 +23,7 @@ var orm = {
             if (street_address == ''){
                 street_address = null;
             }
-            console.log(table + ',' + firstName + ',' + lastName + ',' + street_address + ',' + city + ',' + state + ',' + zip);
+ 
             var queryString = 'UPDATE tech_db.' + table + ' SET firstName = ?, lastName = ?, email = ?, mobile_number = ?, street_address = ?, city = ?, state = ?, zip = ? where id = ?'
             console.log(queryString);
             connection.query(queryString, [firstName, lastName, email, phone, street_address, city, state, zip, userID], function(err, res) {

@@ -106,7 +106,7 @@ module.exports = function(app, passport) {
     });
 
     app.post('/update_employee_profile', isLoggedIn, function(req,res) {        
-    	orm.updateEmployeeProfile('users', req.body.firstName, req.body.lastName, req.body.email, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.id);
+    	orm.updateEmployeeProfile('users', req.body.firstName, req.body.lastName, req.body.email, req.body.phone, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.id);
     	res.redirect('/employee_profile');
     })
 
