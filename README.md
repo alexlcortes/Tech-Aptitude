@@ -47,7 +47,7 @@ WEDNESDAY SCRUM
 - [x] Update database based on test results
 - [x] social medie page
 
-Issues in most recent pull/merge
+Issues in most recent pull/merge after making new account:
 - [ ] skills were pre-loaded in new account
 - [ ] unable to edit portfolio once entered
 - [ ] return to profile button after test does not work
