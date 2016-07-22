@@ -146,6 +146,7 @@ module.exports = function(app, passport) {
         var userid = req.user.id;
         orm.getSocialMedia('social_media', userid, function(data) {
             var userData = data;
+            console.log(userData);
             // load the employee_social_media file
             res.render('employee/employee_social_media', { user: userData});
         });
