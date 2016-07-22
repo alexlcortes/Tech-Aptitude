@@ -1,6 +1,6 @@
 // HTML
 var panel = $('#quiz-area');
-var countStartNumber = 30;
+var countStartNumber = 15;
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -72,7 +72,6 @@ var questions = [{
   correctAnswer: "< meter >"
 }]; 
   
-
 var game = {
   questions:questions,
   currentQuestion:0,
