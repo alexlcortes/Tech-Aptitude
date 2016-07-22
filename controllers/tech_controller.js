@@ -97,9 +97,13 @@ module.exports = function(app, passport) {
                         orm.getSocialData('social_media', userid,  function(data) {
                             var socialData = data;
                             console.log(socialData);
-                        
 
-                        res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillOptions, portfolio: portData, social: socialData })
+                            orm.getSocialData( userid,  function(data) {
+                                var skillLevelsData = data;
+                                console.log(skillLevels);
+
+                                    res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillOptions, portfolio: portData, social: socialData, skillLevels: skillLevelsData })
+                            })
                         })
                     // get the user out of session and pass to template
                     })

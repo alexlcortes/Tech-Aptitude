@@ -135,6 +135,14 @@ var orm = {
         }); // end of connection query
     }, // end of getSocialMedia
 
+    getSkillLevels: function( userID, cb) {
+        var queryString = 'SELECT * FROM tech_db.skill_level WHERE userid = ' + userID;
+        connection.query(queryString, function(err, res) {
+            if (err) throw err;
+            return cb(res);
+        }); // end of connection query
+    }, // end of getSocialMedia
+
      getPortfolio: function(empID, cb) {
         var queryString = 'SELECT * from tech_db.portfolio where id = ?';
         connection.query(queryString, [empID], function(err, res) {
