@@ -50,4 +50,9 @@ WEDNESDAY SCRUM
 - [x] social medie page
 - [ ] fix skills
 
+Issues in most recent pull/merge
+- [ ] skills were pre-loaded in new account
+- [ ] unable to edit portfolio once entered
+- [ ] return to profile button after test does not work
+
 
