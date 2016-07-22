@@ -89,10 +89,12 @@ module.exports = function(app, passport) {
                     var skillData = data;
                     console.log(skillData);
 
+
                     orm.getPortfolio(userid, function(data) {
                         var portData = data;
                         console.log(portData);
                         res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillData, portfolio: portData })
+
                     // get the user out of session and pass to template
                     })
                 })
@@ -110,7 +112,7 @@ module.exports = function(app, passport) {
     });
 
     app.post('/update_employee_profile', isLoggedIn, function(req,res) {        
-    	orm.updateEmployeeProfile('users', req.body.firstName, req.body.lastName, req.body.email, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.id);
+    	orm.updateEmployeeProfile('users', req.body.firstName, req.body.lastName, req.body.email, req.body.phone, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.id);
     	res.redirect('/employee_profile');
     })
 
