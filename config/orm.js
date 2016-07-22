@@ -157,7 +157,7 @@ var orm = {
 
 
     getSkillLevels: function( userID, cb) {
-        var queryString = 'SELECT * FROM tech_db.skill_level WHERE userid = ' + userID;
+        var queryString = 'SELECT * FROM tech_db.skill_level WHERE empID = ' + userID;
         connection.query(queryString, function(err, res) {
             if (err) throw err;
             return cb(res);

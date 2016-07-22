@@ -94,18 +94,13 @@ module.exports = function(app, passport) {
                         var portData = data;
                         //console.log(portData);
 
-                        orm.getSocialData('social_media', userid,  function(data) {
+                        orm.getSocialMedia('social_media', userid,  function(data) {
                             var socialData = data;
-<<<<<<< HEAD
                             console.log(socialData);
-=======
-                            //console.log(socialData);
-                        
->>>>>>> james-working
 
-                            orm.getSocialData( userid,  function(data) {
+                            orm.getSkillLevels( userid,  function(data) {
                                 var skillLevelsData = data;
-                                console.log(skillLevels);
+                                console.log(skillLevelsData);
 
                                     res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillOptions, portfolio: portData, social: socialData, skillLevels: skillLevelsData })
                             })
