@@ -89,7 +89,7 @@ module.exports = function(app, passport) {
                     var skillData = data;
                     console.log(skillData);
                 
-                    res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillData })
+                    res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillOptions })
                     // get the user out of session and pass to template
                 })
             })
