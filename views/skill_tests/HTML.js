@@ -1,6 +1,6 @@
 // HTML
 var panel = $('#quiz-area');
-var countStartNumber = 30;
+var countStartNumber = 15;
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -111,9 +111,9 @@ var game = {
     // panel.append('<img src="' + questions[this.currentQuestion].image + '" />');
 
     if (game.currentQuestion === questions.length - 1){
-      setTimeout(game.results, 3 * 1000);
+      setTimeout(game.results, 1000);
     } else {
-      setTimeout(game.nextQuestion, 3 * 1000);
+      setTimeout(game.nextQuestion, 1000);
     }
   },
   results: function() {
@@ -153,9 +153,9 @@ var game = {
     // panel.append('<img src="' + questions[game.currentQuestion].image + '" />');
 
     if (game.currentQuestion === questions.length - 1){
-      setTimeout(game.results, 3 * 1000);
+      setTimeout(game.results, 1000);
     } else {
-      setTimeout(game.nextQuestion, 3 * 1000);
+      setTimeout(game.nextQuestion, 1000);
     }
   },
   answeredCorrectly: function(){
@@ -165,9 +165,9 @@ var game = {
     // panel.append('<img src="' + questions[game.currentQuestion].image + '" />');
 
     if (game.currentQuestion === questions.length - 1){
-      setTimeout(game.results, 3 * 1000);
+      setTimeout(game.results, 1000);
     } else {
-      setTimeout(game.nextQuestion, 3 * 1000);
+      setTimeout(game.nextQuestion, 1000);
     }
   },
   //would not want a reset

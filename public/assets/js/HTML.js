@@ -1,6 +1,6 @@
 // HTML
 var panel = $('#quiz-area');
-var countStartNumber = 30;
+var countStartNumber = 15;
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -18,7 +18,7 @@ $(document).on('click', '.answer-button', function(e) {
 });
 
 $(document).on('click', '#start', function(e) {
-  $('#subwrapper').prepend('<h2>Time Remaining: <span id="counter-number">30</span> Seconds</h2>');
+  $('#subwrapper').prepend('<h2>Time Remaining: <span id="counter-number">15</span> Seconds</h2>');
   game.loadQuestion();
 });
 
@@ -111,9 +111,9 @@ var game = {
     // panel.append('<img src="' + questions[this.currentQuestion].image + '" />');
 
     if (game.currentQuestion === questions.length - 1){
-      setTimeout(game.results, 3 * 1000);
+      setTimeout(game.results, 1000);
     } else {
-      setTimeout(game.nextQuestion, 3 * 1000);
+      setTimeout(game.nextQuestion, 1000);
     }
   },
   results: function() {
@@ -124,7 +124,7 @@ var game = {
         if (game.correct < 4) {
       panel.html('<h2> Congratulations you are a Junior HTML Developer! </h2>')
     }; 
-     if (game.correct = 5) {
+     if (game.correct == 5) {
       panel.html('<h2> Congratulations you are a Mid-Level HTML Developer! </h2>')
     }; 
      if (game.correct > 6) {
@@ -153,9 +153,9 @@ var game = {
     // panel.append('<img src="' + questions[game.currentQuestion].image + '" />');
 
     if (game.currentQuestion === questions.length - 1){
-      setTimeout(game.results, 3 * 1000);
+      setTimeout(game.results,  1000);
     } else {
-      setTimeout(game.nextQuestion, 3 * 1000);
+      setTimeout(game.nextQuestion,  1000);
     }
   },
   answeredCorrectly: function(){
@@ -165,9 +165,9 @@ var game = {
     // panel.append('<img src="' + questions[game.currentQuestion].image + '" />');
 
     if (game.currentQuestion === questions.length - 1){
-      setTimeout(game.results, 3 * 1000);
+      setTimeout(game.results,1000);
     } else {
-      setTimeout(game.nextQuestion, 3 * 1000);
+      setTimeout(game.nextQuestion,  1000);
     }
   },
   //would not want a reset
