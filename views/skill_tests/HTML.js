@@ -72,7 +72,6 @@ var questions = [{
   correctAnswer: "< meter >"
 }]; 
   
-
 var game = {
   questions:questions,
   currentQuestion:0,
