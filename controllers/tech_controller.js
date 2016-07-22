@@ -126,8 +126,6 @@ module.exports = function(app, passport) {
         res.render('employee/employee_edit_portfolio');
     });
     app.post('/employee_edit_portfolio', function(req, res) {
-        // load the edit_profile file
-        console.log(req);
         orm.updateEmployeePortfolio(req.body.title, req.body.startDate, req.body.endDate, req.body.description , req.body.skillsUsed, req.user.id, req.body.photourl)
         res.redirect('/employee_profile')
     });
@@ -168,6 +166,7 @@ module.exports = function(app, passport) {
     });
 
     app.post('/addSkill', isLoggedIn, function(req, res) {
+        console.log(req);
         orm.addSkill('skills', req.body.id)
     res.redirect('/employee_profile')
     })
