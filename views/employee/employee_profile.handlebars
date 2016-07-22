@@ -11,7 +11,7 @@
   <div class="two-third">
     <div class="row">
       <div class="medium-7 columns">
-        <h2 id="mainLogo"><img src="/assets/img/loginBackground/icon-clear-thinkers.jpg" style="color: #D72323" alt="lightBulb" height="60" width="60"> Tech Aptitude</h2>
+        <h2 id="mainLogo"><img src="/assets/img/loginBackground/icon-clear-thinkers.jpg" style="color: #D72323" alt="lightBulb" height="60" width="60"> Tech Aptitude</h2>   <a href = "/logout" class="button">LOGOUT !!! I NEED STYLED AND PLACED ALEX!!!</a>
       </div>
     </div>
 
@@ -39,7 +39,7 @@
                 <div class="medium-11 medium-centered columns">
 
                   <!-- social icons -->
-                  {{#each user}}
+                  {{#each social}}
                   {{#if facebook.length}}
                     <a href="{{facebook}}" target="_blank"><i class="fa fa-facebook-official fa-2x fBookIcon" aria-hidden="true"></i></a>
                   {{/if}}
@@ -121,7 +121,7 @@
                 <ul class="menu">
                 <li><a href="#">BullCrap</a></li>
                   {{#each skillOpt}}
-                  <li><a href="#">{{skill}}</a></li>
+                  <li><a href="/addSkill">{{skill}}</a></li>
                   {{/each}}
                 </ul>
               </li>

@@ -5,9 +5,19 @@ var connection = mysql.createConnection(dbconfig.connection);
 
 var orm = {
 
-    getPersonalData: function(table1, table2, userID, cb) {
+    getPersonalData: function(table, userID, cb) {
+        var queryString = 'select * from tech_db.' + table + ' where id = ' + userID;
+        // var queryString = 'SELECT * FROM tech_db.' + table1 + ' AS u INNER JOIN tech_db.' + table2 + ' AS sm ON (u.id = sm.userid) WHERE u.id = ' + userID;
+        console.log(queryString);
+        connection.query(queryString, function(err, res) {
+            if (err) throw err;
+            return cb(res);
+        }); // end of connection query
+    }, // end of getPersonalData
+
+        getSocialData: function(table, userID, cb) {
         //var queryString = 'select * from tech_db.' + table + ' where id = ' + userID;
-        var queryString = 'SELECT * FROM tech_db.' + table1 + ' AS u INNER JOIN tech_db.' + table2 + ' AS sm ON (u.id = sm.userid) WHERE u.id = ' + userID;
+        var queryString = 'SELECT * FROM tech_db.' + table + ' WHERE userid = ' + userID;
         console.log(queryString);
         connection.query(queryString, function(err, res) {
             if (err) throw err;
@@ -94,8 +104,8 @@ var orm = {
 
     addSocialMedia: function(table, empID, facebook, twitter, github, stackoverflow, linkedin) {
        return new Promise(function(resolve, reject) {
-            var queryString = 'INSERT INTO tech_db.' + table + ' (userid, facebook, twitter, github, stackedoverflow, linkedin) VALUES (?, ?, ?, ?, ?, ?)';          
-            var values = [empID, facebook, twitter, github, stackoverflow, linkedin]; 
+            var queryString = 'UPDATE tech_db.' + table + ' SET facebook = ? , twitter = ? , github = ? , stackedoverflow = ? , linkedin = ? where userid = ?';          
+            var values = [facebook, twitter, github, stackoverflow, linkedin, empID]; 
             console.log(queryString);
             console.log(values);
             connection.query(queryString, values, function(err, res) {

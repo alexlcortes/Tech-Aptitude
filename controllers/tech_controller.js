@@ -76,7 +76,7 @@ module.exports = function(app, passport) {
 
     app.get('/employee_profile', isLoggedIn, function(req, res) {
         var userid = req.user.id;
-        orm.getPersonalData('users', 'social_media', userid, function(data) {
+        orm.getPersonalData('users', userid, function(data) {
             //console.log(data);
             var userData = data;
             console.log(userData);
@@ -94,8 +94,13 @@ module.exports = function(app, passport) {
                         var portData = data;
                         console.log(portData);
 
-                        res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillOptions, portfolio: portData })
+                        orm.getSocialData('social_media', userid,  function(data) {
+                            var socialData = data;
+                            console.log(socialData);
+                        
 
+                        res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillOptions, portfolio: portData, social: socialData })
+                        })
                     // get the user out of session and pass to template
                     })
                 })
@@ -107,7 +112,7 @@ module.exports = function(app, passport) {
     app.get('/employee_edit_profile', isLoggedIn, function(req, res) {
         // load the edit_profile file
         var userid = req.user.id;
-        orm.getPersonalData('users', 'social_media', userid, function(data) {
+        orm.getPersonalData('users', userid, function(data) {
         res.render('employee/employee_edit_profile', { user: data });
         });
     });
@@ -145,9 +150,10 @@ module.exports = function(app, passport) {
 
     // SOCIAL MEDIA
     app.post('/add_social_media', function(req, res) {
+        console.log(req.body);
         orm.addSocialMedia('social_media', req.user.id, req.body.facebook, req.body.twitter, req.body.github, req.body.stackoverflow, req.body.linkedin);
         // load the employee_social_media file
-        res.render('employee/employee_social_media');
+        res.redirect('/employee_profile');
     });
 
 
