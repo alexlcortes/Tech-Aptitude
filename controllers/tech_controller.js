@@ -82,15 +82,21 @@ module.exports = function(app, passport) {
             console.log(userData);
 
             orm.skillOptions(userid, function(data) {
-                                var skillOptions = data;
-                                console.log(skillOptions);
+                var skillOptions = data;
+                console.log(skillOptions);
                                 
                 orm.getSkills(userid, function(data) {
                     var skillData = data;
                     console.log(skillData);
-                
-                    res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillData })
+
+
+                    orm.getPortfolio(userid, function(data) {
+                        var portData = data;
+                        console.log(portData);
+                        res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillData, portfolio: portData })
+
                     // get the user out of session and pass to template
+                    })
                 })
             })
         });
@@ -105,14 +111,25 @@ module.exports = function(app, passport) {
         });
     });
 
-    app.post('/update_employee_profile', isLoggedIn ,function(req,res) {        
-    	orm.updateEmployeeProfile('users', req.body.firstName, req.body.lastName, req.body.email, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.id);
+    app.post('/update_employee_profile', isLoggedIn, function(req,res) {        
+    	orm.updateEmployeeProfile('users', req.body.firstName, req.body.lastName, req.body.email, req.body.phone, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.id);
     	res.redirect('/employee_profile');
     })
 
     app.get('/employee_edit_resume', function(req, res) {
         // load the edit_profile file
         res.render('employee/employee_edit_resume');
+    });
+
+    app.get('/employee_edit_portfolio', function(req, res) {
+        // load the edit_profile file
+        res.render('employee/employee_edit_portfolio');
+    });
+    app.post('/employee_edit_portfolio', function(req, res) {
+        // load the edit_profile file
+        console.log(req);
+        orm.updateEmployeePortfolio(req.body.title, req.body.startDate, req.body.endDate, req.body.description , req.body.skillsUsed, req.user.id, req.body.photourl)
+        res.redirect('/employee_profile')
     });
 
     // SOCIAL MEDIA
@@ -144,7 +161,7 @@ module.exports = function(app, passport) {
     // Skills & Skill Tests ================
     // =====================================
 
-    app.get('/html_test', function(req, res) {
+    app.get('/html_test',isLoggedIn, function(req, res) {
         // load the edit_profile file
         res.render('skill_tests/html_test');
     });

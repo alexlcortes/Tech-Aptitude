@@ -21,6 +21,8 @@ body {
 	}
 	.button {
 		background-color: $sb;
+		padding: 15px;
+		margin: 5px;
 	}
 	.heading_bg {
 		color: $sb;
@@ -31,6 +33,10 @@ body {
 	.space3 {
 		height: 15px;
 	}
+}
+
+.answer-button {
+	color: #6D739D;
 }
 
 .form-group {
@@ -94,7 +100,6 @@ a {
 .contactIcons2 {
 	color: $cb;
 }
-
 
 .card {
 	overflow: hidden;
