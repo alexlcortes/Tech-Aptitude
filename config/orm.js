@@ -15,7 +15,7 @@ var orm = {
         }); // end of connection query
     }, // end of getPersonalData
 
-    updateEmployeeProfile: function(table, firstName, lastName, email, street_address, city, state, zip, userID, cb) {
+    updateEmployeeProfile: function(table, firstName, lastName, email, phone, street_address, city, state, zip, userID, cb) {
         return new Promise(function(resolve, reject) {
             if (zip == '') {
                 zip = null;
@@ -24,9 +24,9 @@ var orm = {
                 street_address = null;
             }
             console.log(table + ',' + firstName + ',' + lastName + ',' + street_address + ',' + city + ',' + state + ',' + zip);
-            var queryString = 'UPDATE tech_db.' + table + ' SET firstName = ?, lastName = ?, email = ?, street_address = ?, city = ?, state = ?, zip = ? where id = ?'
+            var queryString = 'UPDATE tech_db.' + table + ' SET firstName = ?, lastName = ?, email = ?, mobile_number = ?, street_address = ?, city = ?, state = ?, zip = ? where id = ?'
             console.log(queryString);
-            connection.query(queryString, [firstName, lastName, email, street_address, city, state, zip, userID], function(err, res) {
+            connection.query(queryString, [firstName, lastName, email, phone, street_address, city, state, zip, userID], function(err, res) {
                 if (err) reject(err);
                 else resolve(res);
             })
@@ -70,7 +70,7 @@ var orm = {
 
     skillOptions: function(userID, cb){
        // return new Promise(function(resolve, reject) {
-            var queryString = 'select skill from tech_db.skills where skill not in (select skill from tech_db.skills s left  join tech_db.emp_skills e on s.id = e.skillID where empID = ' + userID + ')';
+            var queryString = 'select skill from tech_db.skills where skill not in (select skill from tech_db.skills s left join tech_db.emp_skills e on s.id = e.skillID where empID = ' + userID + ')';
             console.log(queryString);
             connection.query(queryString, function(err, res) {
             if (err) throw err;
