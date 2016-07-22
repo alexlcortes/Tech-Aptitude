@@ -7,13 +7,18 @@ body {
 .row .signUpLogo {
   color: #e63d00; }
 .row .button {
-  background-color: #3A4750; }
+  background-color: #3A4750;
+  padding: 15px;
+  margin: 5px; }
 .row .heading_bg {
   color: #3A4750; }
 .row .instructions {
   color: #3A4750; }
 .row .space3 {
   height: 15px; }
+
+.answer-button {
+  color: #6D739D; }
 
 .form-group .labels {
   color: #e63d00; }
