@@ -70,8 +70,9 @@ module.exports = function(passport) {
                     connection.query(insertQuery,[newUserMysql.email, newUserMysql.password, newUserMysql.firstName, newUserMysql.lastName],function(err, rows) {
                         newUserMysql.id = rows.insertId;
                         var insertQuery = 'INSERT INTO social_media ( userid ) values (?)'
-                        connection.query(insertQuery, [rows.insertID], function(err, rows){
-                            
+                        connection.query(insertQuery, [rows.insertId], function(err, rows){
+                            console.log('what does this even do?');
+                            console.log(rows.insertId);
                         })
                        // connection.query('INSERT INTO social_media (userid) values ('+ rows.insertID +')';)
 
