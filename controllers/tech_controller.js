@@ -93,7 +93,8 @@ module.exports = function(app, passport) {
                     orm.getPortfolio(userid, function(data) {
                         var portData = data;
                         console.log(portData);
-                        res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillData, portfolio: portData })
+                        
+                        res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillOptions, portfolio: portData })
 
                     // get the user out of session and pass to template
                     })
