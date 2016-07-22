@@ -82,15 +82,19 @@ module.exports = function(app, passport) {
             console.log(userData);
 
             orm.skillOptions(userid, function(data) {
-                                var skillOptions = data;
-                                console.log(skillOptions);
+                var skillOptions = data;
+                console.log(skillOptions);
                                 
                 orm.getSkills(userid, function(data) {
                     var skillData = data;
                     console.log(skillData);
-                
-                    res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillData })
+
+                    orm.getPortfolio(userid, function(data) {
+                        var portData = data;
+                        console.log(portData);
+                        res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillData, portfolio: portData })
                     // get the user out of session and pass to template
+                    })
                 })
             })
         });
@@ -114,6 +118,15 @@ module.exports = function(app, passport) {
         // load the edit_profile file
         res.render('employee/employee_edit_resume');
     });
+
+    app.get('/employee_edit_portfolo', isLoggedIn, function(req, res) {
+        // load the edit_profile file
+        var userid = req.user.id;
+        orm.getPersonalData('users', userid, function(data) {
+        res.render('employee/employee_edit_profile', { user: data });
+        });
+    });
+
      app.get('/employee_social_media', function(req, res) {
         // load the employee_social_media file
         var userid = req.user.id;
@@ -144,7 +157,7 @@ module.exports = function(app, passport) {
     // Skills & Skill Tests ================
     // =====================================
 
-    app.get('/html_test', function(req, res) {
+    app.get('/html_test',isLoggedIn, function(req, res) {
         // load the edit_profile file
         res.render('skill_tests/html_test');
     });
