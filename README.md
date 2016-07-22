@@ -1,14 +1,14 @@
 # Tech-Aptitude
 The Demise of Linkedin
 
-- [ ] HTML/CSS/Javascript/JQuery (Paul Newman, Richard Garcia, Morgan...)
+- [x] HTML/CSS/Javascript/JQuery (Paul Newman, Richard Garcia, Morgan...)
 - [x] Login page (Paul Newman)
 - [x] Create new account
 - [x] Existing account
 - [x] Profile page employee/employer (Richard Garcia)
-- [ ] Resume builder (Stretch Goal)
-- [ ] Upload Existing Resume (Stretch Goal)(Richard)
-- [ ] Create Resume from Scratch (Paul Newman)
+- [0] Resume builder (Stretch Goal)
+- [0] Upload Existing Resume (Stretch Goal)(Richard)
+- [0] Create Resume from Scratch (Paul Newman)
 - [ ] Skills Page
 - [X] Junior, Mid-Level, Senior developer tests
 - [X] CSS test
@@ -16,10 +16,10 @@ The Demise of Linkedin
 - [X] Node test
 - [X] PHP test
 
-- [ ] Node
-- [ ] Create routes to pages  
-- [ ] Create API that shows potential employees
-- [ ] Create API that shows potential employers
+- [x] Node
+- [x] Create routes to pages  
+- [x] Create API that shows potential employees
+- [x] Create API that shows potential employers
 
 - [X] MySQL
 - [X] Create Table  (Oppenheimer)
@@ -30,15 +30,24 @@ The Demise of Linkedin
 - [X] New technology - login using facebook or gmail account.
 - [X] New Technology - sass/css (Paul Newman)
 
+Color Palette:
+#FA5555
+#F7FB76
+#8DED8E
+#2D7D8F
 
 WEDNESDAY SCRUM
 - [ ] drop-down using foundation to populate employee skills to database.
 - [ ] create buttons from text of skills for current employee that have been retrieved from database.
 - [ ] upload resume and display (somehow) on profile
-- [X] transfer test pages into handlebars while retrieving data (questions, option, and answers).
+- [x] transfer test pages into handlebars while retrieving data (questions, option, and answers).
 - [ ] complete CSS for each page -- Sorry Alex, still lots of work for you...
 - [ ] stretch ???
 - [ ] presentation...
-
+- [ ] Logout Button
+- [ ] Fix HTML test
+- [ ] Update database based on test results
+- [ ] social medie page
+- [ ] fix skills
 
 
