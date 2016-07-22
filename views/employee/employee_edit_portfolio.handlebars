@@ -1,43 +1,27 @@
 <div class="header">
-
   <div class="row">
     <div class="medium-12 columns space2">
     </div>
   </div>
-  
 </div> 
 
 <div id="container">
   <div class="two-third"> 
-
-  <div class="row">
-    <div class="medium-7 columns">
-          <h2 id="mainLogo"><img src="/assets/img/loginBackground/icon-clear-thinkers.jpg" style="color: #D72323" alt="lightBulb" height="60" width="60"> Tech Aptitude</h2>
+    <a href = "/logout"><i class="fa fa-sign-out fa-3x editButton" aria-hidden="true"></i></a>  
+    <div class="row">
+      <div class="medium-7 columns">
+        <h2 id="mainLogo"><a href="/employee_profile"><img src="/assets/img/loginBackground/icon-clear-thinkers.jpg" style="color: #D72323" alt="lightBulb" height="60" width="60"></a>Tech Aptitude</h2>
+      </div>
     </div>
-  </div>
 
-<div style="clear:both"></div>
+    <div style="clear:both"></div>
 
-<div>
-  <!-- section title -->
-  <div class="row">
-    <div class="medium-4 medium-centered heading_bg">
-      <h5>Update Your Portfolio</h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="medium-6 medium-centered instructions">
-      <p>Please enter any project(s) you have worked on below.</p>
-    </div>
-  </div>
-
-  <div class="row">
+    <div class="row">
       <div class="medium-10 columns">
         <div class="card">
           <div class="content">
-
+            <h5 class="medium-6 heading_bg">Update Portfolio Information</h5>
             <form action="/employee_edit_portfolio" method="post">
-
               <fieldset class="form-group">
                 <label class="profileLabels" for="projectTitle">Project Title</label>
                 <input type="text" class="form-control" id="ProjectTitle1" placeholder="Enter Project Title" name="title">
@@ -70,15 +54,12 @@
                 <br>
                 <input type="text" name="photourl">
               </fieldset>
-
-               <input type="submit" class="button" value="Add Project"/>
-
+              <input type="submit" class="button" value="Add Project"/>
             </form>
-
           </div>
         </div>
       </div>
-    </div><!-- row -->
+    </div>
 
   </div><!-- close two third -->
       

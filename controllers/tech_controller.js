@@ -79,27 +79,31 @@ module.exports = function(app, passport) {
         orm.getPersonalData('users', userid, function(data) {
             //console.log(data);
             var userData = data;
-            console.log(userData);
+            //console.log(userData);
 
             orm.skillOptions(userid, function(data) {
                 var skillOptions = data;
-                console.log(skillOptions);
+                //console.log(skillOptions);
                                 
                 orm.getSkills(userid, function(data) {
                     var skillData = data;
-                    console.log(skillData);
+                    //console.log(skillData);
 
 
                     orm.getPortfolio(userid, function(data) {
                         var portData = data;
-                        console.log(portData);
+                        //console.log(portData);
 
-                        orm.getSocialData('social_media', userid,  function(data) {
+                        orm.getSocialMedia('social_media', userid,  function(data) {
                             var socialData = data;
                             console.log(socialData);
-                        
 
-                        res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillOptions, portfolio: portData, social: socialData })
+                            orm.getSkillLevels( userid,  function(data) {
+                                var skillLevelsData = data;
+                                console.log(skillLevelsData);
+
+                                    res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillOptions, portfolio: portData, social: socialData, skillLevels: skillLevelsData })
+                            })
                         })
                     // get the user out of session and pass to template
                     })
@@ -142,6 +146,7 @@ module.exports = function(app, passport) {
         var userid = req.user.id;
         orm.getSocialMedia('social_media', userid, function(data) {
             var userData = data;
+            console.log(userData);
             // load the employee_social_media file
             res.render('employee/employee_social_media', { user: userData});
         });
@@ -170,10 +175,14 @@ module.exports = function(app, passport) {
         // load the edit_profile file
         res.render('skill_tests/html_test');
     });
+    
+    app.post('/html_test_post',isLoggedIn, function(req, res) {
+        var userid = req.user.id;
+        orm.updateEmployeeSkills(userid, 'HTML' ,req.body.level);
+    });
 
-    app.post('/addSkill', isLoggedIn, function(req, res) {
-        console.log(req);
-        orm.addSkill('skills', req.body.id)
+    app.post('/add_skill', isLoggedIn, function(req, res) {
+        orm.addSkill('emp_skills', req.user.id, req.body.skill)
     res.redirect('/employee_profile')
     })
 

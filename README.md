@@ -9,7 +9,7 @@ The Demise of Linkedin
 - [0] Resume builder (Stretch Goal)
 - [0] Upload Existing Resume (Stretch Goal)(Richard)
 - [0] Create Resume from Scratch (Paul Newman)
-- [ ] Skills Page
+- [x] Skills Page
 - [X] Junior, Mid-Level, Senior developer tests
 - [X] CSS test
 - [X] HTML test
@@ -37,17 +37,20 @@ Color Palette:
 #2D7D8F
 
 WEDNESDAY SCRUM
-- [ ] drop-down using foundation to populate employee skills to database.
-- [ ] create buttons from text of skills for current employee that have been retrieved from database.
+- [x] drop-down using foundation to populate employee skills to database.
+- [x] create buttons from text of skills for current employee that have been retrieved from database.
 - [ ] upload resume and display (somehow) on profile
 - [x] transfer test pages into handlebars while retrieving data (questions, option, and answers).
-- [ ] complete CSS for each page -- Sorry Alex, still lots of work for you...
-- [ ] stretch ???
+- [x] complete CSS for each page -- Sorry Alex, still lots of work for you...
 - [ ] presentation...
-- [ ] Logout Button
-- [ ] Fix HTML test
-- [ ] Update database based on test results
-- [ ] social medie page
-- [ ] fix skills
+- [x] Logout Button
+- [x] Update database based on test results
+- [x] social medie page
+
+Issues in most recent pull/merge after making new account:
+- [ ] skills were pre-loaded in new account
+- [ ] unable to edit portfolio once entered
+- [ ] return to profile button after test does not work
+- [ ] HTML test needs to be shorter. About 4 questions total.
 
 

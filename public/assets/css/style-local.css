@@ -20,6 +20,9 @@ body {
 .answer-button {
   color: #6D739D; }
 
+.skillsCard {
+  height: 275px; }
+
 .form-group .labels {
   color: #e63d00; }
 
