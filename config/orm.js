@@ -182,7 +182,7 @@ var orm = {
 
 //<<<<<<< HEAD
                 // select * from skills s left join emp_skills e on s.id = e.skillID where empID = 1;
-                var queryString = 'SELECT * from nd94bu2dunh75gd2.skills s left join nd94bu2dunh75gd2.emp_skills e on s.id = e.skillID where e.userID = ?';
+                var queryString = 'SELECT * from nd94bu2dunh75gd2.skills s left join nd94bu2dunh75gd2.emp_skills e on s.id = e.skillID where e.empID = ?';
 // =======
                 // var queryString = 'SELECT * from tech_db.skills s left join tech_db.emp_skills e on s.id = e.skillID where e.empID = ?';
                 // var queryString = 'SELECT * from tech_db.skills s left join tech_db.emp_skills e on s.id = e.skillID left join tech_db.skill_level sl on e.empID = sl.empID   where e.empID = ?';
