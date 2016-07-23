@@ -7,6 +7,6 @@ module.exports = {
         'user': 'root',
         'password': 'Root'
 },
-	'database': 'tech_db',
+	'database': 'nd94bu2dunh75gd2',
     'users_table': 'users'
 };

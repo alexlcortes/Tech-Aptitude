@@ -9,7 +9,7 @@ var connection = mysql.createConnection(process.env.JAWSDB_URL);
 var orm = {
 
     getPersonalData: function(table, userID, cb) {
-        var queryString = 'select * from tech_db.' + table + ' where id = ' + userID;
+        var queryString = 'select * from nd94bu2dunh75gd2.' + table + ' where id = ' + userID;
         // var queryString = 'SELECT * FROM tech_db.' + table1 + ' AS u INNER JOIN tech_db.' + table2 + ' AS sm ON (u.id = sm.userid) WHERE u.id = ' + userID;
         console.log(queryString);
         connection.query(queryString, function(err, res) {
@@ -20,7 +20,7 @@ var orm = {
 
     getSocialData: function(table, userID, cb) {
         //var queryString = 'select * from tech_db.' + table + ' where id = ' + userID;
-        var queryString = 'SELECT * FROM tech_db.' + table + ' WHERE userid = ' + userID;
+        var queryString = 'SELECT * FROM nd94bu2dunh75gd2.' + table + ' WHERE userid = ' + userID;
         console.log(queryString);
         connection.query(queryString, function(err, res) {
             if (err) throw err;
@@ -37,7 +37,7 @@ var orm = {
                 street_address = null;
             }
 
-            var queryString = 'UPDATE tech_db.' + table + ' SET firstName = ?, lastName = ?, email = ?, mobile_number = ?, street_address = ?, city = ?, state = ?, zip = ? where id = ?'
+            var queryString = 'UPDATE nd94bu2dunh75gd2.' + table + ' SET firstName = ?, lastName = ?, email = ?, mobile_number = ?, street_address = ?, city = ?, state = ?, zip = ? where id = ?'
             console.log(queryString);
             connection.query(queryString, [firstName, lastName, email, phone, street_address, city, state, zip, userID], function(err, res) {
                 if (err) reject(err);
@@ -50,7 +50,7 @@ var orm = {
     updateEmployeePortfolio: function(title, startDate, endDate, desc, skills, userID, pic) {
         console.log(title, startDate, endDate, desc, skills, userID, pic);
         return new Promise(function(resolve, reject) {
-            var queryString = "INSERT INTO tech_db.portfolio ( id, title, startDate, endDate, description, skillsUsed, photo ) values (?,?,?,?,?,?,?)";
+            var queryString = "INSERT INTO nd94bu2dunh75gd2.portfolio ( id, title, startDate, endDate, description, skillsUsed, photo ) values (?,?,?,?,?,?,?)";
             connection.query(queryString, [userID, title, startDate, endDate, desc, skills, pic], function(err, res) {
                 if (err) console.log(err);
                 else resolve(res);
@@ -66,13 +66,13 @@ var orm = {
         return new Promise(function(resolve, reject) {
             return new Promise(function(resolve, reject) {
                     console.log('inside 2nd promise inside updateEmployeeSkills');
-                    var queryString = "select id from tech_db.skills where skill = '" + skill + "'"
+                    var queryString = "select id from nd94bu2dunh75gd2.skills where skill = '" + skill + "'"
                     console.log(queryString);
                     connection.query(queryString, function(err, res) {
                         if (err) reject(err)
                         else {
                             var skillID = res;
-                            var queryString = 'UPDATE tech_db.skill_level SET skill_level = ? WHERE skillsID = ? and empID = ?'
+                            var queryString = 'UPDATE nd94bu2dunh75gd2.skill_level SET skill_level = ? WHERE skillsID = ? and empID = ?'
                             console.log(queryString);
                             connection.query(queryString, [ skillLevel, skillID[0].id, empID], function(err, res) {
                                 if (err) throw err;
@@ -86,7 +86,7 @@ var orm = {
 
     addPhoto: function(table, userID, fileName, cb) {
         return new Promise(function(resolve, reject) {
-                var queryString = 'UPDATE tech_db.' + table + ' SET profile_img = ? where id = ?';
+                var queryString = 'UPDATE nd94bu2dunh75gd2.' + table + ' SET profile_img = ? where id = ?';
                 var values = [fileName, userID];
                 connection.query(queryString, values, function(err, res) {
                         console.log(res);
@@ -98,7 +98,7 @@ var orm = {
 
     addResume: function(table, userID, fileName, cb) {
         return new Promise(function(resolve, reject) {
-                var queryString = 'UPDATE tech_db.' + table + ' SET resume = ? where id = ?';
+                var queryString = 'UPDATE nd94bu2dunh75gd2.' + table + ' SET resume = ? where id = ?';
                 var values = [fileName, userID];
                 connection.query(queryString, values, function(err, res) {
                         console.log(res);
@@ -116,13 +116,13 @@ var orm = {
         return new Promise(function(resolve, reject) {
                 return new Promise(function(resolve, reject) {
                     console.log('inside 2nd promise inside addskill');
-                    var queryString = "select id from tech_db.skills where skill = '" + skill + "'"
+                    var queryString = "select id from nd94bu2dunh75gd2.skills where skill = '" + skill + "'"
                     console.log(queryString);
                     connection.query(queryString, function(err, res) {
                         if (err) reject(err)
                         else {
                             var skillID = res;
-                            var insertString = 'INSERT INTO tech_db.' + table + ' (skillID, empID) values (?,?)';
+                            var insertString = 'INSERT INTO nd94bu2dunh75gd2.' + table + ' (skillID, empID) values (?,?)';
                             var insertValues = [skillID[0].id, userID]
                                 // console.log(insertString);
                                 // console.log(insertValues);
@@ -139,7 +139,7 @@ var orm = {
 
     skillOptions: function(userID, cb) {
         // return new Promise(function(resolve, reject) {
-        var queryString = 'select skill from tech_db.skills where skill not in (select skill from tech_db.skills s left join tech_db.emp_skills e on s.id = e.skillID where empID = ' + userID + ')';
+        var queryString = 'select skill from nd94bu2dunh75gd2.skills where skill not in (select skill from nd94bu2dunh75gd2.skills s left join nd94bu2dunh75gd2.emp_skills e on s.id = e.skillID where empID = ' + userID + ')';
         console.log(queryString);
         connection.query(queryString, function(err, res) {
                 if (err) throw err;
@@ -152,7 +152,7 @@ var orm = {
         return new Promise(function(resolve, reject) {
 
                 // select * from skills s left join emp_skills e on s.id = e.skillID where empID = 1;
-                var queryString = 'SELECT * from tech_db.skills s left join tech_db.emp_skills e on s.id = e.skillID where e.empID = ?';
+                var queryString = 'SELECT * from nd94bu2dunh75gd2.skills s left join nd94bu2dunh75gd2.emp_skills e on s.id = e.skillID where e.empID = ?';
                 console.log(queryString);
                 connection.query(queryString, [empID], function(err, res) {
                         if (err) throw err;
@@ -165,7 +165,7 @@ var orm = {
 
     addSocialMedia: function(table, empID, facebook, twitter, github, stackoverflow, linkedin) {
         return new Promise(function(resolve, reject) {
-                var queryString = 'UPDATE tech_db.' + table + ' SET facebook = ? , twitter = ? , github = ? , stackoverflow = ? , linkedin = ? where userid = ?';
+                var queryString = 'UPDATE nd94bu2dunh75gd2.' + table + ' SET facebook = ? , twitter = ? , github = ? , stackoverflow = ? , linkedin = ? where userid = ?';
                 var values = [facebook, twitter, github, stackoverflow, linkedin, empID];
                 console.log(queryString);
                 console.log(values);
@@ -177,7 +177,7 @@ var orm = {
     }, // end of addSocialMedia 
 
     getSocialMedia: function(table, userID, cb) {
-        var queryString = 'SELECT * FROM tech_db.' + table + ' WHERE userid = ' + userID;
+        var queryString = 'SELECT * FROM nd94bu2dunh75gd2.' + table + ' WHERE userid = ' + userID;
         console.log(queryString);
         
         connection.query(queryString, function(err, res) {
@@ -188,7 +188,7 @@ var orm = {
 
 
     getSkillLevels: function( userID, cb) {
-        var queryString = 'SELECT * FROM tech_db.skill_level WHERE empID = ' + userID;
+        var queryString = 'SELECT * FROM nd94bu2dunh75gd2.skill_level WHERE empID = ' + userID;
         connection.query(queryString, function(err, res) {
             if (err) throw err;
             return cb(res);
@@ -196,7 +196,7 @@ var orm = {
     }, // end of getSocialMedia
 
      getPortfolio: function(empID, cb) {
-        var queryString = 'SELECT * from tech_db.portfolio where id = ?';
+        var queryString = 'SELECT * from nd94bu2dunh75gd2.portfolio where id = ?';
         connection.query(queryString, [empID], function(err, res) {
             if (err) throw err;
             return cb(res);
