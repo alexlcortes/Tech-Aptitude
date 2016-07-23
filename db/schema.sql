@@ -55,6 +55,7 @@ CREATE TABLE users
     state varchar (2),
     zip INT,
     profile_img varchar(50),
+    resume varchar(50),
     mobile_number varchar(50),
     
     PRIMARY KEY (id),
