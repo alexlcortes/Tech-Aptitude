@@ -218,10 +218,10 @@ module.exports = function(app, passport) {
     //======================================
 
     // =====================================
-    // Post for uploading a file ===========
+    // Post for uploading a profile pic ====
     // =====================================
 
-    app.post('/upload', isLoggedIn, function(req, res) {
+    app.post('/upload_image', isLoggedIn, function(req, res) {
         // create an incoming form object
         var form = new formidable.IncomingForm();
         // specify that we want to allow the user to upload multiple files in a single request
@@ -236,6 +236,39 @@ module.exports = function(app, passport) {
             file.name = req.user.id + '_' + req.user.firstName + '_' + req.user.lastName + '.' + ext;
             fs.rename(file.path, path.join(form.uploadDir, file.name));
             orm.addPhoto('users', req.user.id, file.name);
+        });
+        // log any errors that occur
+        form.on('error', function(err) {
+            console.log('An error has occured: \n' + err);
+        });
+        // once all the files have been uploaded, send a response to the client
+        form.on('end', function() {
+            res.end('success');
+        });
+        // parse the incoming request containing the form data
+        form.parse(req);
+        res.redirect('/employee_profile')
+    });
+
+    // =====================================
+    // Post for uploading a resume =========
+    // =====================================
+
+    app.post('/upload_resume', isLoggedIn, function(req, res) {
+        // create an incoming form object
+        var form = new formidable.IncomingForm();
+        // specify that we want to allow the user to upload multiple files in a single request
+        form.multiples = true;
+        // store all uploads in the /uploads directory
+        form.uploadDir = path.join(__dirname, '../public/assets/resume');
+        form.keepExtensions = true;
+        // every time a file has been uploaded successfully, rename it
+        // to the userid_firstname_lastname
+        form.on('file', function(field, file) {
+            var ext = file.name.split('.').pop();
+            file.name = req.user.id + '_' + req.user.firstName + '_' + req.user.lastName + '.' + ext;
+            fs.rename(file.path, path.join(form.uploadDir, file.name));
+            orm.addResume('users', req.user.id, file.name);
         });
         // log any errors that occur
         form.on('error', function(err) {

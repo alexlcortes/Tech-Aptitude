@@ -93,6 +93,18 @@ var orm = {
             }) // end of return new Promise for addPhoto
     }, // end of addPhoto 
 
+    addResume: function(table, userID, fileName, cb) {
+        return new Promise(function(resolve, reject) {
+                var queryString = 'UPDATE tech_db.' + table + ' SET resume = ? where id = ?';
+                var values = [fileName, userID];
+                connection.query(queryString, values, function(err, res) {
+                        console.log(res);
+                        if (err) reject(err);
+                        else resolve(res);
+                    }) //end of connection.query
+            }) // end of return new Promise for addResume
+    }, // end of addResume 
+
     addSkill: function(table, userID, skill, cb) {
         console.log('following 3 logs are inside the addSkill orm function');
         console.log('table: ' + table);
