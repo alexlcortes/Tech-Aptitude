@@ -84,28 +84,28 @@ module.exports = function(app, passport) {
             orm.skillOptions(userid, function(data) {
                 var skillOptions = data;
                 //console.log(skillOptions);
-                                
+
                 orm.getSkills(userid, function(data) {
                     var skillData = data;
-                    //console.log(skillData);
+                    console.log(skillData);
 
 
                     orm.getPortfolio(userid, function(data) {
                         var portData = data;
                         //console.log(portData);
 
-                        orm.getSocialMedia('social_media', userid,  function(data) {
-                            var socialData = data;
-                            console.log(socialData);
+                        orm.getSocialMedia('social_media', userid, function(data) {
+                                var socialData = data;
+                                console.log(socialData);
 
-                            orm.getSkillLevels( userid,  function(data) {
+                            orm.getSkillLevels(userid, function(data) {
                                 var skillLevelsData = data;
-                                console.log(skillLevelsData);
+                                console.log(skillLevelsData[0]);
 
-                                    res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillOptions, portfolio: portData, social: socialData, skillLevels: skillLevelsData })
+                                res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillOptions, portfolio: portData, social: socialData, skillLevels: skillLevelsData })
+                                
                             })
                         })
-                    // get the user out of session and pass to template
                     })
                 })
             })
@@ -117,13 +117,13 @@ module.exports = function(app, passport) {
         // load the edit_profile file
         var userid = req.user.id;
         orm.getPersonalData('users', userid, function(data) {
-        res.render('employee/employee_edit_profile', { user: data });
+            res.render('employee/employee_edit_profile', { user: data });
         });
     });
 
-    app.post('/update_employee_profile', isLoggedIn, function(req,res) {        
-    	orm.updateEmployeeProfile('users', req.body.firstName, req.body.lastName, req.body.email, req.body.phone, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.id);
-    	res.redirect('/employee_profile');
+    app.post('/update_employee_profile', isLoggedIn, function(req, res) {
+        orm.updateEmployeeProfile('users', req.body.firstName, req.body.lastName, req.body.email, req.body.phone, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.id);
+        res.redirect('/employee_profile');
     })
 
     app.get('/employee_edit_resume', function(req, res) {
@@ -136,7 +136,7 @@ module.exports = function(app, passport) {
         res.render('employee/employee_edit_portfolio');
     });
     app.post('/employee_edit_portfolio', function(req, res) {
-        orm.updateEmployeePortfolio(req.body.title, req.body.startDate, req.body.endDate, req.body.description , req.body.skillsUsed, req.user.id, req.body.photourl)
+        orm.updateEmployeePortfolio(req.body.title, req.body.startDate, req.body.endDate, req.body.description, req.body.skillsUsed, req.user.id, req.body.photourl)
         res.redirect('/employee_profile')
     });
 
@@ -148,9 +148,9 @@ module.exports = function(app, passport) {
             var userData = data;
             console.log(userData);
             // load the employee_social_media file
-            res.render('employee/employee_social_media', { user: userData});
+            res.render('employee/employee_social_media', { user: userData });
         });
-        
+
     });
 
     // SOCIAL MEDIA
@@ -171,19 +171,25 @@ module.exports = function(app, passport) {
     // Skills & Skill Tests ================
     // =====================================
 
-    app.get('/html_test',isLoggedIn, function(req, res) {
+    app.get('/html_test', isLoggedIn, function(req, res) {
         // load the edit_profile file
         res.render('skill_tests/html_test');
     });
-    
+
     app.post('/html_test_post',isLoggedIn, function(req, res) {
         var userid = req.user.id;
-        orm.updateEmployeeSkills(userid, 'HTML' ,req.body.level);
+        orm.updateEmployeeSkills(userid, 'HTML' , req.body.level);
     });
+
+    //     app.get('/html_test_post', function(req, res) {
+    //     var userid = req.user.id;
+    //     orm.insertSkillLevel( 1 ,req.body.level, userid);
+    //     res.redirect('/employee_profile');
+    // });
 
     app.post('/add_skill', isLoggedIn, function(req, res) {
         orm.addSkill('emp_skills', req.user.id, req.body.skill)
-    res.redirect('/employee_profile')
+        res.redirect('/employee_profile')
     })
 
     //======================================

@@ -9,8 +9,12 @@ var connection = mysql.createConnection(process.env.JAWSDB_URL);
 var orm = {
 
     getPersonalData: function(table, userID, cb) {
+// <<<<<<< HEAD
         var queryString = 'select * from nd94bu2dunh75gd2.' + table + ' where id = ' + userID;
         // var queryString = 'SELECT * FROM tech_db.' + table1 + ' AS u INNER JOIN tech_db.' + table2 + ' AS sm ON (u.id = sm.userid) WHERE u.id = ' + userID;
+// =======
+//         var queryString = 'select * from tech_db.' + table + ' where id = ' + userID;
+// >>>>>>> james-working
         console.log(queryString);
         connection.query(queryString, function(err, res) {
             if (err) throw err;
@@ -57,13 +61,25 @@ var orm = {
             })
         })
     }, // end of updateEmployeeProfile
+        insertSkillLevel: function(skill, level, userID) {
+        console.log(title, startDate, endDate, desc, skills, userID, pic);
+        return new Promise(function(resolve, reject) {
+            var queryString = "INSERT INTO tech_db.skill_level ( skill_level,empID, skillsID ) values (?,?,?)"
+            console.log(queryString);
+            connection.query(queryString, [skill, userID, skill], function(err, res) {
+                if (err) console.log(err);
+                else resolve(res);
+            })
+        })
 
+    },
     updateEmployeeSkills: function(empID, skill, skillLevel) {
         console.log('empid: ' + empID);
         console.log('skill: ' + skill);
         console.log('skillLevel: ' + skillLevel);
 
         return new Promise(function(resolve, reject) {
+// <<<<<<< HEAD
             return new Promise(function(resolve, reject) {
                     console.log('inside 2nd promise inside updateEmployeeSkills');
                     var queryString = "select id from nd94bu2dunh75gd2.skills where skill = '" + skill + "'"
@@ -73,14 +89,19 @@ var orm = {
                         else {
                             var skillID = res;
                             var queryString = 'UPDATE nd94bu2dunh75gd2.skill_level SET skill_level = ? WHERE skillsID = ? and empID = ?'
+// =======
+           
+//                             var queryString = 'UPDATE tech_db.skill_level SET ' + skill + ' = ? WHERE userID = ?'
+// >>>>>>> james-working
                             console.log(queryString);
-                            connection.query(queryString, [ skillLevel, skillID[0].id, empID], function(err, res) {
+                            var updateValues = [skillLevel,empID ]
+                            connection.query(queryString, updateValues, function(err, res) {
                                 if (err) throw err;
                                  else resolve(res);
                             }); //end of connection.query
-                        } // end of else
-                    }) // end of first connection.query
-            }); // end of 2nd return new Promise for updateEmployeeSkills
+                       
+                    
+          
         }); // end of first return new Promise for updateEmployeeSkills
     },
 
@@ -147,12 +168,25 @@ var orm = {
             }) // end of connection.query
             //  }) // end of return new Promise
     }, // end of skillOptions
+   
+    getSkillLevels: function( userID, cb) {
+        var queryString = 'SELECT * FROM tech_db.skill_level WHERE userid = ' + userID;
+        connection.query(queryString, function(err, res) {
+            if (err) throw err;
+            return cb(res);
+        }); // end of connection query
+    }, // end of
 
     getSkills: function(empID, cb) {
         return new Promise(function(resolve, reject) {
 
+//<<<<<<< HEAD
                 // select * from skills s left join emp_skills e on s.id = e.skillID where empID = 1;
                 var queryString = 'SELECT * from nd94bu2dunh75gd2.skills s left join nd94bu2dunh75gd2.emp_skills e on s.id = e.skillID where e.empID = ?';
+// =======
+                // var queryString = 'SELECT * from tech_db.skills s left join tech_db.emp_skills e on s.id = e.skillID where e.empID = ?';
+                // var queryString = 'SELECT * from tech_db.skills s left join tech_db.emp_skills e on s.id = e.skillID left join tech_db.skill_level sl on e.empID = sl.empID   where e.empID = ?';
+// >>>>>>> james-working
                 console.log(queryString);
                 connection.query(queryString, [empID], function(err, res) {
                         if (err) throw err;
@@ -186,7 +220,6 @@ var orm = {
         }); // end of connection query
     }, // end of getSocialMedia
 
-
     getSkillLevels: function( userID, cb) {
         var queryString = 'SELECT * FROM nd94bu2dunh75gd2.skill_level WHERE empID = ' + userID;
         connection.query(queryString, function(err, res) {
@@ -194,6 +227,7 @@ var orm = {
             return cb(res);
         }); // end of connection query
     }, // end of getSocialMedia
+
 
      getPortfolio: function(empID, cb) {
         var queryString = 'SELECT * from nd94bu2dunh75gd2.portfolio where id = ?';
