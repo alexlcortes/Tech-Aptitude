@@ -9,9 +9,7 @@
 
 <div id="container">
   <div class="two-third">
-{{#each user}}
-  <a href="/assets/resume/{{resume}}">Resume</a>
-{{/each}}
+
     <!-- logout icon -->
     <a href = "/logout"><i class="fa fa-sign-out fa-3x editButton" aria-hidden="true"></i></a>
     <div class="row">
@@ -61,6 +59,10 @@
                   {{#if linkedin.length}}
                     <a href="{{linkedin}}" target="_blank"><i class="fa fa-linkedin-square fa-2x linked" aria-hidden="true"></i></a>
                   {{/if}} 
+                  {{/each}}
+                  <!-- resume -->
+                  {{#each user}}
+                  <a href="/assets/resume/{{resume}}">Resume</a>
                   {{/each}}
                 </div>
               </div>
