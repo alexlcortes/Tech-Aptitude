@@ -57,7 +57,18 @@ var orm = {
             })
         })
     }, // end of updateEmployeeProfile
+        insertSkillLevel: function(skill, level, userID) {
+        console.log(title, startDate, endDate, desc, skills, userID, pic);
+        return new Promise(function(resolve, reject) {
+            var queryString = "INSERT INTO tech_db.skill_level ( skill_level,empID, skillsID ) values (?,?,?)"
+            console.log(queryString);
+            connection.query(queryString, [skill, userID, skill], function(err, res) {
+                if (err) console.log(err);
+                else resolve(res);
+            })
+        })
 
+    },
     updateEmployeeSkills: function(empID, skill, skillLevel) {
         console.log('empid: ' + empID);
         console.log('skill: ' + skill);
@@ -147,7 +158,15 @@ var orm = {
             }) // end of connection.query
             //  }) // end of return new Promise
     }, // end of skillOptions
-
+   
+    getSkillLevels: function( userID, cb) {
+        var queryString = 'SELECT * FROM tech_db.skill_level WHERE userid = ' + userID;
+        connection.query(queryString, function(err, res) {
+            if (err) throw err;
+            return cb(res);
+        }); // end of connection query
+    }, // end of
+    
     getSkills: function(empID, cb) {
         return new Promise(function(resolve, reject) {
 

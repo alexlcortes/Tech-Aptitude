@@ -72,7 +72,7 @@ CREATE TABLE social_media
     twitter varchar(100),
     github varchar(100),
     stackoverflow varchar(100),
-    linkedin varchar(100),
+    linkedin varchar(100)
 );
 
 CREATE TABLE skill_level 
@@ -82,5 +82,5 @@ CREATE TABLE skill_level
     CSS varchar(100),
     JavaScript varchar(100),
     Node varchar(100),
-    JQuery varchar(100),
+    JQuery varchar(100)
 );
