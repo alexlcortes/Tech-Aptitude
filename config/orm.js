@@ -182,7 +182,7 @@ var orm = {
 
 //<<<<<<< HEAD
                 // select * from skills s left join emp_skills e on s.id = e.skillID where empID = 1;
-                var queryString = 'SELECT * from nd94bu2dunh75gd2.skills s left join nd94bu2dunh75gd2.emp_skills e on s.id = e.skillID where e.userID = ?';
+                var queryString = 'SELECT * from nd94bu2dunh75gd2.skills s left join nd94bu2dunh75gd2.emp_skills e on s.id = e.skillID where e.empID = ?';
 // =======
                 // var queryString = 'SELECT * from tech_db.skills s left join tech_db.emp_skills e on s.id = e.skillID where e.empID = ?';
                 // var queryString = 'SELECT * from tech_db.skills s left join tech_db.emp_skills e on s.id = e.skillID left join tech_db.skill_level sl on e.empID = sl.empID   where e.empID = ?';
@@ -221,7 +221,7 @@ var orm = {
     }, // end of getSocialMedia
 
     getSkillLevels: function( userID, cb) {
-        var queryString = 'SELECT * FROM nd94bu2dunh75gd2.skill_level WHERE empID = ' + userID;
+        var queryString = 'SELECT * FROM nd94bu2dunh75gd2.skill_level WHERE userID = ' + userID;
         connection.query(queryString, function(err, res) {
             if (err) throw err;
             return cb(res);
