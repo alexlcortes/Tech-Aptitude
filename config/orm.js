@@ -79,17 +79,17 @@ var orm = {
         console.log('skillLevel: ' + skillLevel);
 
         return new Promise(function(resolve, reject) {
-// <<<<<<< HEAD
-            return new Promise(function(resolve, reject) {
-                    console.log('inside 2nd promise inside updateEmployeeSkills');
-                    var queryString = "select id from nd94bu2dunh75gd2.skills where skill = '" + skill + "'"
-                    console.log(queryString);
-                    connection.query(queryString, function(err, res) {
-                        if (err) reject(err)
-                        else {
-                            var skillID = res;
-                            var queryString = 'UPDATE nd94bu2dunh75gd2.skill_level SET skill_level = ? WHERE skillsID = ? and empID = ?'
-// =======
+// // <<<<<<< HEAD
+//             return new Promise(function(resolve, reject) {
+//                     console.log('inside 2nd promise inside updateEmployeeSkills');
+//                     var queryString = "select id from nd94bu2dunh75gd2.skills where skill = '" + skill + "'"
+//                     console.log(queryString);
+//                     connection.query(queryString, function(err, res) {
+//                         if (err) reject(err)
+//                         else {
+//                             var skillID = res;
+//                             var queryString = 'UPDATE nd94bu2dunh75gd2.skill_level SET skill_level = ? WHERE skillsID = ? and empID = ?'
+// // =======
            
 //                             var queryString = 'UPDATE tech_db.skill_level SET ' + skill + ' = ? WHERE userID = ?'
 // >>>>>>> james-working
