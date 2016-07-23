@@ -60,10 +60,6 @@
                     <a href="{{linkedin}}" target="_blank"><i class="fa fa-linkedin-square fa-2x linked" aria-hidden="true"></i></a>
                   {{/if}} 
                   {{/each}}
-                  <!-- resume -->
-                  {{#each user}}
-                  <a href="/assets/resume/{{resume}}"><i class="fa fa-download" aria-hidden="true">Resume</i></a>
-                  {{/each}}
                 </div>
               </div>
           </div>
@@ -95,6 +91,11 @@
                   <label for="city"></label>
                   <i class="fa fa-home fa-1x contactIcons2" aria-hidden="true"></i>  {{city}}, {{state}} {{zip}}
                   <label for="city"></label>
+                  {{/each}}
+
+                  <!-- resume -->
+                  {{#each user}}
+                  <a href="/assets/resume/{{resume}}"><i class="fa fa-download" aria-hidden="true"> Resume</i></a>
                   {{/each}}
                 </div>
               </form>
