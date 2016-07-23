@@ -1,6 +1,6 @@
 // HTML
 var panel = $('#quiz-area');
-var countStartNumber = 15;
+var countStartNumber = 10;
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -33,43 +33,22 @@ var questions = [{
   question: "What does HTML stand for?",
   answers: ["Hit The Mother Load", "How To Make Language", "Hypertext Markup Language", "Hyper Text Media Language"],
   correctAnswer: "Hypertext Markup Language"
-}, {
-  question: "What goes into the head section of a html document?",
-  answers: ["Title", "Link to CSS Page", "Menu Header", "Title and Link to CSS Page", "All of the Above"],
-  correctAnswer: "Title and Link to CSS Page"
-  
-}, {
+},{
   question: "What common tag is used for a logical container?",
   answers: ["< container > < / container >", "< body > < / body >", "< div > < / div >", "< logicContainer > < / logicContainer >"],
   correctAnswer: "< div > < / div >"
 }, {
-  question: "The < canvas > element in HTML5 is used to: ",
-  answers: ["Display database records", "Draw graphics", "Create draggable elements", "Manipulate data in MySQL"],
-  correctAnswer: "Draw graphics"
-}, {
   question: "Which HTML attribute is used to define inline styles?",
   answers: ["Font", "Styles", "Style", "Class"],
   correctAnswer: "Styles"
-}, {
-  question: "In HTML5, onblur and onfocus are:",
-  answers: ["Style attributes", "HTML elements", "Event attributes", "Javascript attributes"],
-  correctAnswer: "Event attributes"
-}, {
+},{
   question: "In HTML5, which method is used to get the current location of a user?:",
   answers: ["getUserPosition()", "getCurrentPosition()", "getPosition()", "getCurrentUserPosition()"],
   correctAnswer: "getCurrentPosition()"
-}, {
-  question: "In HTML5, you can embed SVG elements directly into an HTML page.",
-  answers: ["True", "False"],
-  correctAnswer: "True"
-}, {
+},{
   question: "Which input type defines a slider control?",
   answers: ["range", "slider", "search", "controls"],
   correctAnswer: "range"
-}, {
-  question: "Which HTML5 element is used to display a scalar measurement within a known range?",
-  answers: ["< measure >", "< gauge >", "< meter >", "< range >"],
-  correctAnswer: "< meter >"
 }]; 
   
 
@@ -121,16 +100,16 @@ var game = {
 //would want this to be amount of correct answers i.e 3+ correct is an beginner, 5+ is a mid and 8+ high end //
     panel.html('<h5 class="heading_bg">Thank you for completing the HTML Test. Your results are displayed below. </h5>');
     $('#counter-number').html(game.counter);
-        if (game.correct < 4) {
+        if (game.correct < 3) {
       panel.html('<h5 class="heading_bg"> Congratulations you are a Junior HTML Developer! </h5>' + '<br> <button class="button success"><a href="/employee_profile">Return to Profile</a></button>')
       game.passOnInfo({level: 'Junior'});
     }; 
 
-     if (game.correct == 5) {
+     if (game.correct == 4) {
       panel.html('<h2> Congratulations you are a Mid-Level HTML Developer! </h2>' + '<br> <button class="button success"><a href="/employee_profile">Return to Profile</a></button>')
       game.passOnInfo({level: 'Mid-Level'});
     }; 
-     if (game.correct > 6) {
+     if (game.correct > 5) {
       panel.html('<h5 class="heading_bg"> Congratulations you are a Senior HTML Developer! </h5>' + '<br> <button class="button success"><a href="/employee_profile">Return to Profile</a></button>')
       game.passOnInfo({level: 'Senior'});
     };

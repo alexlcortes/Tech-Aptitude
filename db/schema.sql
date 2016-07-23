@@ -70,7 +70,7 @@ CREATE TABLE social_media
     facebook varchar(100),
     twitter varchar(100),
     github varchar(100),
-    stackedoverflow varchar(100),
+    stackoverflow varchar(100),
     linkedin varchar(100),
 );
 

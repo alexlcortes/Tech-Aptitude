@@ -56,15 +56,29 @@ var orm = {
     }, // end of updateEmployeeProfile
 
     updateEmployeeSkills: function(empID, skill, skillLevel) {
-        return new Promise(function(resolve, reject) {
+        console.log('empid: ' + empID);
+        console.log('skill: ' + skill);
+        console.log('skillLevel: ' + skillLevel);
 
-            var queryString = 'UPDATE tech_db.skill_level SET HTML = ? WHERE userid = ?'
-            console.log(queryString);
-            connection.query(queryString, [ skillLevel, empID], function(err, res) {
-                if (err) throw err;
-                 else resolve(res);
-            }); //end of connection.query
-        }); // end of return new Promise for getSkills
+        return new Promise(function(resolve, reject) {
+            return new Promise(function(resolve, reject) {
+                    console.log('inside 2nd promise inside updateEmployeeSkills');
+                    var queryString = "select id from tech_db.skills where skill = '" + skill + "'"
+                    console.log(queryString);
+                    connection.query(queryString, function(err, res) {
+                        if (err) reject(err)
+                        else {
+                            var skillID = res;
+                            var queryString = 'UPDATE tech_db.skill_level SET skill_level = ? WHERE skillsID = ? and empID = ?'
+                            console.log(queryString);
+                            connection.query(queryString, [ skillLevel, skillID[0].id, empID], function(err, res) {
+                                if (err) throw err;
+                                 else resolve(res);
+                            }); //end of connection.query
+                        } // end of else
+                    }) // end of first connection.query
+            }); // end of 2nd return new Promise for updateEmployeeSkills
+        }); // end of first return new Promise for updateEmployeeSkills
     },
 
     addPhoto: function(table, userID, fileName, cb) {
