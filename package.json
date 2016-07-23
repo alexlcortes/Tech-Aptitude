@@ -33,6 +33,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/alexlcortes/Tech-Aptitude/issues"
+  },"engines": {
+    "node": "4.4.5"
   },
   "homepage": "https://github.com/alexlcortes/Tech-Aptitude#readme"
 }
