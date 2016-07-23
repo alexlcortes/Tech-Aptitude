@@ -10,7 +10,6 @@ var orm = {
 
     getPersonalData: function(table, userID, cb) {
         var queryString = 'select * from tech_db.' + table + ' where id = ' + userID;
-        // var queryString = 'SELECT * FROM tech_db.' + table1 + ' AS u INNER JOIN tech_db.' + table2 + ' AS sm ON (u.id = sm.userid) WHERE u.id = ' + userID;
         console.log(queryString);
         connection.query(queryString, function(err, res) {
             if (err) throw err;
@@ -75,23 +74,17 @@ var orm = {
         console.log('skillLevel: ' + skillLevel);
 
         return new Promise(function(resolve, reject) {
-            return new Promise(function(resolve, reject) {
-                    console.log('inside 2nd promise inside updateEmployeeSkills');
-                    var queryString = "select id from tech_db.skills where skill = '" + skill + "'"
-                    console.log(queryString);
-                    connection.query(queryString, function(err, res) {
-                        if (err) reject(err)
-                        else {
-                            var skillID = res;
-                            var queryString = 'UPDATE tech_db.skill_level SET skill_level = ? WHERE skillsID = ? and empID = ?'
+           
+                            var queryString = 'UPDATE tech_db.skill_level SET ' + skill + ' = ? WHERE userID = ?'
                             console.log(queryString);
-                            connection.query(queryString, [ skillLevel, skillID[0].id, empID], function(err, res) {
+                            var updateValues = [skillLevel,empID ]
+                            connection.query(queryString, updateValues, function(err, res) {
                                 if (err) throw err;
                                  else resolve(res);
                             }); //end of connection.query
-                        } // end of else
-                    }) // end of first connection.query
-            }); // end of 2nd return new Promise for updateEmployeeSkills
+                       
+                    
+          
         }); // end of first return new Promise for updateEmployeeSkills
     },
 
@@ -166,12 +159,12 @@ var orm = {
             return cb(res);
         }); // end of connection query
     }, // end of
-    
+
     getSkills: function(empID, cb) {
         return new Promise(function(resolve, reject) {
 
-                // select * from skills s left join emp_skills e on s.id = e.skillID where empID = 1;
                 var queryString = 'SELECT * from tech_db.skills s left join tech_db.emp_skills e on s.id = e.skillID where e.empID = ?';
+                // var queryString = 'SELECT * from tech_db.skills s left join tech_db.emp_skills e on s.id = e.skillID left join tech_db.skill_level sl on e.empID = sl.empID   where e.empID = ?';
                 console.log(queryString);
                 connection.query(queryString, [empID], function(err, res) {
                         if (err) throw err;
@@ -206,13 +199,13 @@ var orm = {
     }, // end of getSocialMedia
 
 
-    getSkillLevels: function( userID, cb) {
-        var queryString = 'SELECT * FROM tech_db.skill_level WHERE empID = ' + userID;
-        connection.query(queryString, function(err, res) {
-            if (err) throw err;
-            return cb(res);
-        }); // end of connection query
-    }, // end of getSocialMedia
+    // getSkillLevels: function( userID, cb) {
+    //     var queryString = 'SELECT * FROM tech_db.skill_level WHERE userID = ' + userID;
+    //     connection.query(queryString, function(err, res) {
+    //         if (err) throw err;
+    //         return cb(res);
+    //     }); // end of connection query
+    // }, // end of getSocialMedia
 
      getPortfolio: function(empID, cb) {
         var queryString = 'SELECT * from tech_db.portfolio where id = ?';

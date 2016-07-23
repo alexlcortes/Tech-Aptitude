@@ -87,7 +87,7 @@ module.exports = function(app, passport) {
 
                 orm.getSkills(userid, function(data) {
                     var skillData = data;
-                    //console.log(skillData);
+                    console.log(skillData);
 
 
                     orm.getPortfolio(userid, function(data) {
@@ -98,17 +98,14 @@ module.exports = function(app, passport) {
                                 var socialData = data;
                                 console.log(socialData);
 
-                                orm.getSkillLevels(userid, function(data) {
-                                    var skillLevelsData = data;
-                                    console.log(skillLevelsData);
+                            orm.getSkillLevels(userid, function(data) {
+                                var skillLevelsData = data;
+                                console.log(skillLevelsData[0]);
 
-                                    orm.getSocialData(userid, function(data) {
-                                        var skillLevelsData = data; + console.log(skillLevels);
-                                        res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillOptions, portfolio: portData, social: socialData, skillLevels: skillLevelsData }) +
-                                    })
-                                })
+                                res.render('employee/employee_profile', { user: userData, skills: skillData, skillOpt: skillOptions, portfolio: portData, social: socialData, skillLevels: skillLevelsData })
+                                
                             })
-                            // get the user out of session and pass to template
+                        })
                     })
                 })
             })
@@ -179,10 +176,10 @@ module.exports = function(app, passport) {
         res.render('skill_tests/html_test');
     });
 
-    // app.post('/html_test_post',isLoggedIn, function(req, res) {
-    //     var userid = req.user.id;
-    //     orm.updateEmployeeSkills(userid, 'HTML' ,req.body.level);
-    // });
+    app.post('/html_test_post',isLoggedIn, function(req, res) {
+        var userid = req.user.id;
+        orm.updateEmployeeSkills(userid, 'HTML' , req.body.level);
+    });
 
     //     app.get('/html_test_post', function(req, res) {
     //     var userid = req.user.id;

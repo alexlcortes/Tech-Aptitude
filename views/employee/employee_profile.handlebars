@@ -130,11 +130,15 @@
                   <li>
                     <form action="/add_skill" method="post">
                     <input type="hidden" name="skill" value="{{skill}}">                   
-                      <button type="submit">{{skill}}</button>
+                      <button type="submit">{{skill}} </button>
                     </form>
                   </li>
                   {{/each}}
                   
+
+                  {{#if skillsLevels.HTML}}
+                    {{skillsLevels.HTML}}
+                  {{/if}}
                 </ul>
               </li>
             </ul>  
