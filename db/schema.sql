@@ -55,6 +55,7 @@ CREATE TABLE users
     state varchar (2),
     zip INT,
     profile_img varchar(50),
+    resume varchar(50),
     mobile_number varchar(50),
     
     PRIMARY KEY (id),
@@ -70,7 +71,7 @@ CREATE TABLE social_media
     facebook varchar(100),
     twitter varchar(100),
     github varchar(100),
-    stackedoverflow varchar(100),
+    stackoverflow varchar(100),
     linkedin varchar(100),
 );
 
