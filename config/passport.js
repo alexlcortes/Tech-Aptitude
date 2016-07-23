@@ -7,7 +7,7 @@ var LocalStrategy   = require('passport-local').Strategy;
 var mysql = require('mysql');
 var bcrypt = require('bcrypt-nodejs');
 var dbconfig = require('./connection');
-var connection = mysql.createConnection(dbconfig.connection);
+var connection = mysql.createConnection(process.env.JAWSDB_URL);
 
 connection.query('USE ' + dbconfig.database);
 // expose this function to our app using module.exports
