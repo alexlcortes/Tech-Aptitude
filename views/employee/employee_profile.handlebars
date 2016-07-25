@@ -9,7 +9,9 @@
 
 <div id="container">
   <div class="two-third">
-
+{{#each user}}
+  <a href="/assets/resume/{{resume}}">Resume</a>
+{{/each}}
     <!-- logout icon -->
     <a href = "/logout"><i class="fa fa-sign-out fa-3x editButton" aria-hidden="true"></i></a>
     <div class="row">
@@ -29,7 +31,7 @@
             <!-- Right Picture Nar -->
             <div class="sidebar_right">
             {{#each user}}
-              <img src="http://vignette2.wikia.nocookie.net/heman/images/c/c3/Heman83.jpg" style="width:200px">
+              <img src="assets/img_profile/{{profile_img}}" style="width:200px">
             {{/each}}
             </div>
 
@@ -78,24 +80,19 @@
                 <div id="field1-container" class="field f_50">
                   {{#each user}}
                   <label for="firstName"></label>         
-                  <i class="fa fa-user fa-2x contactIcons" aria-hidden="true"></i>  <h5 class="context">{{firstName}} {{lastName}}</h5>
+                  <i class="fa fa-user fa-1x contactIcons" aria-hidden="true"></i>  {{firstName}} {{lastName}}
                   <label for="lastName"></label>
                   <label for="email"></label>
-                  <i class="fa fa-envelope-o fa-2x contactIcons" aria-hidden="true"></i>  <h5 class="context">{{email}}</h5>
+                  <i class="fa fa-envelope-o fa-1x contactIcons" aria-hidden="true"></i>  {{email}}
                   
                   <label for="phone"></label>
-                  <i class="fa fa-phone fa-2x contactIcons" aria-hidden="true"></i> <h5 class="context">{{mobile_number}}</h5>
+                  <i class="fa fa-phone fa-1x contactIcons" aria-hidden="true"></i> {{mobile_number}}
 
                   <label for="address"></label>
-                  <i class="fa fa-home fa-2x contactIcons" aria-hidden="true"></i>  <h5 class="context">{{street_address}}</h5>
+                  <i class="fa fa-home fa-1x contactIcons" aria-hidden="true"></i>  {{street_address}}
                   <label for="city"></label>
-                  <i class="fa fa-home fa-2x contactIcons2" aria-hidden="true"></i>  <h5 class="context">{{city}}, {{state}} {{zip}}</h5>
+                  <i class="fa fa-home fa-1x contactIcons2" aria-hidden="true"></i>  {{city}}, {{state}} {{zip}}
                   <label for="city"></label>
-                  {{/each}}
-
-                  <!-- resume -->
-                  {{#each user}}
-                  <a href="/assets/resume/{{resume}}"><i class="fa fa-download" aria-hidden="true"> Resume</i></a>
                   {{/each}}
                 </div>
               </form>
